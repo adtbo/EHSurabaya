@@ -19,7 +19,9 @@
             rel="stylesheet">
     <link href="<?php echo base_url('assets'); ?>/css/font-awesome.css" rel="stylesheet">
     <link href="<?php echo base_url('assets'); ?>/css/style.css" rel="stylesheet">
-    <link href="<?php echo base_url('assets'); ?>/css/pages/dashboard.css" rel="stylesheet">
+    <!--link href="<?php echo base_url('assets'); ?>/css/pages/dashboard.css" rel="stylesheet"-->
+    <!--link href="<?php echo base_url('assets'); ?>/css/customize-template.css" type="text/css" media="screen, projection" rel="stylesheet" /-->
+    <script src="<?php echo base_url('assets'); ?>/js/jquery/jquery-1.8.2.min.js" type="text/javascript" ></script>
     <script src="<?php echo base_url('assets/ckeditor'); ?>/ckeditor.js" type="text/javascript"></script>
 </head>
     <body>
