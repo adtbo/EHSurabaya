@@ -23,7 +23,7 @@ class Dasbor extends CI_Controller {
 	{
 		$this->load->view('dasbor/v_dasborhead');
 		$this->load->view('dasbor/v_dasbornav');
-		echo "Fitur belum tersedia";
+		$this->load->view('dasbor/v_dasborgaleri');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
 	}
