@@ -42,9 +42,10 @@
                     <div class="widget-content">
                         <form class="form-default">
                             <fieldset>
-                            <div class="control-group  span5">
+                            <div class="control-group">
                                 <div class="controls"> 
-                                    <textarea name="tentang" id="tentang"></textarea>
+                                    <!--textarea name="tentang" id="tentang"></textarea-->          <textarea class="form-control" rows="5" id="tentang" name="tentang"></textarea>
+
                                 </div>
                                 <div class="form-actions">
                                     <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>Simpan</button>

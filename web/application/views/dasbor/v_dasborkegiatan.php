@@ -10,38 +10,50 @@
                     <p>
                         Pada bagian ini anda bisa mengganti video utama pada halaman depan, mengisi informasi komunitas serta kontak yang bisa dihubungi.
                     </p>
-                    <form role="form">
-                        <div class="form-group">
-                            <label for="NamaKegiatan">Nama Kegiatan</label>
-                            <input type="text" class="form-control" id="NamaKegiatan" placeholder="Nama Kegiatan">
-                        </div>
-                        <div class="form-group">
-                            <label for="TanggalMulai">Tanggal Mulai</label>
-                            <input type="text" class="form-control" id="TanggalMulai" placeholder="Tanggal Mulai">
-                        </div>
-                        <script type="text/javascript"> // When the document is ready
-                          $(document).ready(function () {                                                
-                            $('#TanggalMulai').datepicker({
-                              format: "dd/mm/yyyy"
-                            });  
-                          });
-                        </script>
-                        <div class="form-group">
-                            <label for="TanggalSelesai">Tanggal Selesai</label>
-                            <input type="datetime" class="form-control" id="TanggalSelesai" placeholder="Tanggal Selesai">
-                        </div>
-                        <script type="text/javascript"> // When the document is ready
-                          $(document).ready(function () {                                                
-                            $('#TanggalSelesai').datepicker({
-                              format: "dd/mm/yyyy"
-                            });  
-                          });
-                        </script>                                
-                        <div class="form-group">
-                            <label for="Deskripsi">Deskripsi</label>
-                            <textarea class="form-control" rows="5" id="deskripsi"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                    <form role="form" class="form-default">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="NamaKegiatan">Nama Kegiatan</label>
+                                <div class="controls">
+                                    <input type="text" class="span5" id="NamaKegiatan" placeholder="Nama Kegiatan">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="TanggalMulai">Tanggal Mulai</label>
+                                <div class="controls">
+                                    <input type="text" class="span2" id="TanggalMulai" placeholder="Tanggal Mulai">
+                                </div>
+                            </div>
+                            <script type="text/javascript"> // When the document is ready
+                              $(document).ready(function () {                                                
+                                $('#TanggalMulai').datepicker({
+                                  format: "dd/mm/yyyy"
+                                });  
+                              });
+                            </script>
+                            <div class="control-group">
+                                <label class="control-label" for="TanggalSelesai">Tanggal Selesai</label>
+                                <div class="controls">
+                                    <input type="datetime" class="span2" id="TanggalSelesai" placeholder="Tanggal Selesai">
+                                </div>
+                            </div>
+                            <script type="text/javascript"> // When the document is ready
+                              $(document).ready(function () {                                                
+                                $('#TanggalSelesai').datepicker({
+                                  format: "dd/mm/yyyy"
+                                });  
+                              });
+                            </script>                                
+                            <div class="control-group">
+                                <label class="control-label" for="Deskripsi">Deskripsi</label>
+                                <div class="controls">
+                                    <textarea class="form-control" rows="5" id="deskripsi"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>Simpan</button>
+                            </div>
+                        </fieldset>
                     </form>
                 </div>
             </div>
