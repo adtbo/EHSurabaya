@@ -26,6 +26,10 @@ class Dasbor extends CI_Controller {
         $data['judulLaman'] = "dasborgaleri";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
+<<<<<<< HEAD
+=======
+		$this->load->view('dasbor/v_dasborgaleri');
+>>>>>>> b38a02ce87c1281167465165ece3f941ffb803bb
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
 	}
