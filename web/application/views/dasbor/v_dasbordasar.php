@@ -14,6 +14,17 @@
                                     <i class="icon-play-circle"></i>
                                     <h5>Video Utama</h5>
                                 </div>
+				<div class="box-content">
+					<div class="input-prepend">
+						<div class="form-group">
+                                			<input class="span4" type="text" name="videoutama" id="videoutama" placeholder="link video utama">
+							<button type="submit" class="btn btn-primary">
+                                           		<i class="icon-ok"></i>
+                                           		Simpan
+                                        		</button>
+                                		</div>
+					</div>
+				</div>
                             </div>
                         </div>
                         <div class="span8">
