@@ -3,7 +3,8 @@
 class Dasbor extends CI_Controller {
 	public function index()
 	{
-		$this->load->view('dasbor/v_dasborhead');
+        $data['judulLaman'] = "dasborhome";
+		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
 		$this->load->view('dasbor/v_dasborhome');
 		$this->load->view('dasbor/v_dasborpadding');
@@ -12,7 +13,8 @@ class Dasbor extends CI_Controller {
 
 	public function dasar()
 	{
-		$this->load->view('dasbor/v_dasborhead');
+        $data['judulLaman'] = "dasbordasar";
+		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
 		$this->load->view('dasbor/v_dasbordasar');
 		$this->load->view('dasbor/v_dasborpadding');
@@ -21,18 +23,18 @@ class Dasbor extends CI_Controller {
 
 	public function galeri()
 	{
-		$this->load->view('dasbor/v_dasborhead');
+        $data['judulLaman'] = "dasborgaleri";
+		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
-		echo "Fitur belum tersedia";
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
 	}
 
 	public function kegiatan()
 	{
-		$this->load->view('dasbor/v_dasborhead');
+        $data['judulLaman'] = "dasborkegiatan";
+		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
-		echo "Fitur belum tersedia";
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
 	}
