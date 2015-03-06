@@ -46,7 +46,7 @@
         <div class="span6">
             <div class="widget">
                 <div class="widget-header">
-                    <i class="icon-book"></i>
+                    <i class="icon-calendar"></i>
                     <h3> Daftar Kegiatan EH Surabaya </h3>
                 </div>
                 <div class="widget-content">
