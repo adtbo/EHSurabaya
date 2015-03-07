@@ -17,25 +17,24 @@
          <!-- CSS
          ================================================== -->
         <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="assets/videopage/css/bootstrap.min.css"/>
         <!-- FontAwesome -->
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="assets/videopage/css/font-awesome.min.css"/>
         <!-- Animation -->
-        <link rel="stylesheet" href="assets/css/animate.css" />
+        <link rel="stylesheet" href="assets/videopage/css/animate.css" />
         <!-- Owl Carousel -->
-        <link rel="stylesheet" href="assets/css/owl.carousel.css"/>
-         <link rel="stylesheet" href="css/owl.theme.css"/>
+        <link rel="stylesheet" href="assets/videopage/css/owl.carousel.css"/>
+         <link rel="stylesheet" href="assets/videopage/css/owl.theme.css"/>
          <!-- Pretty Photo -->
-         <link rel="stylesheet" href="assets/css/prettyPhoto.css"/>
-         <link rel="stylesheet" href="assets/css/flexslider.css"/>
-         <link rel="stylesheet" href="assets/css/red.css"/>
+         <link rel="stylesheet" href="assets/videopage/css/prettyPhoto.css"/>
+         <link rel="stylesheet" href="assets/videopage/css/flexslider.css"/>
+         <link rel="stylesheet" href="assets/videopage/css/red.css"/>
 
         <!-- Template styles-->
-        <link rel="stylesheet" href="assets/css/custom.css" />
-        <link rel="stylesheet" href="assets/css/responsive.css" />
-        <link rel="stylesheet" href="assets/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/videopage/css/custom.css" />
+        <link rel="stylesheet" href="assets/videopage/css/responsive.css" />
+        <link rel="stylesheet" href="assets/videopage/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        
     </head>
 
  <body data-spy="scroll" data-target=".navbar-fixed-top">
@@ -54,7 +53,7 @@
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="#">
-                                <img src="images/logo3.png" alt="" class="img-responsive">
+                                <img src="assets/videopage/images/logo3.png" alt="" class="img-responsive">
                         </a>
                  </div><!--Navbar header End-->
                  	<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
@@ -71,9 +70,9 @@
     <section id="home" class="hero landing hero-section">
         <div class="video-background-container">
             <video preload="auto" autoplay loop muted class="video-background">
-                <source type="video/mp4" src="videos/gdrive.mp4" />
-                <source type="video/ogg" src="videos/gdrive.ogv" />
-                <source type="video/webm" src="videos/gdrive.webm" />
+                <source type="video/mp4" src="assets/videopage/videos/gdrive.mp4" />
+                <source type="video/ogg" src="assets/videopage/videos/gdrive.ogv" />
+                <source type="video/webm" src="assets/videopage/videos/gdrive.webm" />
             </video>
         </div> 
     </section><!--/ Home end -->
@@ -237,12 +236,12 @@
               <ul class="portfolio-wrap" id="portfolio_items">
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio identity web-design">
                         <figure>
-                            <img src="images/portfolio/p1.jpg" alt="" class="img-responsive"/>
+                            <img src="assets/videopage/images/portfolio/p1.jpg" alt="" class="img-responsive"/>
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p1.jpg" data-rel="prettyPhoto" >
+                                    <a href="assets/videopage/images/portfolio/p1.jpg" data-rel="prettyPhoto" >
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -255,12 +254,12 @@
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio logo graphic">
                         <figure>
-                        <img src="images/portfolio/p2.jpg" alt="" class="img-responsive" />
+                        <img src="assets/videopage/images/portfolio/p2.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p2.jpg"  data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p2.jpg"  data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -273,12 +272,12 @@
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio graphic logo">
                         <figure>
-                            <img src="images/portfolio/p3.jpg" alt="" class="img-responsive"/>
+                            <img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p3.jpg" data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -289,14 +288,14 @@
                         </figure>
                     </li>
 
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio web-design identity">
+                    <!--<li class="col-md-3 col-xs-12 col-sm-6 single-portfolio web-design identity">
                         <figure>
-                            <img src="images/portfolio/p7.jpg" alt="" class="img-responsive" />
+                            <img src="assets/videopage/images/portfolio/p7.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p7.jpg" data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p7.jpg" data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -309,12 +308,12 @@
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio logo web-design">
                         <figure>
-                            <img src="images/portfolio/p5.jpg" alt="" class="img-responsive" />
+                            <img src="assets/videopage/images/portfolio/p5.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p5.jpg" data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p5.jpg" data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -327,12 +326,12 @@
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio logo graphic">
                         <figure>
-                            <img src="images/portfolio/p6.jpg" alt="" class="img-responsive" />
+                            <img src="assets/videopage/images/portfolio/p6.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p6.jpg" data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p6.jpg" data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -343,14 +342,14 @@
                         </figure>
                     </li>
 
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio graphic identity">
+                    <!--<li class="col-md-3 col-xs-12 col-sm-6 single-portfolio graphic identity">
                         <figure>
-                            <img src="images/portfolio/p3.jpg" alt="" class="img-responsive" />
+                            <img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p3.jpg" data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -363,12 +362,12 @@
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio web-design graphic">
                         <figure>
-                            <img src="images/portfolio/p7.jpg" alt="" class="img-responsive" />
+                            <img src="assets/videopage/images/portfolio/p7.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
                                 <p class="links">
                                     <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p7.jpg" data-rel="prettyPhoto">
+                                    <a href="assets/videopage/images/portfolio/p7.jpg" data-rel="prettyPhoto">
                                         <i class="fa fa-plus"></i>
                                     </a>
                                 </p>
@@ -377,7 +376,7 @@
                                 </p>
                             </figcaption>
                         </figure>
-                    </li>
+                    </li>-->
 
                 </ul>
         </div> <!-- Container Full End -->
@@ -555,7 +554,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="footer_bottom">
-                        <p class="text-block"> &copy; Copyright reserved to <span>Cyprass </span></p>
+                        <p class="text-block"> &copy; Copyright reserved to <span>EARTH HOUR Surabaya 2015</span></p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -597,55 +596,32 @@
     <!-- initialize jQuery Library -->
 
 		<!-- initialize jQuery Library -->
-		<script type="text/javascript" src="assets/js/jquery.js"></script>
+		<script type="text/javascript" src="assets/videopage/js/jquery.js"></script>
         <!-- Bootstrap jQuery -->
-         <script src="assets/js/bootstrap.min.js"></script>
+         <script src="assets/videopage/js/bootstrap.min.js"></script>
         <!-- Owl Carousel -->
-        <script src="assets/js/owl.carousel.min.js"></script>
+        <script src="assets/videopage/js/owl.carousel.min.js"></script>
         <!-- Isotope -->
-        <script src="assets/js/jquery.isotope.js"></script>
+        <script src="assets/videopage/js/jquery.isotope.js"></script>
         <!-- Pretty Photo -->
-		<script type="text/javascript" src="assets/js/jquery.prettyPhoto.js"></script>
+		<script type="text/javascript" src="assets/videopage/js/jquery.prettyPhoto.js"></script>
         <!-- SmoothScroll -->
-        <script type="text/javascript" src="assets/js/smooth-scroll.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/smooth-scroll.js"></script>
         <!-- Image Fancybox -->
-        <script type="text/javascript" src="assets/js/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <script type="text/javascript" src="assets/videopage/js/jquery.fancybox.pack.js?v=2.1.5"></script>
         <!-- Counter  -->
-        <script type="text/javascript" src="assets/js/jquery.counterup.min.js"></script>
-        <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.bxslider.min.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.scrollTo.js"></script>
-        <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/jquery.counterup.min.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/waypoints.min.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/jquery.scrollTo.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/jquery.easing.1.3.js"></script>
    		<!-- PrettyPhoto -->
-        <script src="assets/js/jquery.singlePageNav.js"></script>
+        <script src="assets/videopage/js/jquery.singlePageNav.js"></script>
       	<!-- Wow Animation -->
-        <script type="js/javascript" src="assets/js/wow.min.js"></script>
+        <script type="js/javascript" src="assets/videopage/js/wow.min.js"></script>
         <!-- Google Map  Source -->
-        <script type="text/javascript" src="assets/js/gmaps.js"></script>
+        <script type="text/javascript" src="assets/videopage/js/gmaps.js"></script>
 			<!-- Custom js -->
-        <script src="assets/js/custom.js"></script>
-	<script>
-		// Google Map - with support of gmaps.js
-     var map;
-        map = new GMaps({
-          div: '#map',
-          lat: 23.709921,
-          lng: 90.407143,
-          scrollwheel: false,
-          panControl: false,
-          zoomControl: false,
-        });
-
-        map.addMarker({
-          lat: 23.709921,
-          lng: 90.407143,
-          title: 'Themeturn',
-          infoWindow: { 
-            content: '<p> ThemeTurn, Dhanmondhi 27</p>'
-          },
-          icon: "images/map1.png"
-        });
-      	</script>
- 
+        <script src="assets/videopage/js/custom.js"></script> 
     </body>
 </html>
