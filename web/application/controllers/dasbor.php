@@ -40,4 +40,14 @@ class Dasbor extends CI_Controller {
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
 	}
+    
+    public function ekegiatan()
+    {
+        $data['judulLaman'] = "dasborkegiatan";
+		$this->load->view('dasbor/v_dasborhead', $data);
+		$this->load->view('dasbor/v_dasbornav');
+        $this->load->view('dasbor/v_dasborekegiatan');
+		$this->load->view('dasbor/v_dasborpadding');
+		$this->load->view('dasbor/v_dasborfoot');
+    }
 }
