@@ -1,47 +1,49 @@
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <button class="btn btn-navbar" data-toggle="collapse" data-target="#app-nav-top-bar">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </a>
                     <a href="<?php echo site_url('dasbor'); ?>" class="brand"><i class="icon-leaf">&nbsp;EARTH HOUR Surabaya</i></a>
-                    <div id="app-nav-top-bar" class="nav-collapse">
+                    <div class="nav-collapse">
                         <ul class="nav pull-right">
-                            <li>
-                                <a href="login.html">Logout</a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Akun <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="login.html">Logout</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="body-container">
-            <div id="body-content">
-            	<div class="body-nav body-nav-horizontal body-nav-fixed">
-                    <div class="container">
-                        <ul>
-                            <li>
-                                <a href="<?php echo site_url('dasbor'); ?>">
-                                    <i class="icon-dashboard icon-large"></i> Dasbor
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('dasbor/dasar'); ?>">
-                                    <i class="icon-cogs icon-large"></i> Dasar
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('dasbor/galeri'); ?>">
-                                    <i class="icon-list-alt icon-large"></i> Galeri
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo site_url('dasbor/kegiatan'); ?>">
-                                    <i class="icon-calendar icon-large"></i> Kegiatan
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+        <div class="subnavbar">
+            <div class="subnavbar-inner">
+            	<div class="container">                    
+                    <ul class="mainnav">
+                        <li class="<?php if ($judulLaman=="dasborhome") echo 'active'; ?>">
+                            <a href="<?php echo site_url('dasbor'); ?>">
+                                <i class="icon-dashboard icon-large"></i> <span>Dasbor</span>
+                            </a>
+                        </li>
+                        <li class="<?php if ($judulLaman=="dasbordasar") echo 'active'; ?>">
+                            <a href="<?php echo site_url('dasbor/dasar'); ?>">
+                                <i class="icon-cogs icon-large"></i> <span>Dasar</span>
+                            </a>
+                        </li>
+                        <li class="<?php if ($judulLaman=="dasborgaleri") echo 'active'; ?>">
+                            <a href="<?php echo site_url('dasbor/galeri'); ?>">
+                                <i class="icon-list-alt icon-large"></i> <span>Galeri</span>
+                            </a>
+                        </li>
+                        <li class="<?php if ($judulLaman=="dasborkegiatan") echo 'active'; ?>">
+                            <a href="<?php echo site_url('dasbor/kegiatan'); ?>">
+                                <i class="icon-calendar icon-large"></i> <span>Kegiatan</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+        </div>
