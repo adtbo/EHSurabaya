@@ -13,7 +13,7 @@
 
 		function selectById($id){
 		  $this->load->database();
-		  $query = $this->db->query("Select * from Disponsori, Sponsor where Sponsor.IDSponsor = Disponsori.IDSponsor and Disponsori.IDEvent = '".$id."'");
+		  $query = $this->db->query("Select * from Disponsori, Sponsor where Sponsor.IDSponsor = ListSponsor.IDSponsor and IDEvent = '".$id."'");
 		  return $query;
 		}
 

@@ -22,7 +22,7 @@
 			return $this->db->get('Video')->row();
 		}
 
-		public function insert($data)
+		public function masuk($data)
 		{
 			return $this->db->insert('Video',$data);
 		}

@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class Event_model extends CI_Model
+	class Main_model extends CI_Model
 	{
 
 		function __construct()
@@ -22,7 +22,7 @@
 			return $this->db->get('Event')->row();
 		}
 
-		public function insert($data)
+		public function masuk($data)
 		{
 			return $this->db->insert('Event',$data);
 		}

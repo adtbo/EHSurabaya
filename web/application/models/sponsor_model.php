@@ -22,7 +22,7 @@
 			return $this->db->get('Sponsor')->row();
 		}
 
-		public function insert($data)
+		public function masuk($data)
 		{
 			return $this->db->insert('Sponsor',$data);
 		}
