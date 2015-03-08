@@ -1,59 +1,15 @@
- <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-    <!-- Basic Page Needs
-    ================================================== -->
-        <meta charset="utf-8">
-        <title>EarthHourSurabaya</title>
-        <meta name="description" content="">
-        <!-- Mobile Specific Metas
-    ================================================== -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-         <!-- CSS
-         ================================================== -->
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="assets/videopage/css/bootstrap.min.css"/>
-        <!-- FontAwesome -->
-        <link rel="stylesheet" href="assets/videopage/css/font-awesome.min.css"/>
-        <!-- Animation -->
-        <link rel="stylesheet" href="assets/videopage/css/animate.css" />
-        <!-- Owl Carousel -->
-        <link rel="stylesheet" href="assets/videopage/css/owl.carousel.css"/>
-         <link rel="stylesheet" href="assets/videopage/css/owl.theme.css"/>
-         <!-- Pretty Photo -->
-         <link rel="stylesheet" href="assets/videopage/css/prettyPhoto.css"/>
-         <link rel="stylesheet" href="assets/videopage/css/flexslider.css"/>
-         <link rel="stylesheet" href="assets/videopage/css/red.css"/>
-
-        <!-- Template styles-->
-        <link rel="stylesheet" href="assets/videopage/css/custom.css" />
-        <link rel="stylesheet" href="assets/videopage/css/responsive.css" />
-        <link rel="stylesheet" href="assets/videopage/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-        
-    </head>
-
- <body data-spy="scroll" data-target=".navbar-fixed-top">
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-
     <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
     	<div class="container">
     		<!-- <div class="row"> -->
-                 <div class="navbar-header ">
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <div class="navbar-header ">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="#">
-                                <img src="assets/videopage/images/logo3.png" alt="" class="img-responsive">
+                            <img src="assets/videopage/images/logo.png" alt="" class="img-responsive">
                         </a>
                  </div><!--Navbar header End-->
                  	<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
@@ -63,16 +19,16 @@
                             <li><a href="#portfolio"  >Galeri</a> </li>
                             <li><a href="#footer" >Kontak</a> </li>
                         </ul>
-                     </nav>
-                </div><!-- /.container-fluid -->
-</header>
+                    </nav>
+        </div><!-- /.container-fluid -->
+    </header>
  <!-- Slider start -->
     <section id="home" class="hero landing hero-section">
         <div class="video-background-container">
             <video preload="auto" autoplay loop muted class="video-background">
-                <source type="video/mp4" src="assets/videopage/videos/gdrive.mp4" />
+                <!--<source type="video/mp4" src="assets/videopage/videos/tes.mp4" />
                 <source type="video/ogg" src="assets/videopage/videos/gdrive.ogv" />
-                <source type="video/webm" src="assets/videopage/videos/gdrive.webm" />
+                --><source type="video/webm" src="assets/videopage/videos/tes.webm" />-->
             </video>
         </div> 
     </section><!--/ Home end -->
@@ -96,7 +52,7 @@
 <!-- Service Area End -->
 
 <!-- Team MEmber Start -->
-<!--<section id="team">
+<section id="team">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -107,11 +63,11 @@
                 </div>
             </div>  <!-- Col-md-12 End -->
 
-            <!--<div id="owl-demo" class="owl-carousel owl-theme team-items">
+            <div id="owl-demo" class="owl-carousel owl-theme team-items">
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="images/team/pic6.jpg" alt="" class="img-responsive">
+                            <img src="assets/videopage/images/team/pic6.jpg" alt="" class="img-responsive">
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -127,10 +83,10 @@
                         <h5>Chief Designer</h5>
                     </div>
                 </div>  <!-- item wrapper end -->
-                <!--<div class="item text-center">
+                <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="images/team/pic1.jpg" alt="" class="img-responsive">
+                            <img src="assets/videopage/images/team/pic1.jpg" alt="" class="img-responsive">
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -146,10 +102,10 @@
                         <h5>Chief Designer</h5>
                     </div>
                 </div>  <!-- item wrapper end -->
-                <!--<div class="item text-center">
+                <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="images/team/pic2.jpg" alt="" class="img-responsive">
+                            <img src="assets/videopage/images/team/pic2.jpg" alt="" class="img-responsive">
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -165,10 +121,10 @@
                         <h5>Chief Designer</h5>
                     </div>
                 </div>  <!-- item wrapper end -->
-                <!--<div class="item text-center">
+                <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="images/team/pic5.jpg" alt="" class="img-responsive">
+                            <img src="assets/videopage/images/team/pic5.jpg" alt="" class="img-responsive">
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -184,10 +140,10 @@
                         <h5>Chief Designer</h5>
                     </div>
                 </div>  <!-- item wrapper end -->
-                <!--<div class="item text-center">
+                <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="images/team/pic4.jpg" alt="" class="img-responsive">
+                            <img src="assets/videopage/images/team/pic4.jpg" alt="" class="img-responsive">
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -203,10 +159,10 @@
                         <h5>Chief Designer</h5>
                     </div>
                 </div>  <!-- item wrapper end -->
-            <!--</div>
+            </div>
         </div>
     </div> <!-- Conatiner Team end -->
-<!--</section>  <!-- Section TEam End -->
+</section>  <!-- Section TEam End -->
 
 <!-- Our Team Members End -->
 
@@ -234,7 +190,7 @@
     <div class="clearfix"></div>
    			<div class="text-center ">
               <ul class="portfolio-wrap" id="portfolio_items">
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio identity web-design">
+                    <!--<li class="col-md-3 col-xs-12 col-sm-6 single-portfolio identity web-design">
                         <figure>
                             <img src="assets/videopage/images/portfolio/p1.jpg" alt="" class="img-responsive"/>
                             <figcaption>
@@ -286,7 +242,82 @@
                                 </p>
                             </figcaption>
                         </figure>
-                    </li>
+                    </li>-->
+
+                    <div class="row">
+                       <div class="col-sm-6 col-md-3">
+                          <div class="thumbnail">
+                             <img src="assets/videopage/images/portfolio/p3.jpg" 
+                             alt="Generic placeholder thumbnail">
+                          </div>
+                          <div class="caption">
+                             <h3>Thumbnail label</h3>
+                             <p>Some sample text. Some sample text.</p>
+                             <p>
+                                <a href="#" class="btn btn-primary" role="button">
+                                   Button
+                                </a> 
+                                <a href="#" class="btn btn-default" role="button">
+                                   Button
+                                </a>
+                             </p>
+                          </div>
+                       </div>
+                       <div class="col-sm-6 col-md-3">
+                          <div class="thumbnail">
+                             <img src="assets/videopage/images/portfolio/p3.jpg" 
+                             alt="Generic placeholder thumbnail">
+                          </div>
+                          <div class="caption">
+                             <h3>Thumbnail label</h3>
+                             <p>Some sample text. Some sample text.</p>
+                             <p>
+                                <a href="#" class="btn btn-primary" role="button">
+                                   Button
+                                </a> 
+                                <a href="#" class="btn btn-default" role="button">
+                                   Button
+                                </a>
+                             </p>
+                          </div>
+                       </div>
+                       <div class="col-sm-6 col-md-3">
+                          <div class="thumbnail">
+                             <img src="assets/videopage/images/portfolio/p3.jpg" 
+                             alt="Generic placeholder thumbnail">
+                          </div>
+                          <div class="caption">
+                             <h3>Thumbnail label</h3>
+                             <p>Some sample text. Some sample text.</p>
+                             <p>
+                                <a href="#" class="btn btn-primary" role="button">
+                                   Button
+                                </a> 
+                                <a href="#" class="btn btn-default" role="button">
+                                   Button
+                                </a>
+                             </p>
+                          </div>
+                       </div>
+                       <div class="col-sm-6 col-md-3">
+                          <div class="thumbnail">
+                             <img src="assets/videopage/images/portfolio/p3.jpg" 
+                             alt="Generic placeholder thumbnail">
+                          </div>
+                          <div class="caption">
+                             <h3>Thumbnail label</h3>
+                             <p>Some sample text. Some sample text.</p>
+                             <p>
+                                <a href="#" class="btn btn-primary" role="button">
+                                   Button
+                                </a> 
+                                <a href="#" class="btn btn-default" role="button">
+                                   Button
+                                </a>
+                             </p>
+                          </div>
+                       </div>
+                    </div>
 
                     <!--<li class="col-md-3 col-xs-12 col-sm-6 single-portfolio web-design identity">
                         <figure>
@@ -588,40 +619,3 @@
         </a>
     </div>
     <!-- End Back To Top Button -->
-
-
-
-<!-- Javascript Files
-    ================================================== -->
-    <!-- initialize jQuery Library -->
-
-		<!-- initialize jQuery Library -->
-		<script type="text/javascript" src="assets/videopage/js/jquery.js"></script>
-        <!-- Bootstrap jQuery -->
-         <script src="assets/videopage/js/bootstrap.min.js"></script>
-        <!-- Owl Carousel -->
-        <script src="assets/videopage/js/owl.carousel.min.js"></script>
-        <!-- Isotope -->
-        <script src="assets/videopage/js/jquery.isotope.js"></script>
-        <!-- Pretty Photo -->
-		<script type="text/javascript" src="assets/videopage/js/jquery.prettyPhoto.js"></script>
-        <!-- SmoothScroll -->
-        <script type="text/javascript" src="assets/videopage/js/smooth-scroll.js"></script>
-        <!-- Image Fancybox -->
-        <script type="text/javascript" src="assets/videopage/js/jquery.fancybox.pack.js?v=2.1.5"></script>
-        <!-- Counter  -->
-        <script type="text/javascript" src="assets/videopage/js/jquery.counterup.min.js"></script>
-        <script type="text/javascript" src="assets/videopage/js/waypoints.min.js"></script>
-        <script type="text/javascript" src="assets/videopage/js/jquery.bxslider.min.js"></script>
-        <script type="text/javascript" src="assets/videopage/js/jquery.scrollTo.js"></script>
-        <script type="text/javascript" src="assets/videopage/js/jquery.easing.1.3.js"></script>
-   		<!-- PrettyPhoto -->
-        <script src="assets/videopage/js/jquery.singlePageNav.js"></script>
-      	<!-- Wow Animation -->
-        <script type="js/javascript" src="assets/videopage/js/wow.min.js"></script>
-        <!-- Google Map  Source -->
-        <script type="text/javascript" src="assets/videopage/js/gmaps.js"></script>
-			<!-- Custom js -->
-        <script src="assets/videopage/js/custom.js"></script> 
-    </body>
-</html>

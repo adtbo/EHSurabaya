@@ -4,7 +4,7 @@
             <div class="widget">
                 <div class="widget-header">
                     <i class="icon-list-alt"></i>
-                    <h3> Pengaturan Menambahkan Kegiatan </h3>
+                    <h3> Menambahkan Kegiatan </h3>
                 </div>
                 <div class="widget-content">
                     <p>
@@ -65,29 +65,45 @@
                     <h3> Daftar Kegiatan </h3>
                 </div>
                 <div class="widget-content">
-                    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Kegiatan</th>
-                                <th>Tangaal Mulai</th>
-                                <th>Tanggal Selesai</th>
-                                <th>Deskripsi</th>
-                            </tr>
-                        </thead>
-
-                        <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>Nama Kegiatan</th>
-                                <th>Tangaal Mulai</th>
-                                <th>Tanggal Selesai</th>
-                                <th>Deskripsi</th>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <div class="bs-example">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Row</th>
+                                    <th>Nama Kegiatan</th>
+                                    <th>Tanggal Mulai</th>
+                                    <th>Tanggal Selesai</th>
+                                    <th>Deskripsi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>John</td>
+                                    <td>Carter</td>
+                                    <td>johncarter@mail.com</td>
+                                    <td>naskleng</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Peter</td>
+                                    <td>Parker</td>
+                                    <td>peterparker@mail.com</td>
+                                    <td>Wasyuu</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>John</td>
+                                    <td>Rambo</td>
+                                    <td>johnrambo@mail.com</td>
+                                    <td>djancukkk</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
