@@ -162,8 +162,7 @@ ALTER TABLE `listgambar`
 --
 ALTER TABLE `listvideo`
   ADD CONSTRAINT `listvideo_ibfk_1` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`),
-  ADD CONSTRAINT `listvideo_ibfk_2` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`),
-  ADD CONSTRAINT `listvideo_ibfk_3` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`);
+  ADD CONSTRAINT `listvideo_ibfk_2` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
