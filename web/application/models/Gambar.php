@@ -9,7 +9,7 @@ class Gambar extends CI_Model {
 
 	public function getAll()
 	{
-		$query = $this->db->get('Foto');
+		$query = $this->db->get('Gambar');
 		return $query->result(); 
 	}
 

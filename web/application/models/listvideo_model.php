@@ -13,13 +13,13 @@
 
 		function selectById($id){
 		  $this->load->database();
-		  $query = $this->db->query("Select NamaVideo, Link from ListVideo, Video where Video.IDVideo = ListVideo.IDVideo and IDEvent = '".$id."'");
+		  $query = $this->db->query("Select NamaVideo, Link from Listvideo, Video where Video.IDVideo = Listvideo.IDVideo and Listvideo.IDEvent = '".$id."'");
 		  return $query;
 		}
 		
 		function selectByName($id){
 		  $this->load->database();
-		  $query = $this->db->query("Select NamaVideo, Link from ListVideo, Video where Video.IDVideo = ListVideo.IDVideo and IDEvent = '".$id."'");
+		  $query = $this->db->query("Select NamaVideo, Link from Listvideo, Video where Video.IDVideo = Listvideo.IDVideo and Listvideo.IDEvent = '".$id."'");
 		  return $query;
 		}
 

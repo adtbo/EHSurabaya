@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 06, 2015 at 08:10 PM
+-- Generation Time: Mar 08, 2015 at 07:12 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `EarthHour`
+-- Database: `earthhour`
 --
 
 -- --------------------------------------------------------
@@ -51,29 +51,29 @@ CREATE TABLE IF NOT EXISTS `event` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `foto`
+-- Table structure for table `gambar`
 --
 
-CREATE TABLE IF NOT EXISTS `foto` (
-  `IDFoto` int(11) NOT NULL,
-  `Judul` varchar(100) NOT NULL,
-  `DeskripsiFoto` text NOT NULL,
-  `WaktuFoto` date NOT NULL,
-  `Gambar` blob NOT NULL,
-  PRIMARY KEY (`IDFoto`)
+CREATE TABLE IF NOT EXISTS `gambar` (
+  `IDGambar` int(11) NOT NULL,
+  `DataGambar` blob NOT NULL,
+  `JudulGambar` varchar(100) NOT NULL,
+  `WaktuGambar` date NOT NULL,
+  `DeskripsiGambar` text NOT NULL,
+  PRIMARY KEY (`IDGambar`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `listfoto`
+-- Table structure for table `listgambar`
 --
 
-CREATE TABLE IF NOT EXISTS `listfoto` (
+CREATE TABLE IF NOT EXISTS `listgambar` (
   `IDEvent` int(11) NOT NULL,
-  `IDFoto` int(11) NOT NULL,
+  `IDGambar` int(11) NOT NULL,
   KEY `IDEvent` (`IDEvent`),
-  KEY `IDFoto` (`IDFoto`)
+  KEY `IDGambar` (`IDGambar`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -147,23 +147,23 @@ CREATE TABLE IF NOT EXISTS `video` (
 -- Constraints for table `disponsori`
 --
 ALTER TABLE `disponsori`
-  ADD CONSTRAINT `disponsori_ibfk_2` FOREIGN KEY (`IDSponsor`) REFERENCES `sponsor` (`IDSponsor`),
-  ADD CONSTRAINT `disponsori_ibfk_1` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`);
+  ADD CONSTRAINT `disponsori_ibfk_1` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`),
+  ADD CONSTRAINT `disponsori_ibfk_2` FOREIGN KEY (`IDSponsor`) REFERENCES `sponsor` (`IDSponsor`);
 
 --
--- Constraints for table `listfoto`
+-- Constraints for table `listgambar`
 --
-ALTER TABLE `listfoto`
-  ADD CONSTRAINT `listfoto_ibfk_2` FOREIGN KEY (`IDFoto`) REFERENCES `foto` (`IDFoto`),
-  ADD CONSTRAINT `listfoto_ibfk_1` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`);
+ALTER TABLE `listgambar`
+  ADD CONSTRAINT `listgambar_ibfk_2` FOREIGN KEY (`IDGambar`) REFERENCES `gambar` (`IDGambar`),
+  ADD CONSTRAINT `listgambar_ibfk_1` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`);
 
 --
 -- Constraints for table `listvideo`
 --
 ALTER TABLE `listvideo`
-  ADD CONSTRAINT `listvideo_ibfk_3` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`),
   ADD CONSTRAINT `listvideo_ibfk_1` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`),
-  ADD CONSTRAINT `listvideo_ibfk_2` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`);
+  ADD CONSTRAINT `listvideo_ibfk_2` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`),
+  ADD CONSTRAINT `listvideo_ibfk_3` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
