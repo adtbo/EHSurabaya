@@ -55,7 +55,26 @@
                                 <div class="span11">
                                     <label class="control-label" for="Deskripsi"><strong>Deskripsi</strong></label>
                                     <div class="controls">
-                                        <textarea class="form-control" rows="5" id="deskripsi"></textarea>
+                                        <textarea class="form-control" id="deskripsi"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="span11">
+                                    <label class="control-label" for="Deskripsi">&nbsp;</label>
+                                    <div class="accordion" id="gambar">
+                                        <div class="accordion-group">
+                                            <div class="accordion-heading">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#gambar" href="#gambarkegiatan">Daftar Gambar Kegiatan</a>
+                                            </div>
+                                            <div class="accordion-body collapse in" id="gambarkegiatan">
+                                                <div class="accordion-inner">
+                                                    <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
+                                                    <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
+                                                    <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
