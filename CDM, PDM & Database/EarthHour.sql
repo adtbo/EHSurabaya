@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 08, 2015 at 07:12 PM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Host: localhost
+-- Generation Time: Mar 14, 2015 at 01:52 PM
+-- Server version: 5.5.41-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -105,10 +105,18 @@ CREATE TABLE IF NOT EXISTS `organisasi` (
   `Facebook` varchar(20) NOT NULL,
   `Twitter` varchar(20) NOT NULL,
   `Pinterest` varchar(20) NOT NULL,
-  `Google+` varchar(20) NOT NULL,
+  `Gplus` varchar(20) NOT NULL,
   `Linkedin` varchar(20) NOT NULL,
+  `Instagram` varchar(20) NOT NULL,
   PRIMARY KEY (`IDOrganisasi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `organisasi`
+--
+
+INSERT INTO `organisasi` (`IDOrganisasi`, `NamaOrganisasi`, `Alamat`, `Deskripsi`, `Email`, `NoTlp`, `Facebook`, `Twitter`, `Pinterest`, `Gplus`, `Linkedin`, `Instagram`) VALUES
+(1, 'Earth Hour Surabaya', 'sebelah aiola', '<p>EH Surabaya adalah EH Surabaya.</p>\n\n<p>Yang buat ganteng deh, bikin ketagihan :3</p>\n', 'surya.igede@gmail.com', '031123121', 'facebook.com', 'twitter.com', 'pinterest.com', 'plus.google.com', 'linked.in', 'instagram.com');
 
 -- --------------------------------------------------------
 
