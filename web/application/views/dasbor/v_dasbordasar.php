@@ -40,11 +40,11 @@
                         <h3> Tentang EH Surabaya </h3>
                     </div>
                     <div class="widget-content">
-                        <form class="form-default">
+                        <form class="form-default" action="<?php echo site_url('dasbor/updatedes'); ?>" method="POST">
                             <fieldset>
                             <div class="control-group">
                                 <div class="controls"> 
-                                    <!--textarea name="tentang" id="tentang"></textarea-->          <textarea class="form-control" rows="5" id="tentang" name="tentang"></textarea>
+                                    <!--textarea name="tentang" id="tentang"></textarea-->          <textarea class="form-control" rows="5" id="tentang" name="tentang"><?php echo $deskripsi; ?></textarea>
 
                                 </div>
                                 <div class="form-actions">
@@ -61,45 +61,45 @@
                         <h3> Kontak EH Surabaya </h3>
                     </div>
                     <div class="widget-content">
-                        <form class="form-inline">
+                        <form class="form-inline" action="<?php echo site_url('dasbor/updatekon'); ?>" method="POST">
                             <fieldset>
                             <div class="control-group  span5">
                                 <div class="controls"> 
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-envelope"></i></span>
-                                        <input class="span4" type="email" name="email" id="email" placeholder="Alamat Email">
+                                        <input class="span4" type="email" name="email" id="email" placeholder="Alamat Email" value="<?php echo $kontak['email']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-phone"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="No. Telepon">
+                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="No. Telepon" value="<?php echo $kontak['telp']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-facebook"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="Facebook">
+                                        <input class="span4" type="text" name="facebook" id="facebook" placeholder="Facebook" value="<?php echo $kontak['facebook']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-twitter"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="Twitter">
+                                        <input class="span4" type="text" name="twitter" id="twitter" placeholder="Twitter" value="<?php echo $kontak['twitter']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-google-plus"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="Google+">
+                                        <input class="span4" type="text" name="gplus" id="gplus" placeholder="Google+" value="<?php echo $kontak['gplus']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-pinterest"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="Pinterest">
+                                        <input class="span4" type="text" name="pinterest" id="pinterest" placeholder="Pinterest" value="<?php echo $kontak['pinterest']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-camera-retro"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="Instagram">
+                                        <input class="span4" type="text" name="instagram" id="instagram" placeholder="Instagram" value="<?php echo $kontak['instagram']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-linkedin"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="LinkedIn">
+                                        <input class="span4" type="text" name="linkedin" id="linkedin" placeholder="LinkedIn" value="<?php echo $kontak['linkedin']; ?>">
                                     </div>
                                     <div class="input-prepend">
                                         <span class="add-on"><i class="icon-home"></i></span>
-                                        <input class="span4" type="text" name="telepon" id="telepon" placeholder="Alamat Kantor">
+                                        <input class="span4" type="text" name="alamat" id="alamat" placeholder="Alamat Kantor" value="<?php echo $kontak['alamat']; ?>">
                                     </div>
                                 </div>
                                 <div class="form-actions">
