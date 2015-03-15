@@ -184,13 +184,13 @@
 
     <div id="isotope-filter" class="skew3 text-center">
         <a data-filter="*"  href="#" class="active ">Semua</a>
-        <a data-filter=".identity"  href="#" class="">Foto</a>
-        <a data-filter=".web-design" href="#"  class="">Video</a>
+        <a data-filter=".gambar"  href="#" class="">Gambar</a>
+        <a data-filter=".video" href="#"  class="">Video</a>
     </div>
     <div class="clearfix"></div>
    			<div class="text-center ">
               <ul class="portfolio-wrap" id="portfolio_items">
-                    <!--<li class="col-md-3 col-xs-12 col-sm-6 single-portfolio identity web-design">
+                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
                         <figure>
                             <img src="assets/videopage/images/portfolio/p1.jpg" alt="" class="img-responsive"/>
                             <figcaption>
@@ -208,7 +208,7 @@
                         </figure>
                     </li>
 
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio logo graphic">
+                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
                         <figure>
                         <img src="assets/videopage/images/portfolio/p2.jpg" alt="" class="img-responsive" />
                             <figcaption>
@@ -226,7 +226,7 @@
                         </figure>
                     </li>
 
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio graphic logo">
+                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio video">
                         <figure>
                             <img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
                             <figcaption>
@@ -242,9 +242,9 @@
                                 </p>
                             </figcaption>
                         </figure>
-                    </li>-->
+                    </li>
 
-                    <div class="row">
+                    <!--<div class="row">
                        <div class="col-sm-6 col-md-3">
                           <div class="thumbnail">
                              <img src="assets/videopage/images/portfolio/p3.jpg" 
@@ -256,8 +256,20 @@
                              <p>
                                 <a href="#" class="btn btn-primary" role="button">
                                    Button
-                                </a> 
-                                <a href="#" class="btn btn-default" role="button">
+                                </a>
+                             </p>
+                          </div>
+                       </div>
+                       <div class="col-sm-6 col-md-3">
+                          <div class="thumbnail">
+                             <img src="assets/videopage/images/portfolio/p3.jpg" 
+                             alt="Generic placeholder thumbnail">
+                          </div>
+                          <div class="caption">
+                             <h3>Thumbnail label</h3>
+                             <p>Some sample text. Some sample text.</p>
+                             <p>
+                                <a href="#" class="btn btn-primary" role="button">
                                    Button
                                 </a>
                              </p>
@@ -299,25 +311,7 @@
                              </p>
                           </div>
                        </div>
-                       <div class="col-sm-6 col-md-3">
-                          <div class="thumbnail">
-                             <img src="assets/videopage/images/portfolio/p3.jpg" 
-                             alt="Generic placeholder thumbnail">
-                          </div>
-                          <div class="caption">
-                             <h3>Thumbnail label</h3>
-                             <p>Some sample text. Some sample text.</p>
-                             <p>
-                                <a href="#" class="btn btn-primary" role="button">
-                                   Button
-                                </a> 
-                                <a href="#" class="btn btn-default" role="button">
-                                   Button
-                                </a>
-                             </p>
-                          </div>
-                       </div>
-                    </div>
+                    </div>-->
 
                     <!--<li class="col-md-3 col-xs-12 col-sm-6 single-portfolio web-design identity">
                         <figure>
