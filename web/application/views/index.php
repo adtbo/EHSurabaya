@@ -1,4 +1,4 @@
-    <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner">
+    <header id="header" class="navbar-fixed-top navbar-inverse video-menu" role="banner"style="background-color:#000">
     	<div class="container">
     		<!-- <div class="row"> -->
                 <div class="navbar-header ">
@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="feature_header text-center">
-                    <h3 class="feature_title">Our <b>Team Members</b></h3>
+                    <h3 class="feature_title">Ini <b>Aksiku!</b></h3>
                     <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
                     <div class="divider"></div>
                 </div>
@@ -188,10 +188,10 @@
         <a data-filter=".video" href="#"  class="">Video</a>
     </div>
     <div class="clearfix"></div>
-   			<div class="text-center ">
+   			<div class="text-center " style="padding:10px">
               <ul class="portfolio-wrap" id="portfolio_items">
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
-                        <figure>
+                        <figure style="padding:5px">
                             <img src="assets/videopage/images/portfolio/p1.jpg" alt="" class="img-responsive"/>
                             <figcaption>
                                 <h5>Creative Zoe</h5>
@@ -209,7 +209,7 @@
                     </li>
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
-                        <figure>
+                        <figure style="padding:5px">
                         <img src="assets/videopage/images/portfolio/p2.jpg" alt="" class="img-responsive" />
                             <figcaption>
                                 <h5>Creative Zoe</h5>
@@ -227,7 +227,7 @@
                     </li>
 
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio video">
-                        <figure>
+                        <figure style="padding:5px">
                             <img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
                             <figcaption>
                                 <h5>Creative Zoe</h5>
