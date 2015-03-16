@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class Main_model extends CI_Model
+	class Event_model extends CI_Model
 	{
 
 		function __construct()
@@ -11,9 +11,10 @@
 			$this->load->database();
 		}
 
-		public function find()
+		public function getAll()
 		{
-			return $this->db->get('Event')->result();
+			$query = $this->db->get('Event');
+			return $query->result(); 
 		}
 
 		public function select($id)
