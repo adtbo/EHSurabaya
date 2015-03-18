@@ -7,13 +7,13 @@
                     <h3> SUNTING KEGIATAN: Nama kegiatan </h3>
                 </div>
                 <div class="widget-content">
-                    <form role="form" class="form-default">
+                    <form role="form" class="form-default" action="<?php echo site_url('dasbor/updatekeg'); ?>" method="post">
                         <fieldset>
                             <div class="control-group">
                                 <div class="span10">
                                     <label class="control-label" for="NamaKegiatan"><strong>Nama Kegiatan</strong></label>
                                     <div class="controls">
-                                        <input type="text" class="span8" id="NamaKegiatan" placeholder="Nama Kegiatan">
+                                        <input type="text" class="span8" id="NamaKegiatan" name="NamaKegiatan" placeholder="Nama Kegiatan" value="<?php echo $nama; ?>">
                                     </div>
                                 </div>
                             </div>
@@ -21,7 +21,7 @@
                                 <div class="span4">
                                     <label class="control-label" for="TanggalMulai"><strong>Tanggal Mulai</strong></label>
                                     <div class="controls">
-                                        <input type="text" class="span2" id="TanggalMulai" placeholder="Tanggal Mulai">
+                                        <input type="text" class="span2" id="TanggalMulai" name="TanggalMulai" placeholder="Tanggal Mulai" value="<?php echo $mulai; ?>">
                                     </div>
                                     <script type="text/javascript"> // When the document is ready
                               $(document).ready(function () {                                                
@@ -34,7 +34,7 @@
                                 <div class="span4">
                                     <label class="control-label" for="TanggalSelesai"><strong>Tanggal Selesai</strong></label>
                                 <div class="controls">
-                                    <input type="datetime" class="span2" id="TanggalSelesai" placeholder="Tanggal Selesai">
+                                    <input type="datetime" class="span2" id="TanggalSelesai" name="TanggalSelesai" placeholder="Tanggal Selesai" value="<?php echo $selesai; ?>">
                                 </div>
                                 </div>
                                 <script type="text/javascript"> // When the document is ready
@@ -55,7 +55,7 @@
                                 <div class="span11">
                                     <label class="control-label" for="Deskripsi"><strong>Deskripsi</strong></label>
                                     <div class="controls">
-                                        <textarea class="form-control" id="deskripsi"></textarea>
+                                        <textarea class="form-control" id="deskripsi" name="deskripsi"><?php echo $des; ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -83,6 +83,7 @@
                             <div class="form-group">
                                 <div class="span11">
                                     <div class="form-actions">
+                                        <input type="hidden" name="id" id="id" value="<?php echo $id; ?>">
                                         <a class="btn btn-danger" href="<?php echo site_url('dasbor/kegiatan'); ?>"><i class="icon-chevron-left"></i> Kembali</a>
                                         <button type="submit" class="btn btn-primary"><i class="icon-ok"></i> Simpan</button>
                                     </div>

@@ -2,7 +2,7 @@
 	/**
 	* 
 	*/
-	class Main_model extends CI_Model
+	class Event_model extends CI_Model
 	{
 
 		function __construct()
@@ -13,24 +13,24 @@
 
 		public function find()
 		{
-			return $this->db->get('Event')->result();
+			return $this->db->get('event')->result();
 		}
 
 		public function select($id)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->get('Event')->row();
+			return $this->db->get('event')->row();
 		}
 
 		public function masuk($data)
 		{
-			return $this->db->insert('Event',$data);
+			return $this->db->insert('event',$data);
 		}
 
 		public function update($id, $data)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->update('Event',$data);
+			return $this->db->update('event',$data);
 		}
 
 		public function delete($id)
