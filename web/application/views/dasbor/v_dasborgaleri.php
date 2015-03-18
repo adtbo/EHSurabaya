@@ -38,7 +38,8 @@
                             <div class="control-group">
                                 <label class="control-label" for="WaktuGambar"><strong>Waktu Gambar</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span3" id="WaktuGambar" placeholder="dd/mm/yyyy">
+                                	<input class="form-control" size="16" type="text" readonly="" name="mulai" value="" id="mulai">
+                                    <input type="text" size="16" class="span3" id="WaktuGambar" placeholder="dd/mm/yyyy">
                                 </div>
                             </div>
                             <script type="text/javascript"> // When the document is ready
