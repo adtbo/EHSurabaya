@@ -13,31 +13,31 @@
 
 		public function getAll()
 		{
-			$query = $this->db->get('Event');
+			$query = $this->db->get('event');
 			return $query->result(); 
 		}
 
 		public function select($id)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->get('Event')->row();
+			return $this->db->get('event')->row();
 		}
 
 		public function masuk($data)
 		{
-			return $this->db->insert('Event',$data);
+			return $this->db->insert('event',$data);
 		}
 
 		public function update($id, $data)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->update('Event',$data);
+			return $this->db->update('event',$data);
 		}
 
 		public function delete($id)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->delete('Event');
+			return $this->db->delete('event');
 		}
 	}
 ?>

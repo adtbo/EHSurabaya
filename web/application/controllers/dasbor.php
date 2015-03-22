@@ -49,7 +49,7 @@ class Dasbor extends CI_Controller {
 	public function kegiatan()
 	{
         $this->load->model('event_model');
-        $query = $this->event_model->find();
+        $query = $this->event_model->getAll();
         $i = 0;
         foreach ($query as $row)
         {
