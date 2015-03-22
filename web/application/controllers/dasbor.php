@@ -178,11 +178,11 @@ class Dasbor extends CI_Controller {
     {
 		$this->load->model('event_model');
 		$info['IDEvent'] = $this->event_model->getID();
-        $info['NamaEvent'] = $this->input->post('NamaKegiatan');   
-        $info['TglMulai'] = $this->input->post('TanggalMulai');  
+        $info['NamaEvent'] = $this->input->post('NamaKegiatan');
+        $info['TglMulai'] = $this->input->post('TanggalMulai');
         $tmp = explode("/", $info['TglMulai']);
         $info['TglMulai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
-        $info['TglSelesai'] = $this->input->post('TanggalSelesai');  
+        $info['TglSelesai'] = $this->input->post('TanggalSelesai');
         $tmp = explode("/", $info['TglSelesai']);
         $info['TglSelesai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
         $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
@@ -194,10 +194,33 @@ class Dasbor extends CI_Controller {
     {
         $this->load->model('gambar_model');
         $info['IDGambar'] = $this->gambar_model->getID();
+        $config = array(
+                'upload_path' => './uploads',
+                'allowed_types' => '*'
+            );
+        $this->load->library('upload', $config);
+        $this->load->model('gambar_model');
+        $this->upload->initialize($config);
+        $files = $_FILES;
+        $ct = count($_FILES['DataGambar']['name']);
+        for ($i=0; $i<$ct; $i++)
+        {
+            $_FILES['DataGambar']['name']= $files['DataGambar']['name'][$i];
+            $_FILES['DataGambar']['type']= $files['DataGambar']['type'][$i];
+            $_FILES['DataGambar']['tmp_name']= $files['DataGambar']['tmp_name'][$i];
+            $_FILES['DataGambar']['error']= $files['DataGambar']['error'][$i];
+            $_FILES['DataGambar']['size']= $files['DataGambar']['size'][$i]; 
+            if (!$this->upload->do_upload('DataGambar'))
+            {
+                echo $this->upload->display_errors();
+            }
+            $imgstring = file_get_contents($_FILES['DataGambar']['tmp_name']);
+            $idgambar = $this->gambar_model->getID();
+            $this->gambar_model->setDataGambar($idgambar, $imgstring, $_FILES['DataGambar']['name'], date('Y-m-d'), 'deskripsi');
+            unlink('./uploads/'.$_FILES['DataGambar']['name']);
+        }
         $info['NamaGambar'] = $this->input->post('NamaGambar');   
-        $info['WaktuGambar'] = $this->input->post('WaktuGambar');  
-        $tmp = explode("/", $info['WaktuGambar']);
-        $info['WaktuGambar'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['WaktuGambar'] = date('Y-m-d');
         $info['DeskripsiGambar'] = $this->input->post('DeskripsiGambar'); 
         $this->gambar_model->masuk($info);
         header("location: ".site_url('dasbor/galeri'));
@@ -206,14 +229,11 @@ class Dasbor extends CI_Controller {
     function insvid()
     {
         $this->load->model('video_model');
-        $info['IDVideo'] = $this->gambar_model->getID();
-        $info['Link'] = $this->input->post('Link');   
-        $info['JudulVideo'] = $this->input->post('JudulVideo');   
-        $info['WaktuVideo'] = $this->input->post('WaktuVideo');  
-        $tmp = explode("/", $info['WaktuVideo']);
-        $info['WaktuVideo'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
-        $info['DeskripsiVideo'] = $this->input->post('DeskripsiVideo'); 
-        $this->gambar_model->masuk($info);
+        $info['IDVideo'] = $this->video_model->getID();
+        $info['Link'] = $this->input->post('Link');
+        $info['JudulVideo'] = $this->input->post('JudulVideo');
+        $info['WaktuVideo'] = date('Y-m-d');
+        $this->video_model->masuk($info);
         header("location: ".site_url('dasbor/galeri'));
     }
 }

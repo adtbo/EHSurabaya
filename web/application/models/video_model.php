@@ -11,12 +11,6 @@
 			$this->load->database();
 		}
 		
-		public function getAll()
-		{
-			$query = $this->db->get('video');
-			return $query->result(); 
-		}
-		
 		public function getID()
 		{
 			$i = 0;
@@ -29,7 +23,7 @@
 			return $i;
 		}
 		
-		public function setDataVideo($id_video, $link, $judul_video, $waktu_video)
+		/*public function setDataVideo($id_video, $link, $judul_video, $waktu_video)
 		{
 			$data = array(
 				'idvideo' => $id_video,
@@ -38,6 +32,12 @@
 				'waktuvideo' => $waktu_video
 				);
 			$this->db->insert('video', $data);
+		}
+
+		public function getAll()
+		{
+			$query = $this->db->get('video');
+			return $query->result(); 
 		}
 
 		public function getDataVideo()
@@ -59,9 +59,38 @@
 			$this->db->set('linkVideo', $link);
 			$this->db->insert('video');
 		}
+		public function update($id, $data)
+		{
+			$this->db->where('IDVideo',$id);
+			return $this->db->update('video',$data);
+		}
+
+		public function delete($id)
+		{
+			$this->db->where('IDVideo',$id);
+			return $this->db->delete('video');
+		}
 		public function masuk($data)
 		{
-			return $this->db->insert('video',$data);
+			$query = $this->db->insert('video',$data);
+			return $query;
+		}*/
+		public function find()
+		{
+			$query = $this->db->get('video');
+			return $query->result(); 
+		}
+
+		public function select($id)
+		{
+			$this->db->where('IDVideo',$id);
+			return $this->db->get('video')->row();
+		}
+
+		public function masuk($data)
+		{
+			$query = $this->db->insert('video',$data);
+			return $query;
 		}
 
 		public function update($id, $data)

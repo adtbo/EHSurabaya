@@ -22,40 +22,26 @@
                     <form role="form" class="form-default" action="<?php echo site_url('dasbor/insgam'); ?>" method="post" enctype="multipart/form-data">
                     <div class="input-prepend">
 						<div class="form-group">
-                        <label class="control-label">Unggah gambar dari komputer anda</label>
-                            <input class="span4" type="file" id="DataGambar" placeholder="gambar">
+                        <label class="control-label" for="DataGambar">Unggah gambar dari komputer anda</label>
+                            <input class="span4" type="file" id="DataGambar" name="DataGambar" placeholder="gambar">
                         </div>
 
                             <div class="form-group">
                                 <div class="control-group">
-                                    <label class="control-label"><strong>Nama Gambar</strong></label>
+                                    <label class="control-label" for="NamaGambar"><strong>Nama Gambar</strong></label>
                                     <div class="controls">
-                                        <input type="text" class="span3" id="NamaGambar" placeholder="ex: nama kegiatan">
+                                        <input type="text" class="span3" id="NamaGambar" name="NamaGambar" placeholder="ex: nama kegiatan">
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="form-group">
-                            <div class="control-group">
-                                <label class="control-label" for="WaktuGambar"><strong>Waktu Gambar</strong></label>
-                                <div class="controls">
-                                	<input class="form-control" size="16" type="text" readonly="" name="mulai" value="" id="mulai">
-                                    <input type="text" size="16" class="span3" id="WaktuGambar" placeholder="dd/mm/yyyy">
-                                </div>
-                            </div>
-                            <script type="text/javascript"> // When the document is ready
-                              $(document).ready(function () {                                                
-                                $('#WaktuGambar').datepicker({
-                                  format: "dd/mm/yyyy"
-                                });  
-                              });
-                            </script>
 
                             <div class="form-group">
                                 <div class="control-group">
-                                    <label class="control-label"><strong>Deskripsi Gambar</strong></label>
+                                    <label class="control-label" for="DeskripsiGambar"><strong>Deskripsi Gambar</strong></label>
                                     <div class="controls">
-                                        <textarea class="span3" rows="5"></textarea>
+                                        <textarea class="span3" rows="5" id="DeskrpisiGambar" name="DeskripsiGambar"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -95,18 +81,18 @@
 
                         <div class="form-group">
                             <div class="control-group">
-                                <label class="control-label"><strong>Video URL</strong></label>
+                                <label class="control-label" for="LinkVideo"><strong>Video URL</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span3" id="LinkVideo" placeholder="ex: https://www.youtube.co...">
+                                    <input type="text" class="span3" id="LinkVideo" name="LinkVideo" placeholder="ex: https://www.youtube.co...">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="control-group">
-                                <label class="control-label"><strong>Nama Video</strong></label>
+                                <label class="control-label" for="NamaVideo"><strong>Nama Video</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span3" id="NamaVideo" placeholder="ex: video aksi">
+                                    <input type="text" class="span3" id="NamaVideo" name="NamaVideo" placeholder="ex: video aksi">
                                 </div>
                             </div>
                         </div>
