@@ -86,12 +86,16 @@ class Dasbor extends CI_Controller {
         $tmp = explode("-", $data['selesai']);
         $data['selesai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
         $data['des'] = $query->DeskripsiEvent;
-        $this->load->model('gambar_model');
-        $query = $this->gambar_model->getDataGambar();
+        $this->load->model('listgambar_model');
+        $query = $this->listgambar_model->selectById($data['id']);
         $i=0;
         foreach ($query as $row)
         {
-            $data['gambar'][$i] = $row->datagambar;   
+            $data['gambar'][$i]['id'] = $row->IDGambar;
+            $data['gambar'][$i]['data'] = $row->DataGambar;   
+            $data['gambar'][$i]['judul'] = $row->JudulGambar;
+            $data['gambar'][$i]['waktu'] = $row->WaktuGambar;
+            $data['gambar'][$i]['deskripsi'] = $row->DeskripsiGambar;
             $i++;
         }
         $data['gambarnum'] = $i;

@@ -78,7 +78,7 @@
                                                         if ($gambarnum==0) echo "No Pictures";
                                                         for ($i = 0; $i < $gambarnum; $i++) {
                                                     ?>
-                                                        <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]); ?>" height="50">
+                                                        <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>" height="50">
                                                     <?php } ?>
                                                 </div>
                                             </div>
