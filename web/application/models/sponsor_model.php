@@ -13,17 +13,17 @@
 
 		public function find()
 		{
-			return $this->db->get('Sponsor')->result();
+			return $this->db->get('sponsor')->result();
 		}
 
 		public function getID()
 		{
 			$i = 0;
-			$save = $this->db->query('select IDSponsor from Sponsor where IDSponsor ="'.$i.'"');
+			$save = $this->db->query('select IDSponsor from sponsor where IDSponsor ="'.$i.'"');
 			while($save->num_rows() == 1)
 			{
 				$i = $i + 1;
-				$save = $this->db->query('select IDSponsor from Sponsor where IDSponsor ="'.$i.'"');
+				$save = $this->db->query('select IDSponsor from sponsor where IDSponsor ="'.$i.'"');
 			}
 			return $i;
 		}
@@ -31,24 +31,24 @@
 		public function select($id)
 		{
 			$this->db->where('IDSponsor',$id);
-			return $this->db->get('Sponsor')->row();
+			return $this->db->get('sponsor')->row();
 		}
 
 		public function masuk($data)
 		{
-			return $this->db->insert('Sponsor',$data);
+			return $this->db->insert('sponsor',$data);
 		}
 
 		public function update($id, $data)
 		{
 			$this->db->where('IDSponsor',$id);
-			return $this->db->update('Sponsor',$data);
+			return $this->db->update('sponsor',$data);
 		}
 
 		public function delete($id)
 		{
 			$this->db->where('IDSponsor',$id);
-			return $this->db->delete('Sponsor');
+			return $this->db->delete('sponsor');
 		}
 	}
 ?>

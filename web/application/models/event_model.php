@@ -14,11 +14,11 @@
 		public function getID()
 		{
 			$i = 0;
-			$save = $this->db->query('select IDEvent from Event where IDEvent ="'.$i.'"');
+			$save = $this->db->query('select IDEvent from event where IDEvent ="'.$i.'"');
 			while($save->num_rows() == 1)
 			{
 				$i = $i + 1;
-				$save = $this->db->query('select IDEvent from Event where IDEvent ="'.$i.'"');
+				$save = $this->db->query('select IDEvent from event where IDEvent ="'.$i.'"');
 			}
 			return $i;
 		}

@@ -13,11 +13,11 @@
 
 		public function insert($data)
 		{
-			$query = $this->db->query("Select IDOrganisasi from Organisasi where IDOrganisasi='".$data['IDOrganisasi']."'");
+			$query = $this->db->query("Select IDOrganisasi from organisasi where IDOrganisasi='".$data['IDOrganisasi']."'");
 			if ($query->num_rows() > 0) return false;
 			else
 			{
-				return $this->db->insert('Organisasi',$data);
+				return $this->db->insert('organisasi',$data);
 			}
 		}
 

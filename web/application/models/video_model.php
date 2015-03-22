@@ -20,11 +20,11 @@
 		public function getID()
 		{
 			$i = 0;
-			$save = $this->db->query('select IDVideo from Video where IDVideo ="'.$i.'"');
+			$save = $this->db->query('select IDVideo from video where IDVideo ="'.$i.'"');
 			while($save->num_rows() == 1)
 			{
 				$i = $i + 1;
-				$save = $this->db->query('select IDVideo from Video where IDVideo ="'.$i.'"');
+				$save = $this->db->query('select IDVideo from video where IDVideo ="'.$i.'"');
 			}
 			return $i;
 		}
@@ -38,7 +38,7 @@
 				'waktuvideo' => $waktu_video,
 				'deskripsivideo' => $deskripsi_video
 				);
-			$this->db->insert('Video', $data);
+			$this->db->insert('video', $data);
 		}
 
 		public function getDataVideo()
@@ -50,7 +50,7 @@
 		public function select($id)
 		{
 			$this->db->where('IDVideo',$id);
-			return $this->db->get('Video')->row();
+			return $this->db->get('video')->row();
 		}
 		
 		public function insertVideoProfile($link)
@@ -59,7 +59,7 @@
 			$this->db->set('deskripsiVideo', '');
 			$this->db->set('waktuVideo', 'NOW()', false);
 			$this->db->set('linkVideo', $link);
-			$this->db->insert('Video');
+			$this->db->insert('video');
 		}
 		public function masuk($data)
 		{

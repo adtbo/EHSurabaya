@@ -20,11 +20,11 @@
 		public function getID()
 		{
 			$i = 0;
-			$save = $this->db->query('select IDGambar from Gambar where IDGambar ="'.$i.'"');
+			$save = $this->db->query('select IDGambar from gambar where IDGambar ="'.$i.'"');
 			while($save->num_rows() == 1)
 			{
 				$i = $i + 1;
-				$save = $this->db->query('select IDGambar from Gambar where IDGambar ="'.$i.'"');
+				$save = $this->db->query('select IDGambar from gambar where IDGambar ="'.$i.'"');
 			}
 			return $i;
 		}

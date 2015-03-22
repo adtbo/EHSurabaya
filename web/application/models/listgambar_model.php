@@ -13,13 +13,13 @@
 
 		function selectById($id){
 		  $this->load->database();
-		  $query = $this->db->query("Select NamaGambar, Gambar from Listgambar, Gambar where Gambar.IDGambar = Listgambar.IDGambar and Listgambar.IDEvent = '".$id."'");
+		  $query = $this->db->query("Select NamaGambar, Gambar from listgambar, gambar where Gambar.IDGambar = Listgambar.IDGambar and Listgambar.IDEvent = '".$id."'");
 		  return $query;
 		}
 		
 		function selectByName($id){
 		  $this->load->database();
-		  $query = $this->db->query("Select NamaGambar, Gambar from Listgambar, Gambar where Gambar.IDGambar = Listgambar.IDGambar and Listgambar.IDEvent = '".$id."'");
+		  $query = $this->db->query("Select NamaGambar, Gambar from listgambar, gambar where Gambar.IDGambar = Listgambar.IDGambar and Listgambar.IDEvent = '".$id."'");
 		  return $query;
 		}
 
