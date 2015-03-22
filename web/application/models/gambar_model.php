@@ -10,12 +10,6 @@
 			parent::__construct();
 			$this->load->database();
 		}
-
-		public function getAll()
-		{
-			$query = $this->db->get('gambar');
-			return $query->result(); 
-		}
 		
 		public function getID()
 		{
@@ -39,6 +33,12 @@
 				'deskripsigambar' => $deskripsi_gambar
 				);
 			$this->db->insert('gambar', $data);
+		}
+		/*
+		public function getAll()
+		{
+			$query = $this->db->get('gambar');
+			return $query->result(); 
 		}
 
 		public function getDataGambar()
@@ -68,6 +68,35 @@
 		{
 			$query = $this->db->insert('gambar',$data);
 			return $query;
+		}*/
+		public function find()
+		{
+			$query = $this->db->get('gambar');
+			return $query->result(); 
+		}
+
+		public function select($id)
+		{
+			$this->db->where('IDGambar',$id);
+			return $this->db->get('gambar')->row();
+		}
+
+		public function masuk($data)
+		{
+			$query = $this->db->insert('gambar',$data);
+			return $query;
+		}
+
+		public function update($id, $data)
+		{
+			$this->db->where('IDGambar',$id);
+			return $this->db->update('gambar',$data);
+		}
+
+		public function delete($id)
+		{
+			$this->db->where('IDGambar',$id);
+			return $this->db->delete('gambar');
 		}
 	}
 ?>

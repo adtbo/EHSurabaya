@@ -28,9 +28,9 @@
 
                             <div class="form-group">
                                 <div class="control-group">
-                                    <label class="control-label" for="NamaGambar"><strong>Nama Gambar</strong></label>
+                                    <label class="control-label" for="JudulGambar"><strong>Nama Gambar</strong></label>
                                     <div class="controls">
-                                        <input type="text" class="span3" id="NamaGambar" name="NamaGambar" placeholder="ex: nama kegiatan">
+                                        <input type="text" class="span3" id="JudulGambar" name="JudulGambar" placeholder="ex: nama kegiatan">
                                     </div>
                                 </div>
                             </div>
