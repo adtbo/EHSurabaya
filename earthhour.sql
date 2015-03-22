@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2015 at 08:37 PM
+-- Generation Time: Mar 22, 2015 at 09:19 PM
 -- Server version: 5.6.14
 -- PHP Version: 5.5.6
 
@@ -48,16 +48,6 @@ CREATE TABLE IF NOT EXISTS `event` (
   PRIMARY KEY (`IDEvent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `event`
---
-
-INSERT INTO `event` (`IDEvent`, `NamaEvent`, `TglMulai`, `TglSelesai`, `DeskripsiEvent`) VALUES
-(0, 'EarthHourssss', '2015-03-05', '2015-03-06', '<p>adjdjadadadhaufhubunrq</p>\r\n'),
-(1, 'frff', '2015-03-05', '2015-03-04', '<p>frfrfr</p>\r\n'),
-(2, 'efefefe', '2015-03-07', '2015-03-26', '<p>efefefefefefef</p>\r\n'),
-(3, 'dwdwdwd', '2015-03-12', '2015-03-02', '<p>ddwdwdw</p>\r\n');
-
 -- --------------------------------------------------------
 
 --
@@ -66,7 +56,7 @@ INSERT INTO `event` (`IDEvent`, `NamaEvent`, `TglMulai`, `TglSelesai`, `Deskrips
 
 CREATE TABLE IF NOT EXISTS `gambar` (
   `IDGambar` int(11) NOT NULL,
-  `DataGambar` blob NOT NULL,
+  `DataGambar` mediumblob NOT NULL,
   `JudulGambar` varchar(100) NOT NULL,
   `WaktuGambar` date NOT NULL,
   `DeskripsiGambar` text NOT NULL,
@@ -115,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `organisasi` (
   `Facebook` varchar(20) NOT NULL,
   `Twitter` varchar(20) NOT NULL,
   `Pinterest` varchar(20) NOT NULL,
-  `Google+` varchar(20) NOT NULL,
+  `GPlus` varchar(20) NOT NULL,
   `Linkedin` varchar(20) NOT NULL,
   PRIMARY KEY (`IDOrganisasi`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
