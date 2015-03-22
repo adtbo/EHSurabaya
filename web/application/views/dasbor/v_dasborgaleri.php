@@ -81,18 +81,18 @@
 
                         <div class="form-group">
                             <div class="control-group">
-                                <label class="control-label" for="LinkVideo"><strong>Video URL</strong></label>
+                                <label class="control-label" for="Link"><strong>Video URL</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span3" id="LinkVideo" name="LinkVideo" placeholder="ex: https://www.youtube.co...">
+                                    <input type="text" class="span3" id="Link" name="Link" placeholder="ex: https://www.youtube.co...">
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="control-group">
-                                <label class="control-label" for="NamaVideo"><strong>Nama Video</strong></label>
+                                <label class="control-label" for="JudulVideo"><strong>Nama Video</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span3" id="NamaVideo" name="NamaVideo" placeholder="ex: video aksi">
+                                    <input type="text" class="span3" id="JudulVideo" name="JudulVideo" placeholder="ex: video aksi">
                                 </div>
                             </div>
                         </div>
