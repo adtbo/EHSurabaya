@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 23, 2015 at 12:41 AM
+-- Generation Time: Mar 23, 2015 at 03:34 AM
 -- Server version: 5.5.41-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.6
 
@@ -40,22 +40,20 @@ CREATE TABLE IF NOT EXISTS `disponsori` (
 --
 
 CREATE TABLE IF NOT EXISTS `event` (
-  `IDEvent` int(11) NOT NULL AUTO_INCREMENT,
+  `IDEvent` int(11) NOT NULL,
   `NamaEvent` varchar(100) NOT NULL,
   `TglMulai` date NOT NULL,
   `TglSelesai` date NOT NULL,
   `DeskripsiEvent` text NOT NULL,
   PRIMARY KEY (`IDEvent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `event`
 --
 
 INSERT INTO `event` (`IDEvent`, `NamaEvent`, `TglMulai`, `TglSelesai`, `DeskripsiEvent`) VALUES
-(1, 'tester', '2015-05-14', '2015-05-18', '<p>Wow banget deh</p>\n'),
-(2, 'Kegiatan ', '2015-03-11', '2015-03-21', '<p>asdfasdf</p>\n'),
-(3, 'Belajar bersama', '2015-03-18', '2015-03-20', '<p>Belajar bersama orangutan</p>\n');
+(0, 'asdasdasd', '2015-03-22', '2015-03-25', '<p>sadasdasdasd</p>\n');
 
 -- --------------------------------------------------------
 
@@ -65,7 +63,7 @@ INSERT INTO `event` (`IDEvent`, `NamaEvent`, `TglMulai`, `TglSelesai`, `Deskrips
 
 CREATE TABLE IF NOT EXISTS `gambar` (
   `IDGambar` int(11) NOT NULL,
-  `DataGambar` blob NOT NULL,
+  `DataGambar` mediumblob NOT NULL,
   `JudulGambar` varchar(100) NOT NULL,
   `WaktuGambar` date NOT NULL,
   `DeskripsiGambar` text NOT NULL,
@@ -125,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `organisasi` (
 --
 
 INSERT INTO `organisasi` (`IDOrganisasi`, `NamaOrganisasi`, `Alamat`, `Deskripsi`, `Email`, `NoTlp`, `Facebook`, `Twitter`, `Pinterest`, `Gplus`, `Linkedin`, `Instagram`) VALUES
-(1, 'Earth Hour Surabaya', 'sebelah aiola', '<p>EH Surabaya adalah EH Surabaya.</p>\n\n<p>Yang buat ganteng deh, bikin ketagihan :3</p>\n', 'surya.igede@gmail.com', '031123121', 'facebook.com', 'twitter.com', 'pinterest.com', 'plus.google.com', 'linked.in', 'instagram.com');
+(1, '', 'sebelah aiola', '<p>asdfasdfasdf</p>\n', 'surya.igede@gmail.com', '081811111', 'Earth Hour', 'Earth Hour', 'Earth Hour', 'Earth Hour', 'Earth Hour', 'Earth Hour');
 
 -- --------------------------------------------------------
 
@@ -152,7 +150,6 @@ CREATE TABLE IF NOT EXISTS `video` (
   `Link` varchar(300) NOT NULL,
   `JudulVideo` varchar(100) NOT NULL,
   `WaktuVideo` date NOT NULL,
-  `DeskripsiVideo` text NOT NULL,
   PRIMARY KEY (`IDVideo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -179,7 +176,8 @@ ALTER TABLE `listgambar`
 --
 ALTER TABLE `listvideo`
   ADD CONSTRAINT `listvideo_ibfk_1` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`),
-  ADD CONSTRAINT `listvideo_ibfk_2` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`);
+  ADD CONSTRAINT `listvideo_ibfk_2` FOREIGN KEY (`IDEvent`) REFERENCES `event` (`IDEvent`),
+  ADD CONSTRAINT `listvideo_ibfk_3` FOREIGN KEY (`IDVideo`) REFERENCES `video` (`IDVideo`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

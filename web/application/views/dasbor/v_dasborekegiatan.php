@@ -74,10 +74,16 @@
                                                                 <label class="control-label">Tambah Gambar Baru: </label>
                                                                 <input type="file" id="gambar" name="gambar[]" multiple>          
                                                             </div>
-                                                    
-                                                    <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
-                                                    <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
-                                                    <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
+                                                    <?php 
+                                                        if ($gambarnum==0) echo "No Pictures";
+                                                        for ($i = 0; $i < $gambarnum; $i++) {
+                                                    ?>
+                                                    <div class="col-xs-6 col-md-3">
+                                                    <div class="thumbnail">
+                                                        <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>" height="50">
+                                                    </div>
+                                                    </div>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
