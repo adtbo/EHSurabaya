@@ -64,5 +64,10 @@
 			$this->db->where('IDGambar',$id);
 			return $this->db->delete('gambar');
 		}
+		public function masuk($data)
+		{
+			$query = $this->db->insert('gambar',$data);
+			return $query;
+		}
 	}
 ?>
