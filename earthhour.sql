@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10deb1
+-- version 4.0.9
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 23, 2015 at 03:34 AM
--- Server version: 5.5.41-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.6
+-- Host: 127.0.0.1
+-- Generation Time: Mar 22, 2015 at 10:30 PM
+-- Server version: 5.6.14
+-- PHP Version: 5.5.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -138,6 +138,26 @@ CREATE TABLE IF NOT EXISTS `sponsor` (
   `Logo` blob NOT NULL,
   PRIMARY KEY (`IDSponsor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(1, 'administrator', '33030396a73a00f4ed47910e0e274975');
 
 -- --------------------------------------------------------
 
