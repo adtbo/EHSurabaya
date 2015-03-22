@@ -3,16 +3,34 @@
 class Dasbor extends CI_Controller {
 	public function index()
 	{
-        $data['judulLaman'] = "dasborhome";
+ 		$this->check();
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
+		$data['judulLaman'] = "dasborhome";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
 		$this->load->view('dasbor/v_dasborhome');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
 	}
+	
+	public function check()
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$session_data = $this->session->userdata('logged_in');
+			$data['username'] = $session_data['username'];
+		}
+		else
+		{
+			//If no session, redirect to login page
+			redirect('login', 'refresh');
+		}
+	}
 
 	public function dasar()
 	{
+		$this->check();
         $this->load->model('organisasi_model');
         $query = $this->organisasi_model->getAll(1);
         foreach ($query as $row)
@@ -28,6 +46,8 @@ class Dasbor extends CI_Controller {
             $data['kontak']['linkedin'] = $row->Linkedin;
             $data['kontak']['instagram'] = $row->Instagram;
         }
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
         $data['judulLaman'] = "dasbordasar";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -38,6 +58,9 @@ class Dasbor extends CI_Controller {
 
 	public function galeri()
 	{
+		$this->check();
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
         $data['judulLaman'] = "dasborgaleri";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -48,6 +71,7 @@ class Dasbor extends CI_Controller {
 
 	public function kegiatan()
 	{
+		$this->check();
         $this->load->model('event_model');
         $query = $this->event_model->find();
         $i = 0;
@@ -64,6 +88,8 @@ class Dasbor extends CI_Controller {
             $i++;
         }
         $data['numkegiatan'] = $i;
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
         $data['judulLaman'] = "dasborkegiatan";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -74,6 +100,7 @@ class Dasbor extends CI_Controller {
     
     public function ekegiatan()
     {
+		$this->check();
         $id = $this->input->post('ptr');
         $this->load->model('event_model');
         $query = $this->event_model->select($id);
@@ -109,6 +136,7 @@ class Dasbor extends CI_Controller {
     
     function updatedes()
     {
+		$this->check();
         $des = $this->input->post('tentang');
         $this->load->model('organisasi_model');
         $this->organisasi_model->updateDeskripsi(1, $des);
@@ -117,6 +145,7 @@ class Dasbor extends CI_Controller {
     
     function updatekon()
     {
+		$this->check();
         $kontak['email'] = $this->input->post('email');
         $kontak['alamat'] = $this->input->post('alamat');
         $kontak['telp'] = $this->input->post('telepon');
@@ -133,6 +162,7 @@ class Dasbor extends CI_Controller {
     
     function updatekeg()
     {
+		$this->check();
         $id = $this->input->post('id');
         $info['NamaEvent'] = $this->input->post('NamaKegiatan');
         $info['TglMulai'] = $this->input->post('TanggalMulai');  
@@ -176,6 +206,7 @@ class Dasbor extends CI_Controller {
     
     function inskeg()
     {
+		$this->check();
 		$this->load->model('event_model');
 		$info['IDEvent'] = $this->event_model->getID();
         $info['NamaEvent'] = $this->input->post('NamaKegiatan');
@@ -192,6 +223,7 @@ class Dasbor extends CI_Controller {
 
     function insgam()
     {
+		$this->check();
         $this->load->model('gambar_model');
         $info['IDGambar'] = $this->gambar_model->getID();
         $config = array(
@@ -228,6 +260,7 @@ class Dasbor extends CI_Controller {
 
     function insvid()
     {
+		$this->check();
         $this->load->model('video_model');
         $info['IDVideo'] = $this->video_model->getID();
         $info['Link'] = $this->input->post('Link');
@@ -236,4 +269,11 @@ class Dasbor extends CI_Controller {
         $this->video_model->masuk($info);
         header("location: ".site_url('dasbor/galeri'));
     }
+	
+	function logout()
+	{
+		$this->check();
+		$this->session->unset_userdata('logged_in');
+		redirect('dasbor', 'refresh');
+	}
 }
