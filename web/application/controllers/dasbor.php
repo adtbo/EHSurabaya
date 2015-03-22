@@ -48,6 +48,22 @@ class Dasbor extends CI_Controller {
 
 	public function kegiatan()
 	{
+        $this->load->model('event_model');
+        $query = $this->event_model->find();
+        $i = 0;
+        foreach ($query as $row)
+        {
+            $data['kegiatan'][$i]['id'] = $row->IDEvent;
+            $data['kegiatan'][$i]['nama'] = $row->NamaEvent;
+            $data['kegiatan'][$i]['mulai'] = $row->TglMulai;
+            $tmp = explode("-", $data['kegiatan'][$i]['mulai']);
+            $data['kegiatan'][$i]['mulai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
+            $data['kegiatan'][$i]['selesai'] = $row->TglSelesai;
+            $tmp = explode("-", $data['kegiatan'][$i]['selesai']);
+            $data['kegiatan'][$i]['selesai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
+            $i++;
+        }
+        $data['numkegiatan'] = $i;
         $data['judulLaman'] = "dasborkegiatan";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -58,6 +74,18 @@ class Dasbor extends CI_Controller {
     
     public function ekegiatan()
     {
+        $id = $this->input->post('ptr');
+        $this->load->model('event_model');
+        $query = $this->event_model->select($id);
+        $data['id'] = $query->IDEvent;
+        $data['nama'] = $query->NamaEvent;
+        $data['mulai'] = $query->TglMulai;
+        $tmp = explode("-", $data['mulai']);
+        $data['mulai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
+        $data['selesai'] = $query->TglSelesai;
+        $tmp = explode("-", $data['selesai']);
+        $data['selesai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
+        $data['des'] = $query->DeskripsiEvent;
         $data['judulLaman'] = "dasborkegiatan";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -88,5 +116,35 @@ class Dasbor extends CI_Controller {
         $this->load->model('organisasi_model');
         $this->organisasi_model->updateKontak(1, $kontak);
         header("location: ".site_url('dasbor/dasar'));
+    }
+    
+    function updatekeg()
+    {
+        $id = $this->input->post('id');
+        $info['NamaEvent'] = $this->input->post('NamaKegiatan');   
+        $info['TglMulai'] = $this->input->post('TanggalMulai');  
+        $tmp = explode("/", $info['TglMulai']);
+        $info['TglMulai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['TglSelesai'] = $this->input->post('TanggalSelesai');  
+        $tmp = explode("/", $info['TglSelesai']);
+        $info['TglSelesai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
+        $this->load->model('event_model');
+        $this->event_model->update($id, $info);
+        header("location: ".site_url('dasbor/kegiatan'));
+    }
+    
+    function inskeg()
+    {
+        $info['NamaEvent'] = $this->input->post('NamaKegiatan');   
+        $info['TglMulai'] = $this->input->post('TanggalMulai');  
+        $tmp = explode("/", $info['TglMulai']);
+        $info['TglMulai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['TglSelesai'] = $this->input->post('TanggalSelesai');  
+        $tmp = explode("/", $info['TglSelesai']);
+        $info['TglSelesai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
+        $this->load->model('event_model');
+        $this->event_model->masuk($info);
     }
 }

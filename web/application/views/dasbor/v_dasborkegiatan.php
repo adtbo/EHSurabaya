@@ -10,18 +10,18 @@
                     <p>
                         Pada bagian ini anda bisa mengganti video utama pada halaman depan, mengisi informasi komunitas serta kontak yang bisa dihubungi.
                     </p>
-                    <form role="form" class="form-default">
+                    <form role="form" class="form-default" action="<?php echo site_url('dasbor/inskeg'); ?>" method="post">
                         <fieldset>
                             <div class="control-group">
                                 <label class="control-label" for="NamaKegiatan"><strong>Nama Kegiatan</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span5" id="NamaKegiatan" placeholder="Nama Kegiatan">
+                                    <input type="text" class="span5" id="NamaKegiatan" name="NamaKegiatan" placeholder="Nama Kegiatan">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label" for="TanggalMulai"><strong>Tanggal Mulai</strong></label>
                                 <div class="controls">
-                                    <input type="text" class="span2" id="TanggalMulai" placeholder="Tanggal Mulai">
+                                    <input type="text" class="span2" id="TanggalMulai" name="TanggalMulai" placeholder="Tanggal Mulai">
                                 </div>
                             </div>
                             <script type="text/javascript"> // When the document is ready
@@ -34,7 +34,7 @@
                             <div class="control-group">
                                 <label class="control-label" for="TanggalSelesai"><strong>Tanggal Selesai</strong></label>
                                 <div class="controls">
-                                    <input type="datetime" class="span2" id="TanggalSelesai" placeholder="Tanggal Selesai">
+                                    <input type="datetime" class="span2" id="TanggalSelesai" name="TanggalSelesai" placeholder="Tanggal Selesai">
                                 </div>
                             </div>
                             <script type="text/javascript"> // When the document is ready
@@ -47,7 +47,7 @@
                             <div class="control-group">
                                 <label class="control-label" for="Deskripsi"><strong>Deskripsi</strong></label>
                                 <div class="controls">
-                                    <textarea class="form-control" rows="5" id="deskripsi"></textarea>
+                                    <textarea class="form-control" rows="5" id="deskripsi" name="deskripsi"></textarea>
                                 </div>
                             </div>
                             <div class="form-actions">
@@ -69,7 +69,7 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>Row</th>
+                                    <th>No.</th>
                                     <th>Nama Kegiatan</th>
                                     <th>Tanggal Mulai</th>
                                     <th>Tanggal Selesai</th>
@@ -77,27 +77,25 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php for ($i = 0; $i < $numkegiatan; $i++){ ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>John</td>
-                                    <td>Carter</td>
-                                    <td>johncarter@mail.com</td>
-                                    <td><a href="<?php echo site_url('dasbor/ekegiatan'); ?>" class="btn btn-success"><i class="icon-pencil"> Sunting</a></td>
+                                    <td><?php echo $i+1; ?></td>
+                                    <td><?php echo $kegiatan[$i]['nama']; ?></td>
+                                    <td><?php echo $kegiatan[$i]['mulai']; ?></td>
+                                    <td><?php echo $kegiatan[$i]['selesai']; ?></td>
+                                    <td width="20">
+                                        <form action="<?php echo site_url('dasbor/ekegiatan'); ?>" method="post">
+                                            <fieldset>
+                                                <input type="hidden" id="ptr" name="ptr" value="<?php echo $kegiatan[$i]['id']; ?>">
+                                                <div class="form-action">       
+                                                    <label class="control-label">&nbsp;</label>
+                                                    <button type="submit" class="btn btn-success"><i class="icon-pencil"></i> Sunting</button>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Peter</td>
-                                    <td>Parker</td>
-                                    <td>peterparker@mail.com</td>
-                                    <td><a href="<?php echo site_url('dasbor/ekegiatan'); ?>" class="btn btn-success"><i class="icon-pencil"> Sunting</a></td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>John</td>
-                                    <td>Rambo</td>
-                                    <td>johnrambo@mail.com</td>
-                                    <td><a href="<?php echo site_url('dasbor/ekegiatan'); ?>" class="btn btn-success"><i class="icon-pencil"> Sunting</a></td>
-                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
