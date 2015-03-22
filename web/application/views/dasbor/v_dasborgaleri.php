@@ -7,11 +7,11 @@
                     <h3> Input Gambar </h3>
                 </div>
                 <div class="widget-content">
-                    <p>
-                        Pada bagian ini anda dapat menyimpan gambar yang akan disimpan dalam Galeri.
-                    </p>
+                        <p>
+                           Pada bagian ini anda dapat menyimpan gambar yang akan disimpan dalam Galeri.
+                        </p>
+                    </div>
                 </div>
-            </div>
             <div class="widget">
                 <div class="widget-header">
                     <i class="icon-camera"></i>
@@ -19,6 +19,7 @@
                 </div>
                 
                 <div class="widget-content">
+                    <form role="form" class="form-default" action="<?php echo site_url('dasbor/insgam'); ?>" method="post" enctype="multipart/form-data">
                     <div class="input-prepend">
 						<div class="form-group">
                         <label class="control-label">Unggah gambar dari komputer anda</label>
@@ -67,6 +68,7 @@
                             </button>
                         </div>
 					</div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -88,6 +90,7 @@
                     <h3> Input Video </h3>
                 </div>
                 <div class="widget-content">
+                    <form role="form" class="form-default" action="<?php echo site_url('dasbor/insvid'); ?>" method="post" enctype="multipart/form-data">
                     <div class="input-prepend">
 
                         <div class="form-group">
@@ -115,6 +118,7 @@
                             </button>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

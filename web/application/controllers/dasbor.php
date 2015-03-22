@@ -149,4 +149,31 @@ class Dasbor extends CI_Controller {
         $this->event_model->masuk($info);
         header("location: ".site_url('dasbor/kegiatan'));
     }
+
+    function insgam()
+    {
+        $this->load->model('gambar_model');
+        $info['IDGambar'] = $this->gambar_model->getID();
+        $info['NamaGambar'] = $this->input->post('NamaGambar');   
+        $info['WaktuGambar'] = $this->input->post('WaktuGambar');  
+        $tmp = explode("/", $info['WaktuGambar']);
+        $info['WaktuGambar'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['DeskripsiGambar'] = $this->input->post('DeskripsiGambar'); 
+        $this->gambar_model->masuk($info);
+        header("location: ".site_url('dasbor/galeri'));
+    }
+
+    function insvid()
+    {
+        $this->load->model('video_model');
+        $info['IDVideo'] = $this->gambar_model->getID();
+        $info['Link'] = $this->input->post('Link');   
+        $info['JudulVideo'] = $this->input->post('JudulVideo');   
+        $info['WaktuVideo'] = $this->input->post('WaktuVideo');  
+        $tmp = explode("/", $info['WaktuVideo']);
+        $info['WaktuVideo'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
+        $info['DeskripsiVideo'] = $this->input->post('DeskripsiVideo'); 
+        $this->gambar_model->masuk($info);
+        header("location: ".site_url('dasbor/galeri'));
+    }
 }
