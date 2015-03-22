@@ -16,6 +16,18 @@
 			return $this->db->get('Sponsor')->result();
 		}
 
+		public function getID()
+		{
+			$i = 0;
+			$save = $this->db->query('select IDSponsor from Sponsor where IDSponsor ="'.$i.'"');
+			while($save->num_rows() == 1)
+			{
+				$i = $i + 1;
+				$save = $this->db->query('select IDSponsor from Sponsor where IDSponsor ="'.$i.'"');
+			}
+			return $i;
+		}
+		
 		public function select($id)
 		{
 			$this->db->where('IDSponsor',$id);
