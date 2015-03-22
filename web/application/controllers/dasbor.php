@@ -129,9 +129,30 @@ class Dasbor extends CI_Controller {
         $tmp = explode("/", $info['TglSelesai']);
         $info['TglSelesai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
         $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
+        $config = array(
+				'upload_path' => './uploads',
+				'allowed_types' => '*'
+			);
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+        $files = $_FILES;
+        $ct = count($_FILES['gambar']['name']);
+        for ($i=0; $i<$ct; $i++)
+        {
+            $_FILES['gambar']['name']= $files['gambar']['name'][$i];
+            $_FILES['gambar']['type']= $files['gambar']['type'][$i];
+            $_FILES['gambar']['tmp_name']= $files['gambar']['tmp_name'][$i];
+            $_FILES['gambar']['error']= $files['gambar']['error'][$i];
+            $_FILES['gambar']['size']= $files['gambar']['size'][$i]; 
+            echo $_FILES['gambar']['name'];
+            if (!$this->upload->do_upload('gambar'))
+            {
+                echo $this->upload->display_errors();
+            }
+        }
         $this->load->model('event_model');
         $this->event_model->update($id, $info);
-        header("location: ".site_url('dasbor/kegiatan'));
+        //header("location: ".site_url('dasbor/kegiatan'));
     }
     
     function inskeg()
@@ -147,4 +168,45 @@ class Dasbor extends CI_Controller {
         $this->load->model('event_model');
         $this->event_model->masuk($info);
     }
+    
+    function uploadImg()
+    {
+        
+		$namafile = $_FILES['gambar']['name'];
+		$id = $_POST['id'];
+		$config = array(
+				'upload_path' => './uploads',
+				'allowed_types' => '*'
+			);
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+		if (!$this->upload->do_upload('gambar'))
+		{
+			echo $this->upload->display_errors();
+		}
+		/*$file = fopen(base_url('uploads/'.$namafile), "r");
+		while(! feof($file))	
+		{
+			$mhs = fgetcsv($file);
+			if (!$this->praktikan_mdl->isExist($mhs[0]))
+			{
+				$this->praktikan_mdl->insert($mhs[0], $mhs[1]);
+				if (!$this->praktikan_mdl->isExistInClass($mhs[0], $idkelas))
+					{
+						$this->praktikan_mdl->insertToClass($mhs[0], $idkelas);
+					}
+			}
+			else
+			{
+				if (!$this->praktikan_mdl->isExistInClass($mhs[0], $idkelas))
+					{
+						$this->praktikan_mdl->insertToClass($mhs[0], $idkelas);
+					}
+			}
+		}
+		fclose($file);
+		unlink('./uploads/'.$namafile);
+		header("location: ".site_url('praktikan/p/d/'.$idkelas));*/
+    }
+    
 }

@@ -7,7 +7,7 @@
                     <h3> SUNTING KEGIATAN: Nama kegiatan </h3>
                 </div>
                 <div class="widget-content">
-                    <form role="form" class="form-default" action="<?php echo site_url('dasbor/updatekeg'); ?>" method="post">
+                    <form role="form" class="form-default" action="<?php echo site_url('dasbor/updatekeg'); ?>" method="post" enctype="multipart/form-data">
                         <fieldset>
                             <div class="control-group">
                                 <div class="span10">
@@ -69,6 +69,12 @@
                                             </div>
                                             <div class="accordion-body collapse in" id="gambarkegiatan">
                                                 <div class="accordion-inner">
+                                                    
+                                                            <div class="form-actions">  
+                                                                <label class="control-label">Tambah Gambar Baru: </label>
+                                                                <input type="file" id="gambar" name="gambar[]" multiple>          
+                                                            </div>
+                                                    
                                                     <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
                                                     <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
                                                     <img src="<?php echo base_url('assets/images/testimonial2.png'); ?>" height="50">
