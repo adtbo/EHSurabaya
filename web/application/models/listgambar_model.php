@@ -10,7 +10,17 @@
 			parent::__construct();
 			$this->load->database();
 		}
-
+        
+        function insert($idevent, $idgambar)
+        {
+            $data = array(
+				'IDEvent' => $idevent,
+				'IDGambar' => $idgambar
+				);
+			$this->db->insert('listgambar', $data);
+            
+        }
+        
 		function selectById($id){
 		  $this->load->database();
 		  $query = $this->db->query("Select NamaGambar, Gambar from listgambar, gambar where Gambar.IDGambar = Listgambar.IDGambar and Listgambar.IDEvent = '".$id."'");
@@ -22,6 +32,7 @@
 		  $query = $this->db->query("Select NamaGambar, Gambar from listgambar, gambar where Gambar.IDGambar = Listgambar.IDGambar and Listgambar.IDEvent = '".$id."'");
 		  return $query;
 		}
+        
 
 	}
 ?>
