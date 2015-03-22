@@ -29,21 +29,20 @@
 			return $i;
 		}
 		
-		public function setDataVideo($id_video, $link, $judul_video, $waktu_video, $deskripsi_video)
+		public function setDataVideo($id_video, $link, $judul_video, $waktu_video)
 		{
 			$data = array(
 				'idvideo' => $id_video,
 				'link' => $link,
 				'judulvideo' => $judul_video,
-				'waktuvideo' => $waktu_video,
-				'deskripsivideo' => $deskripsi_video
+				'waktuvideo' => $waktu_video
 				);
 			$this->db->insert('video', $data);
 		}
 
 		public function getDataVideo()
 		{
-			$query = $this->db->query('SELECT video.idvideo, video.link, video.judulvideo, video.waktuvideo, video.deskripsivideo FROM video');
+			$query = $this->db->query('SELECT video.idvideo, video.link, video.judulvideo, video.waktuvideo, FROM video');
 			return $query->result();
 		}
 
@@ -56,7 +55,6 @@
 		public function insertVideoProfile($link)
 		{
 			$this->db->set('judulVideo', 'Profil EarthHour');
-			$this->db->set('deskripsiVideo', '');
 			$this->db->set('waktuVideo', 'NOW()', false);
 			$this->db->set('linkVideo', $link);
 			$this->db->insert('video');
