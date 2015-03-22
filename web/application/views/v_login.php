@@ -22,19 +22,18 @@
 		<h5>Earth Hour Surabaya</h5>
 	</div>
 	<div class="box-content">
+			<?php echo validation_errors(); ?>
+			<?php echo form_open('verifylogin'); ?>
 		<div class="input-prepend">
 			<div class="form-group">
-      				<form method="post" action="index.html">
-       					<p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-        				<p><input type="password" name="password" value="" placeholder="Password"></p>
-        				<p class="remember_me">
-          				<label>
-            					<input type="checkbox" name="remember_me" id="remember_me">
-           					Remember me on this computer
-          				</label>
-        				</p>
-					<p class="submit"><input type="submit" name="commit" value="Login"></p>
-      				</form>
+				<label for="username">Username:</label>
+				<input type="text" size="20" id="username" name="username"/>
+				<br/>
+				<label for="password">Password:</label>
+				<input type="password" size="20" id="passowrd" name="password"/>
+				<br/>
+				<input type="submit" value="Login"/>
+				</form>
 			</div>
 		</div>
 	</div>

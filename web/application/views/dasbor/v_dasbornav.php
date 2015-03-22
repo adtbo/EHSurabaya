@@ -9,9 +9,9 @@
                     <a href="<?php echo site_url('dasbor'); ?>" class="brand"><i class="icon-leaf">&nbsp;EARTH HOUR Surabaya</i></a>
                     <div class="nav-collapse">
                         <ul class="nav pull-right">
-                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Akun <b class="caret"></b></a>
+                            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> <?php echo $username; ?> <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="login.html">Logout</a></li>
+                                    <li><a href="<?php echo site_url('dasbor/logout'); ?>">Logout</a></li>
                                 </ul>
                             </li>
                         </ul>

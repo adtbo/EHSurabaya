@@ -3,14 +3,28 @@
 class Dasbor extends CI_Controller {
 	public function index()
 	{
-        $data['judulLaman'] = "dasborhome";
-		$this->load->view('dasbor/v_dasborhead', $data);
-		$this->load->view('dasbor/v_dasbornav');
-		$this->load->view('dasbor/v_dasborhome');
-		$this->load->view('dasbor/v_dasborpadding');
-		$this->load->view('dasbor/v_dasborfoot');
+		$this->check();
 	}
 
+	public function check()
+	{
+		if($this->session->userdata('logged_in'))
+		{
+			$session_data = $this->session->userdata('logged_in');
+			$data['username'] = $session_data['username'];
+			$data['judulLaman'] = "dasborhome";
+			$this->load->view('dasbor/v_dasborhead', $data);
+			$this->load->view('dasbor/v_dasbornav');
+			$this->load->view('dasbor/v_dasborhome');
+			$this->load->view('dasbor/v_dasborpadding');
+			$this->load->view('dasbor/v_dasborfoot');
+		}
+		else
+		{
+			//If no session, redirect to login page
+			redirect('login', 'refresh');
+		}
+	}
 	public function dasar()
 	{
         $this->load->model('organisasi_model');
@@ -28,6 +42,8 @@ class Dasbor extends CI_Controller {
             $data['kontak']['linkedin'] = $row->Linkedin;
             $data['kontak']['instagram'] = $row->Instagram;
         }
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
         $data['judulLaman'] = "dasbordasar";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -38,6 +54,8 @@ class Dasbor extends CI_Controller {
 
 	public function galeri()
 	{
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
         $data['judulLaman'] = "dasborgaleri";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -64,6 +82,8 @@ class Dasbor extends CI_Controller {
             $i++;
         }
         $data['numkegiatan'] = $i;
+		$session_data = $this->session->userdata('logged_in');
+		$data['username'] = $session_data['username'];
         $data['judulLaman'] = "dasborkegiatan";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
@@ -86,7 +106,9 @@ class Dasbor extends CI_Controller {
         $tmp = explode("-", $data['selesai']);
         $data['selesai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
         $data['des'] = $query->DeskripsiEvent;
-        $data['judulLaman'] = "dasborkegiatan";
+		$session_data = $this->session->userdata('logged_in');
+        $data['username'] = $session_data['username'];
+		$data['judulLaman'] = "dasborkegiatan";
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
         $this->load->view('dasbor/v_dasborekegiatan');
@@ -148,4 +170,10 @@ class Dasbor extends CI_Controller {
         $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
         $this->event_model->masuk($info);
     }
+	
+	function logout()
+	{
+		$this->session->unset_userdata('logged_in');
+		redirect('dasbor', 'refresh');
+	}
 }
