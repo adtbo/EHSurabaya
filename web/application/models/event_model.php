@@ -11,26 +11,27 @@
 			$this->load->database();
 		}
 
-		public function find()
+		public function getAll()
 		{
-			return $this->db->get('event')->result();
+			$query = $this->db->get('Event');
+			return $query->result(); 
 		}
 
 		public function select($id)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->get('event')->row();
+			return $this->db->get('Event')->row();
 		}
 
 		public function masuk($data)
 		{
-			return $this->db->insert('event',$data);
+			return $this->db->insert('Event',$data);
 		}
 
 		public function update($id, $data)
 		{
 			$this->db->where('IDEvent',$id);
-			return $this->db->update('event',$data);
+			return $this->db->update('Event',$data);
 		}
 
 		public function delete($id)

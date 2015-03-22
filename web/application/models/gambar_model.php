@@ -11,9 +11,10 @@
 			$this->load->database();
 		}
 
-		public function find()
+		public function getAll()
 		{
-			return $this->db->get('Gambar')->result();
+			$query = $this->db->get('Gambar');
+			return $query->result(); 
 		}
 
 		public function select($id)
