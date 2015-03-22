@@ -130,7 +130,7 @@ class Dasbor extends CI_Controller {
     function updatekeg()
     {
         $id = $this->input->post('id');
-        $info['NamaEvent'] = $this->input->post('NamaKegiatan');   
+        $info['NamaEvent'] = $this->input->post('NamaKegiatan');
         $info['TglMulai'] = $this->input->post('TanggalMulai');  
         $tmp = explode("/", $info['TglMulai']);
         $info['TglMulai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
