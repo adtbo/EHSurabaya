@@ -14,8 +14,9 @@
                  </div><!--Navbar header End-->
                  	<nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
                         <ul class="nav navbar-nav navbar-right ">
-                           	<li class="active"> <a href="#home" >Home </a></li>
+                           	<li><a href="#home" >Home </a></li>
                             <li><a href="#service"  >Tentang Kami</a> </li>
+                            <li><a href="#team" >Aksi </a></li>
                             <li><a href="#portfolio"  >Galeri</a> </li>
                             <li><a href="#footer" >Kontak</a> </li>
                         </ul>
@@ -28,7 +29,7 @@
             <video preload="auto" autoplay loop muted class="video-background">
                 <!--<source type="video/mp4" src="assets/videopage/videos/tes.mp4" />
                 <source type="video/ogg" src="assets/videopage/videos/gdrive.ogv" />
-                --><source type="video/webm" src="assets/videopage/videos/tes.webm" />-->
+                --><source type="video/webm" src="<?php echo $video['link'] ?>" />-->
             </video>
         </div> 
     </section><!--/ Home end -->
@@ -59,7 +60,7 @@
             <div class="col-md-12">
                 <div class="feature_header text-center">
                     <h3 class="feature_title">Ini <b>Aksiku!</b></h3>
-                    <h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>
+                    <!--<h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>-->
                     <div class="divider"></div>
                 </div>
             </div>  <!-- Col-md-12 End -->
@@ -69,7 +70,7 @@
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="assets/videopage/images/team/pic6.jpg" alt="" class="img-responsive">
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -78,17 +79,24 @@
                                     <li><a href=""><i class="fa fa-pinterest"></i></a></li>
                                     <li><a href=""><i class="fa fa-skype"></i></a></li>
                                 </ul>
-                                <p><?php echo $kegiatan[1]['deskripsi']?></p>
+                                <figcaption>
+                                    <p class="links">
+                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" data-rel="prettyPhoto">' ?>
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </p>
+                                </figcaption>
+                                <p></p>
                             </div>
                         </div>
-                        <h3><?php echo $kegiatan[1]['nama'] ?></h3>
-                        <h5>Chief Designer</h5>
+                        <h3 style="color:blue"><?php echo $kegiatan[0]['nama'] ?></h3>
+                        <h6><?php echo $kegiatan[0]['deskripsi']?></h6>
                     </div>
                 </div>  <!-- item wrapper end -->
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="assets/videopage/images/team/pic1.jpg" alt="" class="img-responsive">
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[5]['data']).'" alt="" class="img-responsive">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -97,17 +105,50 @@
                                     <li><a href=""><i class="fa fa-pinterest"></i></a></li>
                                     <li><a href=""><i class="fa fa-skype"></i></a></li>
                                 </ul>
-                                <p><?php echo $kegiatan[2]['deskripsi']?></p>
+                                <figcaption>
+                                    <p class="links">
+                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[5]['data']).'" data-rel="prettyPhoto">' ?>
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </p>
+                                </figcaption>
+                                <p></p>
+                            </div>
+                        </div>
+                        <h3 style="color:green"><?php echo $kegiatan[1]['nama'] ?></h3>
+                        <h6><?php echo $kegiatan[1]['deskripsi']?></h6>
+                    </div>
+                </div>  <!-- item wrapper end -->
+                <div class="item text-center">
+                    <div class="single-member">
+                        <div class="overlay-hover">
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
+                            <div class="overlay-effect">
+                                <ul class="social list-inline">
+                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                </ul>
+                                <figcaption>
+                                    <p class="links">
+                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" data-rel="prettyPhoto">' ?>
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </p>
+                                </figcaption>
+                                <p></p>
                             </div>
                         </div>
                         <h3><?php echo $kegiatan[2]['nama'] ?></h3>
-                        <h5>Chief Designer</h5>
+                        <h6><?php echo $kegiatan[2]['deskripsi']?></h6>
                     </div>
                 </div>  <!-- item wrapper end -->
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="assets/videopage/images/team/pic2.jpg" alt="" class="img-responsive">
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -116,36 +157,24 @@
                                     <li><a href=""><i class="fa fa-pinterest"></i></a></li>
                                     <li><a href=""><i class="fa fa-skype"></i></a></li>
                                 </ul>
-                                <p><?php echo $kegiatan[3]['deskripsi']?></p>
+                                <figcaption>
+                                    <p class="links">
+                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" data-rel="prettyPhoto">' ?>
+                                            <i class="fa fa-plus"></i>
+                                        </a>
+                                    </p>
+                                </figcaption>
+                                <p></p>
                             </div>
                         </div>
                         <h3><?php echo $kegiatan[3]['nama'] ?></h3>
-                        <h5>Chief Designer</h5>
+                        <h6><?php echo $kegiatan[3]['deskripsi']?></h6>
                     </div>
                 </div>  <!-- item wrapper end -->
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <img src="assets/videopage/images/team/pic5.jpg" alt="" class="img-responsive">
-                            <div class="overlay-effect">
-                                <ul class="social list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                </ul>
-                                <p><?php echo $kegiatan[4]['deskripsi']?></p>
-                            </div>
-                        </div>
-                        <h3><?php echo $kegiatan[4]['nama'] ?></h3>
-                        <h5>Chief Designer</h5>
-                    </div>
-                </div>  <!-- item wrapper end -->
-                <div class="item text-center">
-                    <div class="single-member">
-                        <div class="overlay-hover">
-                            <img src="assets/videopage/images/team/pic4.jpg" alt="" class="img-responsive">
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li><a href=""><i class="fa fa-facebook"></i></a></li>
@@ -176,7 +205,6 @@
                 <div class="col-md-12">
                     <div class="feature_header text-center">
                         <h3 class="feature_title"><b>Galeri</b></h3>
-                        <h4 class="feature_sub">Halaman ini berisi galeri kegiatan EHSurabaya </h4>
                         <div class="divider"></div>
                     </div>
                 </div>  <!-- Col-md-12 End -->
@@ -256,68 +284,6 @@
                         </figure>
                     </li>
 
-                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio video">
-                        <figure style="padding:5px">
-                            <!--<img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </figcaption>-->
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY" width="300" height="200"></iframe>
-                            </div>
-                        </figure>
-                    </li>
-
-                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio video">
-                        <figure style="padding:5px">
-                            <!--<img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </figcaption>-->
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY" width="300" height="200"></iframe>
-                            </div>
-                        </figure>
-                    </li>
-
-                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio video">
-                        <figure style="padding:5px">
-                            <!--<img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </figcaption>-->
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/ePbKGoIGAXY" width="300" height="200"></iframe>
-                            </div>
-                        </figure>
-                    </li>
 
                     <!--<div class="row">
                        <div class="col-sm-6 col-md-3">
@@ -606,8 +572,9 @@
                     <h3 class="menu_head">Main Menu</h3>
                     <div class="footer_menu">
                         <ul>
-                            <li><a href="#about">Home</a></li>
+                            <li><a href="#home">Home</a></li>
                             <li><a href="#service">Tentang Kami</a></li>
+                            <li><a href="#team">Aksi</a></li>
                             <li><a href="#portfolio">Galeri</a></li>
                             <li><a href="#contact">Kontak</a></li>
                         </ul>
@@ -618,13 +585,21 @@
                     <div class="footer_menu_contact">
                         <ul>
                             <li> <i class="fa fa-home"></i>
-                                <span> 12 Segun Bagicha, 10th Floor </span></li>
-                            <li><i class="fa fa-globe"></i>
-                                <span> +880-12345678</span></li>
+                                <span> <?php echo $kontak['alamat']?> </span></li>
+                            <li><i class="fa fa-mail-reply"></i>
+                                <span> <?php echo $kontak['email']?></span></li>
                             <li><i class="fa fa-phone"></i>
-                                <span> info@mail.com</span></li>
-                            <li><i class="fa fa-map-marker"></i>
-                            <span> www.web.com</span></li>
+                                <span> <?php echo $kontak['telp']?></span></li>
+                            <li><i class="fa fa-facebook"></i>
+                                <span> <?php echo $kontak['facebook']?></span></li>
+                            <li> <i class="fa fa-twitter"></i>
+                                <span> <?php echo $kontak['twitter']?> </span></li>
+                            <li><i class="fa fa-pinterest"></i>
+                                <span> <?php echo $kontak['pinterest']?></span></li>
+                            <li><i class="fa fa-google-plus"></i>
+                                <span> <?php echo $kontak['gplus']?></span></li>
+                            <li><i class="fa fa-instagram"></i>
+                                <span> <?php echo $kontak['instagram']?></span></li>
                         </ul>
                     </div>
                 </div>

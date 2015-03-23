@@ -3,12 +3,43 @@
 class Website extends CI_Controller {
 	public function index()
 	{
-		#ambil deskripsi oorgansasi
+		#ablil data video
+        $this->load->model('video_model');
+        $query = $this->video_model->getAll(0);
+        foreach ($query as $row)
+        {
+            $data['video']['link'] = $row->Link;
+            $data['video']['judul'] = $row->JudulVideo;
+        }
+
+        #ambil data oorgansasi
 		$this->load->model('organisasi_model');
         $query = $this->organisasi_model->getAll(1);
         foreach ($query as $row)
         {
             $data['deskripsi_organisasi'] = $row->Deskripsi;
+            $data['kontak']['alamat'] = $row->Alamat;
+            $data['kontak']['email'] = $row->Email;
+            $data['kontak']['telp'] = $row->NoTlp;
+            $data['kontak']['facebook'] = $row->Facebook;
+            $data['kontak']['twitter'] = $row->Twitter;
+            $data['kontak']['pinterest'] = $row->Pinterest;
+            $data['kontak']['gplus'] = $row->Gplus;
+            $data['kontak']['linkedin'] = $row->Linkedin;
+            $data['kontak']['instagram'] = $row->Instagram;
+        }
+
+
+        #ambil data gambar
+        $this->load->model('gambar_model');
+        $query = $this->gambar_model->getAll();
+        $i = 0;
+        foreach ($query as $row)
+        {
+            $data['gambar'][$i]['id'] = $row->IDGambar;
+            $data['gambar'][$i]['data'] = $row->DataGambar;
+            $data['gambar'][$i]['judul'] = $row->JudulGambar;
+            $i++;
         }
 
         #ambil data event
@@ -22,9 +53,9 @@ class Website extends CI_Controller {
             $data['kegiatan'][$i]['deskripsi'] = $row->DeskripsiEvent;
             $i++;
         }
-		
-		$this->load->view('website/v_websitehead');
-		$this->load->view('index');
+
+		$this->load->view('website/v_websitehead', $data);
+		$this->load->view('website/index');
 		$this->load->view('website/v_websitefoot');
 	}
 }

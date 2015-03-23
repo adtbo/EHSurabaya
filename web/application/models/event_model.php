@@ -23,6 +23,11 @@
 			return $i;
 		}
 
+		public function getAll()
+		{
+			$query = $this->db->get('event');
+			return $query->result(); 
+		}
 		public function find()
 		{
 			$query = $this->db->get('event');
