@@ -9,8 +9,8 @@ class login extends CI_Controller {
  
  function index()
  {
-   $this->load->helper(array('form'));
-   $this->load->view('v_login');
+    $this->load->helper(array('form'));
+    $this->load->view('v_login');
  }
  
 }
