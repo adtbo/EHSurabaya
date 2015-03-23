@@ -225,7 +225,7 @@ class Dasbor extends CI_Controller {
     {
 		$this->check();
         $this->load->model('gambar_model');
-        $info['IDGambar'] = $this->gambar_model->getID();
+        //$info['IDGambar'] = $this->gambar_model->getID();
         $config = array(
                 'upload_path' => './uploads',
                 'allowed_types' => '*'
@@ -248,13 +248,9 @@ class Dasbor extends CI_Controller {
             }
             $imgstring = file_get_contents($_FILES['DataGambar']['tmp_name']);
             $idgambar = $this->gambar_model->getID();
-            $this->gambar_model->setDataGambar($idgambar, $imgstring, $_FILES['DataGambar']['name'], date('Y-m-d'), 'deskripsi');
+            $this->gambar_model->setDataGambar($idgambar, $imgstring, $this->input->post('NamaGambar'), date('Y-m-d'), $this->input->post('DeskripsiGambar'));
             unlink('./uploads/'.$_FILES['DataGambar']['name']);
         }
-        $info['NamaGambar'] = $this->input->post('NamaGambar');   
-        $info['WaktuGambar'] = date('Y-m-d');
-        $info['DeskripsiGambar'] = $this->input->post('DeskripsiGambar'); 
-        $this->gambar_model->masuk($info);
         header("location: ".site_url('dasbor/galeri'));
     }
 

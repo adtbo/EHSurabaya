@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/cobacoba/ehsurabaya/web/';
+$config['base_url']	= '';
 
 /*
 |--------------------------------------------------------------------------

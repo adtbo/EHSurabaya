@@ -23,7 +23,7 @@
                     <div class="input-prepend">
 						<div class="form-group">
                         <label class="control-label" for="DataGambar">Unggah gambar dari komputer anda</label>
-                            <input class="span4" type="file" id="DataGambar" name="DataGambar" placeholder="gambar">
+                            <input class="span4" type="file" id="DataGambar" name="DataGambar[]">
                         </div>
 
                             <div class="form-group">
