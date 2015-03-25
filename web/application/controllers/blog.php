@@ -6,6 +6,7 @@ class Blog extends CI_Controller {
         #ablil data video
         $this->load->model('video_model');
         $query = $this->video_model->getAll(0);
+        
         foreach ($query as $row)
         {
             $data['video']['link'] = $row->Link;
