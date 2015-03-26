@@ -21,21 +21,21 @@
                     <div class="footer_menu_contact">
                         <ul>
                             <li> <i class="fa fa-home"></i>
-                                <span> <?php echo $kontak['alamat']?> </span></li>
+                                <span> <a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['alamat']?></a></span></li>
                             <li><i class="fa fa-mail-reply"></i>
-                                <span> <?php echo $kontak['email']?></span></li>
+                                <span> <a href="<?php echo $kontak['email'] ?>"> <?php echo $kontak['email']?></a></span></li>
                             <li><i class="fa fa-phone"></i>
-                                <span> <?php echo $kontak['telp']?></span></li>
+                                <span> <a href="<?php echo $kontak['telp'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['telp']?></a></span></li>
                             <li><i class="fa fa-facebook"></i>
-                                <span> <?php echo $kontak['facebook']?></span></li>
+                                <span> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['facebook']?></a></span></li>
                             <li> <i class="fa fa-twitter"></i>
-                                <span> <?php echo $kontak['twitter']?> </span></li>
+                                <span> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"> <?php echo $kontak['twitter']?> </a></span></li>
                             <li><i class="fa fa-pinterest"></i>
-                                <span> <?php echo $kontak['pinterest']?></span></li>
+                                <span> <a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <?php echo $kontak['pinterest']?></a></span></li>
                             <li><i class="fa fa-google-plus"></i>
-                                <span> <?php echo $kontak['gplus']?></span></li>
+                                <span> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"> <?php echo $kontak['gplus']?></a></span></li>
                             <li><i class="fa fa-instagram"></i>
-                                <span> <?php echo $kontak['instagram']?></span></li>
+                                <span> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"> <?php echo $kontak['instagram']?></a></span></li>
                         </ul>
                     </div>
                 </div>
@@ -71,12 +71,13 @@
                 <div class="col-md-6">
                     <div class="footer_mid pull-right">
                         <ul class="social-contact list-inline">
-                            <li> <a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-rss"></i></a></li>
-                            <li> <a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                            <li><a href="#"> <i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"> <i class="fa fa-pinterest"></i></a></li>
+                            <li> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
+                            <li> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
+                            <li> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <i class="fa fa-linkedin"></i></a></li>
+                            
                         </ul>
                     </div>
                 </div>

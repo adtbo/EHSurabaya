@@ -33,13 +33,13 @@
 				);
 			$this->db->insert('video', $data);
 		}
-*/
+
 		public function getAll()
 		{
 			$query = $this->db->get('video');
 			return $query->result(); 
 		}
-/*
+
 		public function getDataVideo()
 		{
 			$query = $this->db->query('SELECT video.idvideo, video.link, video.judulvideo, video.waktuvideo, FROM video');
@@ -75,6 +75,13 @@
 			$query = $this->db->insert('video',$data);
 			return $query;
 		}*/
+
+		public function getAll()
+		{
+			$query = $this->db->get('Video');
+			return $query->result(); 
+		}
+		
 		public function find()
 		{
 			$query = $this->db->get('video');

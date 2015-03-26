@@ -2,9 +2,7 @@
     <section id="home" class="hero landing hero-section">
         <div class="video-background-container">
             <video preload="auto" autoplay loop muted class="video-background">
-                <!--<source type="video/mp4" src="assets/videopage/videos/tes.mp4" />
-                <source type="video/ogg" src="assets/videopage/videos/gdrive.ogv" />
-                --><source type="video/webm" src="assets/videopage/videos/gdrive.webm" />
+                <source type="video/webm" src="assets/videopage/videos/gdrive.webm" />
             </video>
         </div> 
     </section><!--/ Home end -->

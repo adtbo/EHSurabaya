@@ -23,7 +23,7 @@
                     <div class="input-prepend">
 						<div class="form-group">
                         <label class="control-label" for="DataGambar">Unggah gambar dari komputer anda</label>
-                            <input class="span4" type="file" id="DataGambar" name="DataGambar[]" multiple>
+                            <input class="span4" type="file" id="DataGambar" name="DataGambar[]">
                         </div>
 
                             <div class="form-group">
@@ -57,55 +57,7 @@
                     </form>
                 </div>
             </div>
-       
-
-       
-            <div class="widget">
-                <div class="widget-header">
-                    <i class="icon-list-alt"></i>
-                    <h3> Daftar Gambar </h3>
-                </div>
-                <div class="widget-content">
-                    <div class="bs-example">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Gambar</th>
-                                    <th>Nama Gambar</th>
-                                    <th>Deskripsi Gambar</th>
-                                    <th>Waktu Upload</th>
-                                    <th>#</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php for ($i = 0; $i < $numgambar; $i++){ ?>
-                                <tr>
-                                    <td><?php echo $i+1; ?></td>
-                                    <td><?php echo $gambar[$i]['DataGambar']; ?></td>
-                                    <td><?php echo $gambar[$i]['NamaGambar']; ?></td>
-                                    <td><?php echo $gambar[$i]['DeskripsiGambar']; ?></td>
-                                    <td><?php echo $gambar[$i]['WaktuGambar']; ?></td>
-                                    <td width="20">
-                                        <form action="<?php echo site_url('dasbor/ekegiatan'); ?>" method="post">
-                                            <fieldset>
-                                                <input type="hidden" id="ptr" name="ptr" value="<?php echo $kegiatan[$i]['id']; ?>">
-                                                <div class="form-action">       
-                                                    <label class="control-label">&nbsp;</label>
-                                                    <button type="submit" class="btn btn-success"><i class="icon-pencil"></i> Sunting</button>
-                                                </div>
-                                            </fieldset>
-                                        </form>
-                                    </td>
-                                </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
         </div>
-
         <div class="span6">
             <div class="widget">
                 <div class="widget-header">
