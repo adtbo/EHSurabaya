@@ -54,6 +54,7 @@ class Blog extends CI_Controller {
             $i++;
         }
 
+        $data['eventnum'] = $i;
         $this->load->view('website/v_websitenav');
         $this->load->view('website/v_websitehead', $data);
         $this->load->view('website/portfolio_single');

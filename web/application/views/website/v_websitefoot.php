@@ -8,11 +8,11 @@
         <!-- Isotope -->
         <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.isotope.js"></script>
         <!-- Pretty Photo -->
-        <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.prettyPhoto.js"></script>
+        <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.prettyPhoto.js" type="text/javascript"></script>
         <!-- SmoothScroll -->
-        <script src="<?php echo base_url('assets'); ?>/videopage/js/smooth-scroll.js"></script>
+        <script src="<?php echo base_url('assets'); ?>/videopage/js/smooth-scroll.js" type="text/javascript"></script>
         <!-- Image Fancybox -->
-        <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.fancybox.pack.js?v=2.1.5"></script>
+        <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.fancybox.pack.js?v=2.1.5" type="text/javascript"></script>
         <!-- Counter  -->
         <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.counterup.min.js" type="text/javascript"></script>
         <!-- waypoint js -->

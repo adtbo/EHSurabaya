@@ -4,7 +4,8 @@
     <div class="footer_top">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 col-sm-6">
+                
+                <div class="col-6 col-sm-4 col-lg-4 col-md-4">
                     <h3 class="menu_head">Main Menu</h3>
                     <div class="footer_menu">
                         <ul>
@@ -16,16 +17,30 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-6">
+
+                <div class="col-6 col-sm-4 col-lg-4 col-md-4">
+                    <h3 class="menu_head">Useful Links</h3>
+                    <div class="footer_menu">
+                        <ul>
+                            <li><a href="http://earthhour.wwf.or.id" target="http://earthhour.wwf.or.id"> www.earthhour.wwf.or.id </a></li>
+                            <li><a href="#"> id.earthhour@gmail.com </a></li>
+                            <li><a href="https://www.youtube.com/user/EHSurabaya" target="https://www.youtube.com/user/EHSurabaya"> EHSurabaya on Youtube </a></li>
+                            <li><a href="#"> consectetur adipisicing elit. </a></li>
+                            <li><a href="http://earthhour.wwf.or.id/f-a-q/"> Frequently Asked Questions </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-6 col-sm-4 col-lg-4 col-md-4">
                     <h3 class="menu_head">Kontak</h3>
                     <div class="footer_menu_contact">
                         <ul>
                             <li> <i class="fa fa-home"></i>
-                                <span> <a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['alamat']?></a></span></li>
-                            <li><i class="fa fa-mail-reply"></i>
-                                <span> <a href="<?php echo $kontak['email'] ?>"> <?php echo $kontak['email']?></a></span></li>
+                                <span> <a href="<?php echo $kontak['alamat'] ?>"> <?php echo $kontak['alamat']?></a></span></li>
+                            <li><i class="fa fa-globe"></i>
+                                <span> <a href="<?php echo $kontak['telp'] ?>"> <?php echo $kontak['telp']?></a></span></li>
                             <li><i class="fa fa-phone"></i>
-                                <span> <a href="<?php echo $kontak['telp'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['telp']?></a></span></li>
+                                <span> <a href="<?php echo $kontak['email'] ?>"> <?php echo $kontak['email']?></a></span></li>                            
                             <li><i class="fa fa-facebook"></i>
                                 <span> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['facebook']?></a></span></li>
                             <li> <i class="fa fa-twitter"></i>
@@ -37,22 +52,6 @@
                             <li><i class="fa fa-instagram"></i>
                                 <span> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"> <?php echo $kontak['instagram']?></a></span></li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <h3 class="menu_head">Tags</h3>
-                    <div class="footer_menu tags">
-                        <a href="#"> Design</a>
-                        <a href="#"> User Interface</a>
-                        <a href="#"> Graphics</a>
-                        <a href="#"> Web Design</a>
-                        <a href="#"> Development</a>
-                        <a href="#"> Asp.net</a>
-                        <a href="#"> Bootstrap</a>
-                        <a href="#"> Joomla</a>
-                        <a href="#"> SEO</a>
-                        <a href="#"> Wordepress</a>
                     </div>
                 </div>
 

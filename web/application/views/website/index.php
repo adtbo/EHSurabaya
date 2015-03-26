@@ -1,14 +1,13 @@
-    <!-- Slider start -->
+<!-- Slider start -->
     <section id="home" class="hero landing hero-section">
         <div class="video-background-container">
             <video preload="auto" autoplay loop muted class="video-background">
-                <source type="video/webm" src="assets/videopage/videos/gdrive.webm" />
+                <source type="video/webm" src="assets/videopage/videos/Earth_Hour_Surabaya_2015_Official_Video.webm" />
             </video>
         </div> 
     </section><!--/ Home end -->
 
 <!-- Service Area start -->
-
     <section id="service">
         <div class="container-fluid">
             <div class="jumbotron">
@@ -37,24 +36,31 @@
                     <div class="divider"></div>
                 </div>
             </div>  <!-- Col-md-12 End -->
-
             
             <div id="owl-demo" class="owl-carousel owl-theme team-items">
+
+                <?php
+                    for ($i=0; $i < $eventnum; $i++) 
+                    { 
+                         # code...
+                ?>
+
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
+                                    <li> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+                                    <li> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+                                    <li> <a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
+                                    <li> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
+                                    <li> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <i class="fa fa-linkedin"></i></a></li>
                                 </ul>
                                 <figcaption>
                                     <p class="links">
-                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" data-rel="prettyPhoto">' ?>
+                                        <a href="assets/videopage/images/portfolio/p2.jpg"  data-rel="prettyPhoto">
                                             <i class="fa fa-plus"></i>
                                         </a>
                                     </p>
@@ -62,103 +68,15 @@
                                 <p></p>
                             </div>
                         </div>
-                        <h3 style="color:blue"><?php echo $kegiatan[0]['nama'] ?></h3>
+                        <h3 style="color:blue"><a href="<?php echo site_url('blog'); ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
                     </div>
                 </div>  <!-- item wrapper end -->
-                <div class="item text-center">
-                    <div class="single-member">
-                        <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[5]['data']).'" alt="" class="img-responsive">' ?>
-                            <div class="overlay-effect">
-                                <ul class="social list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                </ul>
-                                <figcaption>
-                                    <p class="links">
-                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[5]['data']).'" data-rel="prettyPhoto">' ?>
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                    </p>
-                                </figcaption>
-                                <p></p>
-                            </div>
-                        </div>
-                        <h3 style="color:green"><?php echo $kegiatan[1]['nama'] ?></h3>
-                    </div>
-                </div>  <!-- item wrapper end -->
-                <div class="item text-center">
-                    <div class="single-member">
-                        <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
-                            <div class="overlay-effect">
-                                <ul class="social list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                </ul>
-                                <figcaption>
-                                    <p class="links">
-                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" data-rel="prettyPhoto">' ?>
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                    </p>
-                                </figcaption>
-                                <p></p>
-                            </div>
-                        </div>
-                        <h3><?php echo $kegiatan[2]['nama'] ?></h3>
-                    </div>
-                </div>  <!-- item wrapper end -->
-                <div class="item text-center">
-                    <div class="single-member">
-                        <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
-                            <div class="overlay-effect">
-                                <ul class="social list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                </ul>
-                                <figcaption>
-                                    <p class="links">
-                                        <?php  echo '<a href="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" data-rel="prettyPhoto">' ?>
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                    </p>
-                                </figcaption>
-                                <p></p>
-                            </div>
-                        </div>
-                        <h3><?php echo $kegiatan[3]['nama'] ?></h3>
-                    </div>
-                </div>  <!-- item wrapper end -->
-                <div class="item text-center">
-                    <div class="single-member">
-                        <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?>
-                            <div class="overlay-effect">
-                                <ul class="social list-inline">
-                                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
-                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>
-                                    <li><a href=""><i class="fa fa-twitter"></i></a></li>
-                                    <li><a href=""><i class="fa fa-pinterest"></i></a></li>
-                                    <li><a href=""><i class="fa fa-skype"></i></a></li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dignissimos, maxime ea excepturi veritatis itaque. </p>
-                            </div>
-                        </div>
-                        <h3>John Abraham</h3>
-                        <h5>Chief Designer</h5>
-                    </div>
-                </div>  <!-- item wrapper end -->
+
+                <?php 
+                    }
+                ?>
+
+                
             </div>
         </div>
     </div> <!-- Conatiner Team end -->
@@ -189,6 +107,12 @@
     <div class="clearfix"></div>
    			<div class="text-center " style="padding:10px">
               <ul class="portfolio-wrap" id="portfolio_items">
+                    
+                    <?php
+                    for ($i=0; $i < $eventnum; $i++) 
+                    { 
+                         # code...
+                    ?>
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
                         <figure style="padding:5px">
                             <!--<img src="assets/videopage/images/portfolio/p1.jpg" alt="" class="img-responsive"/>
@@ -211,47 +135,10 @@
                         </figure>
                     </li>
 
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
-                        <figure style="padding:5px">
-                        <!--<img src="assets/videopage/images/portfolio/p2.jpg" alt="" class="img-responsive" />
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="assets/videopage/images/portfolio/p2.jpg"  data-rel="prettyPhoto">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                                </figcaption>-->
-                                <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Yz1PDyi3vnY" width="300" height="200"></iframe>
-                            </div>
-                        </figure>
-                    </li>
+                    <?php 
+                        }
+                    ?>
 
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio video">
-                        <figure style="padding:5px">
-                            <!--<img src="assets/videopage/images/portfolio/p3.jpg" alt="" class="img-responsive"/>
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </figcaption>-->
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Yz1PDyi3vnY" width="300" height="200"></iframe>
-                            </div>
-                        </figure>
-                    </li>
                 </ul>
         </div> <!-- Container Full End -->
 </section>  <!-- Portfolio Section End -->

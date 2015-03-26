@@ -53,6 +53,11 @@
                 <h4>Related Posts</h4>
                 <hr>
                 <div class="col-md-4 col-sm-4">
+
+                    <?php
+                        for ($i=0; $i < 10; $i++) { 
+                         # code...
+                    ?>
                     <div class="rel-post">
                         <a href="#">
                             <img src="assets/videopage/images/blog/pic6.jpg" alt="" lass="img-responsive">
@@ -62,30 +67,14 @@
                             </div>
                         </a>
                     </div>
+                    
+                    <?php 
+                    } 
+                    
+                    ?>
+
                 </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="rel-post">
-                        <a href="#">
-                            <img src="assets/videopage/images/blog/pic7.jpg" alt="" lass="img-responsive">
-                            <div class="caption">
-                                <h4>Let go out for once</h4>
-                                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-4">
-                    <div class="rel-post">
-                        <a href="#">
-                            <img src="assets/videopage/images/blog/pic8.jpg" alt="" lass="img-responsive">
-                            <div class="caption">
-                                <h4>Why you are late!</h4>
-                                <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+               
             <div class="clearfix"></div>
             
             <div class="blog-form">

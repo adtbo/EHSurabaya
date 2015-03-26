@@ -54,8 +54,9 @@ class Website extends CI_Controller {
             $i++;
         }
 
+        $data['eventnum'] = $i;
 		$this->load->view('website/v_websitenav');
-        $this->load->view('website/v_websitehead', $data);
+        $this->load->view('website/v_websitehead', $data);        
 		$this->load->view('website/index');
         $this->load->view('website/v_websitefooter');
 		$this->load->view('website/v_websitefoot');
