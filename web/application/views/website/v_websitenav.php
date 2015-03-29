@@ -14,7 +14,7 @@
                  </div><!--Navbar header End-->
                     <nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="navigation">
                         <ul class="nav navbar-nav navbar-right ">
-                            <li><a href="<?php echo site_url('website'); ?>"> Home </a></li>
+                            <li><a href="<?php echo site_url('/website'); ?>#home"> Home </a></li>
                             <li><a href="<?php echo site_url('website'); ?>#service"> Tentang Kami </a> </li>
                             <li><a href="<?php echo site_url('website'); ?>#team"> Aksi </a></li>
                             <li><a href="<?php echo site_url('website'); ?>#portfolio">Galeri </a> </li>
