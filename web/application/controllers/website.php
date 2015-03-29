@@ -94,9 +94,9 @@ class Website extends CI_Controller {
         }
 
         $data['eventnum'] = $i;
-
-		$this->load->view('website/v_websitenav', $data);
-        $this->load->view('website/v_websitehead');        
+		
+        $this->load->view('website/v_websitehead');
+        $this->load->view('website/v_websitenav', $data);        
 		$this->load->view('website/index');
         $this->load->view('website/v_websitefooter');
 		$this->load->view('website/v_websitefoot');
@@ -154,8 +154,8 @@ class Website extends CI_Controller {
         }
 
         $data['eventnum'] = $i;
-        $this->load->view('website/v_websitenav', $data);
         $this->load->view('website/v_websitehead');
+        $this->load->view('website/v_websitenav', $data);
         $this->load->view('website/portfolio_single');
         $this->load->view('website/v_websitefooter');
         $this->load->view('website/v_websitefoot');
