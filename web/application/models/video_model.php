@@ -78,10 +78,16 @@
 
 		public function getAll()
 		{
-			$query = $this->db->get('Video');
+			$query = $this->db->get('video');
 			return $query->result(); 
 		}
 		
+        public function countItem()
+        {
+            $query = $this->db->get('video');
+            return $query->num_rows();
+        }
+        
 		public function find()
 		{
 			$query = $this->db->get('video');

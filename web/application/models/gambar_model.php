@@ -47,6 +47,12 @@
 			return $query->result();
 		}
 
+        public function countItem()
+        {
+            $query = $this->db->get('gambar');
+            return $query->num_rows();
+        }
+        
 		public function select($id)
 		{
 			$this->db->where('IDGambar',$id);

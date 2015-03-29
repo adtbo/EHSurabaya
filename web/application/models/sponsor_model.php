@@ -11,6 +11,13 @@
 			$this->load->database();
 		}
 
+            
+        public function countItem()
+        {
+            $query = $this->db->get('sponsor');
+            return $query->num_rows();
+        }
+        
 		public function find()
 		{
 			return $this->db->get('sponsor')->result();

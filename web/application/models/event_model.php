@@ -25,14 +25,18 @@
 
 		public function getAll()
 		{
+            $query = $this->db->order_by('TglMulai', 'asc');
+            $query = $this->db->order_by('TglSelesai', 'asc');
 			$query = $this->db->get('event');
+            
 			return $query->result(); 
 		}
-		public function find()
-		{
-			$query = $this->db->get('event');
-			return $query->result(); 
-		}
+        
+        public function countItem()
+        {
+            $query = $this->db->get('event');
+            return $query->num_rows();
+        }
 
 		public function select($id)
 		{
