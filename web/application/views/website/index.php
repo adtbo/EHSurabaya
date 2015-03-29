@@ -114,9 +114,9 @@
                         { 
                          # code...
                     ?>
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio identity web-design">
+                    <li class="">
                         <figure>
-                            <iframe width="640" height="380" src="<?php echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
+                            <iframe width="640" height="360" src="<?php echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
                         </figure>
                     </li>
 
