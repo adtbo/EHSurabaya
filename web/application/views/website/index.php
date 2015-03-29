@@ -107,53 +107,24 @@
         <div class="clearfix"></div>
             <div class="text-center ">
 
-                <!--<ul class="portfolio-wrap" id="portfolio_items">
+                <ul class="portfolio-wrap" id="portfolio_items">
+
+                    <?php
+                    for ($i=0; $i < $videonum; $i++) 
+                        { 
+                         # code...
+                    ?>
                     <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio identity web-design">
                         <figure>
-                            <img src="images/portfolio/p1.jpg" alt="" class="img-responsive"/>
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
-                                    <a href="images/portfolio/p1.jpg" data-rel="prettyPhoto" >
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </figcaption>
+                            <iframe width="640" height="380" src="<?php echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
                         </figure>
                     </li>
-                </ul>-->
-                <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="buttom: 500px;">
-                  <!-- Indicators 
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol>
-                 
-                    <!-- Wrapper for slides 
-                    <div class="carousel-inner"> -->                       
-                        
-                        <div class="video-container">
-                           <iframe width="640" height="480" src="<?php echo $video[0]['link'] ?>" frameborder="0" allowfullscreen></iframe>
-                           <div class="carousel-caption">
-                                <h3></h3>
-                            </div>
-                        </div>
-                      
-                    <!--</div>
-                 
-                    <!-- Controls 
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                    </a>
-                </div> <!-- Carousel -->
+
+                    <?php 
+                        }
+                    ?>
+                </ul>
+                                 
             </div> <!-- Container Full End -->
 </section>  <!-- Portfolio Section End -->
  
