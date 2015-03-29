@@ -2403,14 +2403,14 @@ padding: 8px 15px;
     background: url("../images/banner/overaly.png")repeat; 
 }
 .video-background{
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
 }
 .video-background-container {
-    position: absolute;
-    top: ;
+    position: relative;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
