@@ -26,7 +26,7 @@
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/responsive.css"rel="stylesheet">
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" rel="stylesheet">
         <!-- color style -->
-        <link  href="<?php echo base_url ('assets'); ?>/videopage/css/red.css" rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/red.css" rel="stylesheet">
         <!-- Responsive  -->
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/responsive.css" rel="stylesheet">
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" rel="stylesheet">
