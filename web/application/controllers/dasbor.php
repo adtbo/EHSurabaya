@@ -312,4 +312,25 @@ class Dasbor extends CI_Controller {
 		$this->session->unset_userdata('logged_in');
 		redirect('dasbor', 'refresh');
 	}
+	
+	function upload_main_video()
+	{
+		$config['upload_path'] = 'assets/videopage/videos/';
+		$config['allowed_types'] = 'webm';
+
+		$this->load->library('upload', $config);
+
+		if ( ! $this->upload->upload_main_video())
+		{
+			$error = array('error' => $this->upload->display_errors());
+
+			$this->load->view('v_dasbordasar', $error);
+		}
+		else
+		{
+			$data = array('upload_data' => $this->upload->data());
+
+			$this->load->view('v_upload_success', $data);
+		}
+	}
 }
