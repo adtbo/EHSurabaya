@@ -29,18 +29,6 @@ class Website extends CI_Controller {
             $data['kontak']['instagram'] = $row->Instagram;
         }
 
-        #ambil data gambar
-        $this->load->model('gambar_model');
-        $query = $this->gambar_model->getAll();
-        $i = 0;
-        foreach ($query as $row)
-        {
-            $data['gambar'][$i]['id'] = $row->IDGambar;
-            $data['gambar'][$i]['data'] = $row->DataGambar;
-            $data['gambar'][$i]['judul'] = $row->JudulGambar;
-            $i++;
-        }
-
         #ambil data video
         $this->load->model('video_model');
         $query = $this->video_model->getAll();
@@ -54,6 +42,44 @@ class Website extends CI_Controller {
         }
         $data['videonum'] = $i;
 
+        #ambil data gambar
+        $this->load->model('gambar_model');
+        $query = $this->gambar_model->getAll();
+        $i = 0;
+        foreach ($query as $row)
+        {
+            $data['gambar'][$i]['id'] = $row->IDGambar;
+            $data['gambar'][$i]['data'] = $row->DataGambar;
+            $data['gambar'][$i]['judul'] = $row->JudulGambar;
+            $i++;
+        }
+
+        #ambil data event
+
+        /*$this->load->model('event_model');
+        $query = $this->event_model->getAll();
+        $i = 0;
+        foreach ($query as $row)
+        {
+            $data['id'] = $row->IDEvent;
+            $data['kegiatan'][$i]['id'] = $row->IDEvent;
+            $data['kegiatan'][$i]['nama'] = $row->NamaEvent;
+            $data['kegiatan'][$i]['deskripsi'] = $row->DeskripsiEvent;
+            $i++;
+
+            $this->load->model('listgambar_model');
+            $query = $this->listgambar_model->selectById($data['id']);
+            $j = 0;
+            foreach ($query as $row)
+            {
+                $data['gambar'][$i]['id'] = $row->IDGambar;
+                $data['gambar'][$i]['data'] = $row->DataGambar;
+                $data['gambar'][$i]['judul'] = $row->JudulGambar;
+                $j++;
+            }
+            $data['gambarnum'] = $j;     
+        }
+        $data['eventnum'] = $i;*/
         #ambil data event
         $this->load->model('event_model');
         $query = $this->event_model->getAll();
@@ -62,9 +88,11 @@ class Website extends CI_Controller {
         {
             $data['kegiatan'][$i]['id'] = $row->IDEvent;
             $data['kegiatan'][$i]['nama'] = $row->NamaEvent;
+            $data['kegiatan'][$i]['mulai'] = $row->TglMulai;
             $data['kegiatan'][$i]['deskripsi'] = $row->DeskripsiEvent;
             $i++;
         }
+
         $data['eventnum'] = $i;
 
 		$this->load->view('website/v_websitenav');

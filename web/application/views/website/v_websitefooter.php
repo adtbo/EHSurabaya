@@ -26,7 +26,7 @@
                             <li><a href="#"> id.earthhour@gmail.com </a></li>
                             <li><a href="https://www.youtube.com/user/EHSurabaya" target="https://www.youtube.com/user/EHSurabaya"> EHSurabaya on Youtube </a></li>
                             <li><a href="#"> consectetur adipisicing elit. </a></li>
-                            <li><a href="http://earthhour.wwf.or.id/f-a-q/"> Frequently Asked Questions </a></li>
+                            <li><a href="http://earthhour.wwf.or.id/f-a-q/" target="http://earthhour.wwf.or.id/f-a-q"> Frequently Asked Questions </a></li>
                         </ul>
                     </div>
                 </div>

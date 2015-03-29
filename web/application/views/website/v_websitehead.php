@@ -36,3 +36,12 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500' rel='stylesheet' type='text/css'>
 </head>
     <body data-spy="scroll" data-target=".navbar-fixed-top">
+        <style>
+            .carousel-inner > .item > img,
+            .carousel-inner > .item > a > img {
+                width: 50%;
+                margin: auto;
+            }
+
+            
+        </style>

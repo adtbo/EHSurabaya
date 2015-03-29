@@ -28,6 +28,7 @@
 								<?php //echo $error;?>
 								<?php //echo form_open_multipart('upload/do_upload');?>
                                 <div class="form-actions">
+								<div class="form-actions">
                                     <button type="submit" class="btn btn-primary"><i class="icon-ok"></i>Unggah</button>
                                 </div>
                             </div>
