@@ -6,7 +6,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="portfolio-slider-wrapper">
                         <ul id="portfolio-slider">
-                            <li><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$id]['data']).'" alt="" class="img-responsive">' ?></li>
+                            <li></li>
                         </ul>
                     </div>
                 </div>
@@ -23,7 +23,8 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="sidebar">
                         <div class="portfolio-desc">
-                            <h4><?php echo $nama ?></h4>
+                            <h3><strong><?php echo $nama ?></strong></h3>
+                            <p><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$id]['data']).'" alt="" class="img-responsive">' ?></p>
                             <p><?php echo $deskripsi ?></p>
                         <p><a href="#" class="btn btn-main featured">Project Link</a></p>
                     </div>
@@ -59,7 +60,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="feature_header text-center">
-                    <h3 class="feature_title">Ini <b>Aksiku!</b></h3>
+                    <h3 class="feature_title">Related <b>POST</b></h3>
                     <!--<h4 class="feature_sub">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h4>-->
                     <div class="divider"></div>
                 </div>

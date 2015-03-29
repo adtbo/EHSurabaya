@@ -8,7 +8,7 @@
                 </div>
                 <div class="widget-content">
                     <p>
-                        Pada bagian ini anda bisa mengganti video utama pada halaman depan, mengisi informasi komunitas serta kontak yang bisa dihubungi.
+                        Pada bagian ini Anda bisa menambahkan dan menyunting kegiatan yang ingin ditampilkan pada halaman website.
                     </p>
                     <form role="form" class="form-default" action="<?php echo site_url('dasbor/inskeg'); ?>" method="post">
                         <fieldset>
