@@ -34,11 +34,13 @@
 			$this->db->insert('video', $data);
 		}
 
+		
 		public function getAll()
 		{
 			$query = $this->db->get('video');
 			return $query->result(); 
 		}
+		
 
 		public function getDataVideo()
 		{

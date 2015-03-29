@@ -1,16 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Blog extends CI_Controller {
-	public function index()
+	public function index($id)
     {
-        #ablil data video
-        $this->load->model('video_model');
-        $query = $this->video_model->getAll(0);
-        foreach ($query as $row)
-        {
-            $data['video']['link'] = $row->Link;
-            $data['video']['judul'] = $row->JudulVideo;
-        }
+        echo $id;
 
         #ambil data oorgansasi
         $this->load->model('organisasi_model');
@@ -60,5 +53,10 @@ class Blog extends CI_Controller {
         $this->load->view('website/portfolio_single');
         $this->load->view('website/v_websitefooter');
         $this->load->view('website/v_websitefoot');
+    }
+
+    public function event($id)
+    {
+        echo $id;
     }
 }

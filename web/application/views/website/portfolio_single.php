@@ -6,7 +6,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="portfolio-slider-wrapper">
                         <ul id="portfolio-slider">
-                            <li><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?></li>
+                            <li><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$id]['data']).'" alt="" class="img-responsive">' ?></li>
                         </ul>
                     </div>
                 </div>
@@ -23,8 +23,8 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="sidebar">
                         <div class="portfolio-desc">
-                            <h4><?php echo $kegiatan[0]['nama'] ?></h4>
-                            <p><?php echo $kegiatan[0]['deskripsi'] ?></p>
+                            <h4><?php echo $nama ?></h4>
+                            <p><?php echo $deskripsi ?></p>
                         <p><a href="#" class="btn btn-main featured">Project Link</a></p>
                     </div>
                 </div>
@@ -33,9 +33,7 @@
                 <div class="right-sidebar">
                     <h4>Event Details</h4>
                     <ul class="circle">
-                        <li><span>date : </span> 15 May 2014</li>
-                        <li><span>client : </span>Enavto</li>
-                        <li><span>Category :</span> Web design</li>
+                        <li><span>date : </span> <?php echo $kegiatan[$id]['mulai'] ?></li>                   
                     </ul>
                 </div>
                 <div class="share">
@@ -81,7 +79,7 @@
                             <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
                         </div>
                         <div class="caption">
-                            <h3 style="color:blue"><a href="<?php echo site_url('blog'); ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
+                            <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan[$i]['id'] ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
                         </div>                        
                     </div>
                 </div>  <!-- item wrapper end -->

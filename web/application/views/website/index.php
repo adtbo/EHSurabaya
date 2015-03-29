@@ -60,7 +60,7 @@
                                 </ul>
                                 <figcaption>
                                     <p class="links">
-                                        <a href="assets/videopage/images/portfolio/p2.jpg"  data-rel="prettyPhoto">
+                                        <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
                                             <i class="fa fa-plus"></i>
                                         </a>
                                     </p>
@@ -68,7 +68,7 @@
                                 <p></p>
                             </div>
                         </div>
-                        <h3 style="color:blue"><a href="<?php echo site_url('blog'); ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
+                        <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan[$i]['id'] ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
                     </div>
                 </div>  <!-- item wrapper end -->
 
@@ -97,49 +97,26 @@
             </div>  <!-- Col-md-12 End -->
         </div>
     </div>
-
-
-    <div id="isotope-filter" class="skew3 text-center">
-        <a data-filter="*"  href="#" class="active ">Semua</a>
-        <a data-filter=".gambar"  href="#" class="">Gambar</a>
-        <a data-filter=".video" href="#"  class="">Video</a>
-    </div>
-    <div class="clearfix"></div>
-   			<div class="text-center " style="padding:10px">
-              <ul class="portfolio-wrap" id="portfolio_items">
-                    
-                    <?php
-                    for ($i=0; $i < $eventnum; $i++) 
-                    { 
-                         # code...
-                    ?>
-                    <li class="col-md-3 col-xs-12 col-sm-6 single-portfolio gambar">
-                        <figure style="padding:5px">
-                            <!--<img src="assets/videopage/images/portfolio/p1.jpg" alt="" class="img-responsive"/>
-                            <!--<img src="img_pulpit.jpg" alt="The Pulpit Rock" width="304" height="228">
-                            
-                            <figcaption>
-                                <h5>Creative Zoe</h5>
-                                <p class="links">
-                                    <a href="assets/videopage/images/portfolio/p2.jpg"  data-rel="prettyPhoto">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </p>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                </p>
-                            </figcaption>-->
-                            <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="//www.youtube.com/embed/Yz1PDyi3vnY" width="300" height="200"></iframe>
-                            </div>
-                        </figure>
-                    </li>
-
-                    <?php 
-                        }
-                    ?>
-
-                </ul>
-        </div> <!-- Container Full End -->
+    
+    <div align="center" class="text-center" style="padding:10px">
+                <div style="text-align:center;">
+                    <div style="align:center;" class="html5gallery" data-skin="light" data-width="640" data-height="360">
+                        <?php
+                            for ($i=0; $i < $videonum; $i++) 
+                            {
+                        ?>       
+                                    
+                            <a href="<?php echo $video[$i]['link'] ?>"><img src="assets/videopage/images/Swan_small.jpg" alt="Youtube Video"></a>
+                             
+                        <?php 
+                            }
+                        ?>
+                    </div>
+                </div>
+            </div> <!-- Container Full End -->
 </section>  <!-- Portfolio Section End -->
+
+ 
+
+
 
