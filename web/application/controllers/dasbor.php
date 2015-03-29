@@ -7,6 +7,44 @@ class Dasbor extends CI_Controller {
 		$session_data = $this->session->userdata('logged_in');
 		$data['username'] = $session_data['username'];
 		$data['judulLaman'] = "dasborhome";
+        $this->load->model('event_model');
+        $this->load->model('gambar_model');
+        $this->load->model('video_model');
+        $this->load->model('sponsor_model');
+        $query = $this->event_model->getAll();
+        $i = 0;
+        foreach ($query as $row)
+        {
+            $data['kegiatan'][$i]['id'] = $row->IDEvent;
+            $data['kegiatan'][$i]['nama'] = $row->NamaEvent;
+            $data['kegiatan'][$i]['mulai'] = $row->TglMulai;
+            $tmp = explode("-", $data['kegiatan'][$i]['mulai']);
+            $data['kegiatan'][$i]['mulai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
+            $data['kegiatan'][$i]['selesai'] = $row->TglSelesai;
+            $tmp = explode("-", $data['kegiatan'][$i]['selesai']);
+            $data['kegiatan'][$i]['selesai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
+            $data['kegiatan'][$i]['deskripsi'] = $row->DeskripsiEvent;
+            $i++;
+        }
+        $data['bulan'] = array(
+            '01' => 'Januari',
+            '02' => 'Februari',
+            '03' => 'Maret',
+            '04' => 'April',
+            '05' => 'Mei',
+            '06' => 'Juni',
+            '07' => 'Juli',
+            '08' => 'Agustus',
+            '09' => 'September',
+            '10' => 'Oktober',
+            '11' => 'November',
+            '12' => 'Desember'
+        );
+        $data['numkegiatan'] = $i;
+        $data['jumkegiatan'] = $this->event_model->countItem();
+        $data['jumgambar'] = $this->gambar_model->countItem();
+        $data['jumvideo'] = $this->video_model->countItem();
+        $data['jumsponsor'] = $this->sponsor_model->countItem();
 		$this->load->view('dasbor/v_dasborhead', $data);
 		$this->load->view('dasbor/v_dasbornav');
 		$this->load->view('dasbor/v_dasborhome');
@@ -73,7 +111,7 @@ class Dasbor extends CI_Controller {
 	{
 		$this->check();
         $this->load->model('event_model');
-        $query = $this->event_model->find();
+        $query = $this->event_model->getAll();
         $i = 0;
         foreach ($query as $row)
         {
@@ -101,6 +139,8 @@ class Dasbor extends CI_Controller {
     public function ekegiatan()
     {
 		$this->check();
+        $session_data = $this->session->userdata('logged_in');
+        $data['username'] = $session_data['username'];
         $id = $this->input->post('ptr');
         $this->load->model('event_model');
         $query = $this->event_model->select($id);
