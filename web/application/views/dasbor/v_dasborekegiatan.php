@@ -78,9 +78,58 @@
                                                         if ($gambarnum==0) echo "No Pictures";
                                                         for ($i = 0; $i < $gambarnum; $i++) {
                                                     ?>
-                                                    <div class="col-xs-6 col-md-3">
-                                                    <div class="thumbnail">
-                                                        <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>" height="50">
+                                                    <div class="row" style="margin:2% 0%;">
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div class="row" style="margin:2% 0%;">
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
+                                                    </div>
+                                                    <div class="span2">
+                                                        <div class="thumbnail">
+                                                            <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$i]['data']); ?>">
+                                                        </div>
                                                     </div>
                                                     </div>
                                                     <?php } ?>

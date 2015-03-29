@@ -12,7 +12,7 @@
                             <div id="big_stats" class="cf">
                                 <div class="stat"> <span class="value"><?php echo $jumkegiatan; ?></span> <i>Kegiatan</i></div>
                                 <div class="stat">  <span class="value"><?php echo $jumgambar; ?></span> <i>Gambar</i></div>
-                                <div class="stat"> <span class="value"><?php echo $jumvideo; ?> <i>Video</i></span> </div>
+                                <div class="stat"> <span class="value"><?php echo $jumvideo; ?></span> <i>Video</i></div>
                                 <div class="stat"> <span class="value"><?php echo $jumsponsor; ?></span> <i>Sponsor</i></div>
                             </div>
                         </div>
