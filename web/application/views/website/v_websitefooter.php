@@ -9,11 +9,11 @@
                     <h3 class="menu_head">Main Menu</h3>
                     <div class="footer_menu">
                         <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#service">Tentang Kami</a></li>
-                            <li><a href="#team">Aksi</a></li>
-                            <li><a href="#portfolio">Galeri</a></li>
-                            <li><a href="#contact">Kontak</a></li>
+                            <li><a href="<?php echo site_url('/'); ?>#home"> Home </a></li>
+                            <li><a href="<?php echo site_url('/'); ?>#service"> Tentang Kami </a></li>
+                            <li><a href="<?php echo site_url('/'); ?>#team"> Aksi </a></li>
+                            <li><a href="<?php echo site_url('/'); ?>#portfolio"> Galeri </a></li>
+                            <li><a href="#contact"> Kontak </a></li>
                         </ul>
                     </div>
                 </div>

@@ -53,6 +53,7 @@ class Website extends CI_Controller {
             $data['gambar'][$i]['judul'] = $row->JudulGambar;
             $i++;
         }
+        $data['gambarnum'] = $i;
 
         #ambil data event
 

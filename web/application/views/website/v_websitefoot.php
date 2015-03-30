@@ -36,5 +36,7 @@
         <script src="<?php echo base_url('assets'); ?>/videopage/js/jquery.bxslider.js"></script>
         
         <script src="<?php echo base_url('assets'); ?>/videopage/js/html5gallery.js" type="text/javascript"></script>
+
+        <script src="<?php echo base_url('assets'); ?>/videopage/js/js-image-slider.js" type="text/javascript"></script>
     </body>
 </html>

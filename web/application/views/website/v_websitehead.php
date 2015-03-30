@@ -11,19 +11,19 @@
         <!-- FontAwesome -->
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/font-awesome.min.css" rel="stylesheet">
         <!-- Animation -->
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/animate.css"rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/animate.css" rel="stylesheet">
         <!-- Owl Carousel -->
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/owl.carousel.css"rel="stylesheet">
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/owl.theme.css"rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/owl.carousel.css" rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/owl.theme.css" rel="stylesheet">
         <!-- Pretty Photo -->
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/prettyPhoto.css"rel="stylesheet">
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/flexslider.css"rel="stylesheet">
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/red.css"rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/prettyPhoto.css" rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/flexslider.css" rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/red.css" rel="stylesheet">
         <!-- Bx slider -->
-        <link  href="<?php echo base_url ('assets'); ?>/videopage/css/jquery.bxslider.css" rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/jquery.bxslider.css" rel="stylesheet">
         <!-- Template styles-->
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/custom.css" rel="stylesheet">
-        <link href="<?php echo base_url ('assets'); ?>/videopage/css/responsive.css"rel="stylesheet">
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/responsive.css" rel="stylesheet">
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" rel="stylesheet">
         <!-- color style -->
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/red.css" rel="stylesheet">
@@ -31,9 +31,7 @@
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/responsive.css" rel="stylesheet">
         <link href="<?php echo base_url ('assets'); ?>/videopage/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" rel="stylesheet">
 
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500' rel='stylesheet' type='text/css'>
+        <link href="<?php echo base_url ('assets'); ?>/videopage/css/js-image-slider.css" rel="stylesheet" type="text/css" />        
 </head>
     <body data-spy="scroll" data-target=".navbar-fixed-top">
         <style>
@@ -41,7 +39,5 @@
             .carousel-inner > .item > a > img {
                 width: 50%;
                 margin: auto;
-            }
-
-            
+            }            
         </style>

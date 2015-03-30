@@ -14,11 +14,11 @@
                  </div><!--Navbar header End-->
                     <nav class="collapse navbar-collapse navigation" id="bs-example-navbar-collapse-1" role="">
                         <ul class="nav navbar-nav navbar-right ">
-                            <li><a href="<?php echo site_url('/'); ?>#home"> Home </a></li>
-                            <li><a href="<?php echo site_url('/'); ?>#service"> Tentang Kami </a> </li>
-                            <li><a href="<?php echo site_url('/'); ?>#team"> Aksi </a></li>
-                            <li><a href="<?php echo site_url('/'); ?>#portfolio">Galeri </a> </li>
-                            <li><a href="<?php echo site_url('/'); ?>#footer"> Kontak </a> </li>
+                            <li><a href="#home"> Home </a></li>
+                            <li><a href="#service"> Tentang Kami </a> </li>
+                            <li><a href="#team"> Aksi </a></li>
+                            <li><a href="#portfolio">Galeri </a> </li>
+                            <li><a href="#footer"> Kontak </a> </li>
                         </ul>
                     </nav>
         </div><!-- /.container-fluid -->

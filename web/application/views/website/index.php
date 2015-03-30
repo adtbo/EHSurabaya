@@ -58,13 +58,6 @@
                                     <li> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
                                     <li><a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <i class="fa fa-linkedin"></i></a></li>
                                 </ul>
-                                <figcaption>
-                                    <p class="links">
-                                        <a href="assets/videopage/images/portfolio/p3.jpg" data-rel="prettyPhoto">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                    </p>
-                                </figcaption>
                                 <p></p>
                             </div>
                         </div>
@@ -99,7 +92,7 @@
         </div>
 
         <div id="isotope-filter" class="skew3 text-center">
-            <a data-filter="*"  href="#" class="active ">All</a>
+            <a data-filter="*"  href="#" class="active">All</a>
             <a data-filter=".identity"  href="#" class="">Video</a>
             <a data-filter=".web-design" href="#"  class="">Gambar</a>
         </div>
@@ -114,22 +107,48 @@
                         { 
                          # code...
                     ?>
-                    <li class="">
+                    <li class="col-xs-6 col-sm-3 col-md-3 single-portfolio identity">
                         <figure>
-                            <iframe width="640" height="360" src="<?php echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
+                            <iframe style="border:10px solid gray;" width="480" height="360" src="<?php echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
                         </figure>
                     </li>
 
                     <?php 
                         }
                     ?>
+
+                    <!-- gambar -->
+
+                    <?php
+                    for ($i=0; $i < $gambarnum; $i++) 
+                        { 
+                         # code...
+                    ?>
+
+                    <li class="col-xs-6 col-sm-3 col-md-3 single-portfolio web-design">
+                        <figure>
+                            <?php  echo '<img style="border:10px solid gray;" src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
+                            <figcaption>
+                                <h5><?php echo $gambar[$i]['judul'] ?></h5>
+                                <p class="links">
+                                    <a href="portfolio-single.html"> <i class="fa fa-link"></i></a>
+                                    <a href="images/portfolio/p1.jpg" data-rel="prettyPhoto" >
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </p>
+                                <p class="description">
+                                    Deskripsi gambar.
+                                </p>
+                            </figcaption>
+                        </figure>
+                    </li>
+
+                    <?php 
+                        }
+                    ?>
+
                 </ul>
                                  
             </div> <!-- Container Full End -->
 </section>  <!-- Portfolio Section End -->
- 
-<script>
-    $('.carousel').carousel({
-        interval: 3000
-    })
-</script>
+
