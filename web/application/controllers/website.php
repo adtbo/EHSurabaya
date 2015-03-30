@@ -155,7 +155,7 @@ class Website extends CI_Controller {
 
         $data['eventnum'] = $i;
         $this->load->view('website/v_websitehead');
-        $this->load->view('website/v_websitenav', $data);
+        $this->load->view('website/v_websitenavdetail', $data);
         $this->load->view('website/portfolio_single');
         $this->load->view('website/v_websitefooter');
         $this->load->view('website/v_websitefoot');
