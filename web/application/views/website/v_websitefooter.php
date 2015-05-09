@@ -13,7 +13,7 @@
                             <li><a href="<?php echo site_url('/'); ?>#service"> Tentang Kami </a></li>
                             <li><a href="<?php echo site_url('/'); ?>#team"> Aksi </a></li>
                             <li><a href="<?php echo site_url('/'); ?>#portfolio"> Galeri </a></li>
-                            <li><a href="#contact"> Kontak </a></li>
+                            <li><a href="#footer"> Kontak </a></li>
                         </ul>
                     </div>
                 </div>
