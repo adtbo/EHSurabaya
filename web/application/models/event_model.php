@@ -25,8 +25,8 @@
 
 		public function getAll()
 		{
-            //$query = $this->db->order_by('TglMulai', 'asc');
-            //$query = $this->db->order_by('TglSelesai', 'asc');
+            $query = $this->db->order_by('TglMulai', 'asc');
+            $query = $this->db->order_by('TglSelesai', 'asc');
 			$query = $this->db->get('event');
             
 			return $query->result(); 

@@ -48,7 +48,7 @@
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
                                     <li> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>

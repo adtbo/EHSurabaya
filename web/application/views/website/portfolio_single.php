@@ -26,17 +26,30 @@
                             <h3><strong><?php echo $nama ?></strong></h3>
                             <p><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$id]['data']).'" alt="" class="img-responsive">' ?></p>
                             <p><?php echo $deskripsi ?></p>
-                        <p><a href="#" class="btn btn-main featured">Project Link</a></p>
+                            <?php
+                                for ($i=0; $i < $gambar_event; $i++) 
+                                { 
+                                     # code...
+                            ?>
+                            <div class="img">
+                                <a target="_blank" href="klematis_big.htm">
+                                    <?php  echo'<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="Klematis" width="110" height="90">' ?>
+                                </a>
+                                <div class="desc">Add a description of the image here</div>
+                            </div>
+                            <?php 
+                                }
+                            ?>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="right-sidebar">
-                    <h4>Event Details</h4>
-                    <ul class="circle">
-                        <li><span>date : </span> <?php echo $kegiatan[$id]['mulai'] ?></li>                   
-                    </ul>
-                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="right-sidebar">
+                        <h4>Event Details</h4>
+                        <ul class="circle">
+                            <li><span>date : </span> <?php echo $kegiatan[$id]['mulai'] ?></li>                   
+                        </ul>
+                    </div>
                 <div class="share">
                     <!-- <h4>Share this :</h4> -->
                     <ul class="social-contact list-inline text-left">
@@ -77,7 +90,7 @@
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive">' ?>
                         </div>
                         <div class="caption">
                             <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan[$i]['id'] ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>

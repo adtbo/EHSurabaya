@@ -23,7 +23,7 @@
         
 		function selectById($id){
 		  $this->load->database();
-		  $query = $this->db->query("Select gambar.IDGambar, DataGambar, JudulGambar, WaktuGambar, DeskripsiGambar from listgambar, gambar where gambar.IDGambar = listgambar.IDGambar and listgambar.IDEvent = '".$id."'");
+		  $query = $this->db->query("Select gambar.IDGambar, DataGambar, JudulGambar, WaktuGambar, DeskripsiGambar from listgambar, gambar where gambar.IDGambar = listgambar.IDGambar and listgambar.IDEvent = '".$id."' limit 1");
 		  return $query->result();
 		}
 		

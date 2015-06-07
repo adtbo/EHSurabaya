@@ -233,7 +233,8 @@ section{
     color: #222;
 }
 .navbar-brand img{
-  height: 180%;
+    margin-top: -10%;
+    height: 370%;
     width: auto;
     vertical-align: middle;
     max-width: 100%;
