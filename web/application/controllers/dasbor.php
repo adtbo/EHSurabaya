@@ -344,4 +344,11 @@ class Dasbor extends CI_Controller {
         $this->gambar_model->delete($id);
         redirect('dasbor/kegiatan', 'refresh');
     }
+    
+    function delKegiatan() {
+        $id = $_POST['iddelkegiatan'];
+        $this->load->model('event_model');
+        $this->event_model->delete($id);
+        redirect('dasbor/kegiatan', 'refresh');
+    }
 }

@@ -83,16 +83,9 @@
                                     <td><?php echo $kegiatan[$i]['nama']; ?></td>
                                     <td><?php echo $kegiatan[$i]['mulai']; ?></td>
                                     <td><?php echo $kegiatan[$i]['selesai']; ?></td>
-                                    <td width="20">
-                                        <form action="<?php echo site_url('dasbor/ekegiatan'); ?>" method="post">
-                                            <fieldset>
-                                                <input type="hidden" id="ptr" name="ptr" value="<?php echo $kegiatan[$i]['id']; ?>">
-                                                <div class="form-action">       
-                                                    <label class="control-label">&nbsp;</label>
-                                                    <button type="submit" class="btn btn-success"><i class="icon-pencil"></i> Sunting</button>
-                                                </div>
-                                            </fieldset>
-                                        </form>
+                                    <td width="40">
+                                        <button class="btn btn-success" style="margin:1px;" title="Sunting Kegiatan Ini" onclick="detailKegiatan(<?php echo $kegiatan[$i]['id']; ?>); return false;"><i class="icon-pencil"></i></button>
+                                        <button class="btn btn-danger" style="margin:1px;" title="Hapus Kegiatan Ini" onclick="hapusKegiatan(<?php echo $kegiatan[$i]['id']; ?>); return false;"><i class="icon-trash"></i></button>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -105,8 +98,26 @@
         </div>
     </div>
 </div>
-
+<form id="detailkegiatan_f" action="<?php echo site_url('dasbor/ekegiatan'); ?>" method="post">
+    <input type="hidden" id="ptr" name="ptr">
+</form>
+<form id="hapuskegiatan_f" action="<?php echo site_url('dasbor/delKegiatan'); ?>" method="post">
+    <input type="hidden" id="iddelkegiatan" name="iddelkegiatan">
+</form>
 
 <script>
     CKEDITOR.replace('deskripsi');
+    function detailKegiatan(id){
+        form = document.getElementById('detailkegiatan_f');
+        elem = form.elements['ptr'];
+        elem.value = id;
+        form.submit();
+    }
+    
+    function hapusKegiatan(id){
+        form = document.getElementById('hapuskegiatan_f');
+        elem = form.elements['iddelkegiatan'];
+        elem.value = id;
+        form.submit();
+    }
 </script>
