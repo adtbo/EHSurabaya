@@ -1,0 +1,13 @@
+.thumbnail .control {
+    margin: -15px;
+    position: absolute;
+    z-index: 10;
+    background: #2E2E2E;
+    opacity: 0.9;
+    padding: 4px 3px 6px 7px;
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    margin-bottom: 5px;
+    color: #fff;
+}
