@@ -15,6 +15,7 @@
     <link href="<?php echo base_url('assets'); ?>/css/style.css" rel="stylesheet">
     <link href="<?php echo base_url('assets'); ?>/css/datepicker.css" rel="stylesheet">
     <link href="<?php echo base_url('assets'); ?>/css/pages/dashboard.css" rel="stylesheet">
+    <link href="<?php echo base_url('assets'); ?>/css/custom.css" rel="stylesheet">
     
     <script src="<?php echo base_url('assets'); ?>/js/jquery/jquery-1.8.2.min.js" type="text/javascript" ></script>
     <script src="<?php echo base_url('assets/ckeditor'); ?>/ckeditor.js" type="text/javascript"></script>

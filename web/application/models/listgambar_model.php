@@ -26,6 +26,12 @@
 		  $query = $this->db->query("Select gambar.IDGambar, DataGambar, JudulGambar, WaktuGambar, DeskripsiGambar from listgambar, gambar where gambar.IDGambar = listgambar.IDGambar and listgambar.IDEvent = '".$id."' limit 1");
 		  return $query->result();
 		}
+        
+        function selectAllById($id){
+		  $this->load->database();
+		  $query = $this->db->query("Select gambar.IDGambar, DataGambar, JudulGambar, WaktuGambar, DeskripsiGambar from listgambar, gambar where gambar.IDGambar = listgambar.IDGambar and listgambar.IDEvent = '".$id."'");
+		  return $query->result();
+		}
 		
 		function selectByName($id){
 		  $this->load->database();
@@ -33,6 +39,11 @@
 		  return $query;
 		}
         
+        public function deleteByIdGambar($id){
+            $this->load->database();
+            $query = $this->db->query("DELETE FROM listgambar WHERE listgambar.IDGambar = '".$id."'");
+            return $query;
+        }
 
 	}
 ?>

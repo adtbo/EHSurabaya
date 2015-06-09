@@ -84,6 +84,7 @@
                                                         ?>
                                                         <div class="span2">
                                                             <div class="thumbnail">
+                                                                <a href="#" title="hapus gambar" onclick="doDelete(<?php echo $gambar[$j]['id']?>); return false;"><div class="control">x</div></a>
                                                                 <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$j]['data']); ?>">
                                                             </div>
                                                         </div>
@@ -114,8 +115,16 @@
         </div>
     </div>
 </div>
-
+<form id="deleteForm" action="<?php echo site_url('dasbor/delgambar'); ?>" method="POST">
+    <input type="hidden" name="iddelgambar" id="iddelgambar">
+</form>
 
 <script>
     CKEDITOR.replace('deskripsi');
+    function doDelete(id){
+        form = document.getElementById('deleteForm');
+        elem = form.elements['iddelgambar'];
+        elem.value = id;
+        form.submit();
+    }
 </script>

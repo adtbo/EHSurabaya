@@ -154,7 +154,7 @@ class Dasbor extends CI_Controller {
         $data['selesai'] = $tmp[2]."/".$tmp[1]."/".$tmp[0];
         $data['des'] = $query->DeskripsiEvent;
         $this->load->model('listgambar_model');
-        $query = $this->listgambar_model->selectById($data['id']);
+        $query = $this->listgambar_model->selectAllById($data['id']);
         $i=0;
         foreach ($query as $row)
         {
@@ -220,28 +220,30 @@ class Dasbor extends CI_Controller {
         $this->load->model('gambar_model');
         $this->load->model('listgambar_model');
 		$this->upload->initialize($config);
-        $files = $_FILES;
-        $ct = count($_FILES['gambar']['name']);
-        for ($i=0; $i<$ct; $i++)
-        {
-            $_FILES['gambar']['name']= $files['gambar']['name'][$i];
-            $_FILES['gambar']['type']= $files['gambar']['type'][$i];
-            $_FILES['gambar']['tmp_name']= $files['gambar']['tmp_name'][$i];
-            $_FILES['gambar']['error']= $files['gambar']['error'][$i];
-            $_FILES['gambar']['size']= $files['gambar']['size'][$i]; 
-            if (!$this->upload->do_upload('gambar'))
+            $files = $_FILES;
+            $ct = count($_FILES['gambar']['name']);
+            for ($i=0; $i<$ct; $i++)
             {
-                echo $this->upload->display_errors();
-            }
-            $imgstring = file_get_contents($_FILES['gambar']['tmp_name']);
-            $idgambar = $this->gambar_model->getID();
-            $this->gambar_model->setDataGambar($idgambar, $imgstring, $_FILES['gambar']['name'], date('Y-m-d'), 'deskripsi');
-            $this->listgambar_model->insert($id, $idgambar);
-            unlink('./uploads/'.$_FILES['gambar']['name']);
-        }
+                if ($files['gambar']['error'][$i] == 0){
+                    $_FILES['gambar']['name']= $files['gambar']['name'][$i];
+                    $_FILES['gambar']['type']= $files['gambar']['type'][$i];
+                    $_FILES['gambar']['tmp_name']= $files['gambar']['tmp_name'][$i];
+                    $_FILES['gambar']['error']= $files['gambar']['error'][$i];
+                    $_FILES['gambar']['size']= $files['gambar']['size'][$i]; 
+                    if (!$this->upload->do_upload('gambar'))
+                    {
+                        echo $this->upload->display_errors();
+                    }
+                    $imgstring = file_get_contents($_FILES['gambar']['tmp_name']);
+                    $idgambar = $this->gambar_model->getID();
+                    $this->gambar_model->setDataGambar($idgambar, $imgstring, $_FILES['gambar']['name'], date('Y-m-d'), 'deskripsi');
+                    $this->listgambar_model->insert($id, $idgambar);
+                    unlink('./uploads/'.$_FILES['gambar']['name']);
+                }
+            }   
         $this->load->model('event_model');
         $this->event_model->update($id, $info);
-        header("location: ".site_url('dasbor/kegiatan'));
+        redirect('dasbor/kegiatan', 'refresh');
     }
     
     function inskeg()
@@ -333,4 +335,13 @@ class Dasbor extends CI_Controller {
 			$this->load->view('v_upload_success', $data);
 		}
 	}
+    
+    function delgambar() {
+        $id = $_POST['iddelgambar'];
+        $this->load->model('listgambar_model');
+        $this->load->model('gambar_model');
+        $this->listgambar_model->deleteByIdGambar($id);
+        $this->gambar_model->delete($id);
+        redirect('dasbor/kegiatan', 'refresh');
+    }
 }
