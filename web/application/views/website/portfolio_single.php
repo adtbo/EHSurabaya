@@ -24,22 +24,25 @@
                     <div class="sidebar">
                         <div class="portfolio-desc">
                             <h3><strong><?php echo $nama ?></strong></h3>
-                            <p><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[$id]['data']).'" alt="" class="img-responsive">' ?></p>
+                            <p><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?></p>
                             <p><?php echo $deskripsi ?></p>
-                            <?php
-                                for ($i=0; $i < $gambar_event; $i++) 
-                                { 
-                                     # code...
-                            ?>
-                            <div class="img">
-                                <a target="_blank" href="klematis_big.htm">
-                                    <?php  echo'<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="Klematis" width="110" height="90">' ?>
-                                </a>
-                                <div class="desc">Add a description of the image here</div>
+                            <h4><strong>Image Galeri</strong></h4>
+                            <div class="row">
+                                <?php
+                                    for ($i=0; $i < $gambarnum; $i++) 
+                                    { 
+                                         # code...
+                                ?>
+                                <div class="img col-xs-3 col-md-4">                            
+                                    <a target="" href="#" class="thumbnail">
+                                        <?php  echo'<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" width="250" height="350">' ?>
+                                    </a>
+                                    <div class="desc"><?php echo $gambar[$i]['deskripsi'] ?></div>
+                                </div>
+                                <?php 
+                                    }
+                                ?>
                             </div>
-                            <?php 
-                                }
-                            ?>
                         </div>
                     </div>
                 </div>
@@ -47,7 +50,7 @@
                     <div class="right-sidebar">
                         <h4>Event Details</h4>
                         <ul class="circle">
-                            <li><span>date : </span> <?php echo $kegiatan[$id]['mulai'] ?></li>                   
+                            <li><span>date : </span> <?php echo $kegiatan_event[$id]['mulai'] ?></li>                   
                         </ul>
                     </div>
                 <div class="share">
@@ -90,10 +93,10 @@
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive">' ?>
+                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive img-rounded">' ?>
                         </div>
                         <div class="caption">
-                            <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan[$i]['id'] ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
+                            <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan_event[$i]['id'] ?>"><?php echo $kegiatan_event[$i]['nama']; ?></a></h3>
                         </div>                        
                     </div>
                 </div>  <!-- item wrapper end -->
