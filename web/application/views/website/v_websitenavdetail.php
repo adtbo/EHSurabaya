@@ -9,7 +9,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#">
-                        <img src="assets/videopage/images/logo.png" alt="hello" class="img-responsive">
+                        <img src="assets/videopage/images/logo.png" alt="" class="img-responsive">
                     </a>
                  </div><!--Navbar header End-->
                     <nav class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" role="navigation">
