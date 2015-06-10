@@ -55,8 +55,8 @@
                                 </div>
                             </div>
                             <div class="form-actions">
+                                <a href="#" onclick="konfirmReset(); return false;" class="btn btn-danger" title="Memuat ulang formulir tambah kegiatan"><i class="icon-eraser"></i> Reset</a>
                                 <button onclick="finishing(); return false;" class="btn btn-primary"><i class="icon-ok"></i> Simpan</button>
-                                <a href="#" onclick="resetMsg(); return false;" class="btn btn-danger"><i class="icon-eraser"></i> Reset</a>
                             </div>
                         </fieldset>
                     </form>
@@ -89,8 +89,8 @@
                                     <td><?php echo $kegiatan[$i]['mulai']; ?></td>
                                     <td><?php echo $kegiatan[$i]['selesai']; ?></td>
                                     <td width="40">
-                                        <button class="btn btn-success" style="margin:1px;" title="Sunting Kegiatan Ini" onclick="detailKegiatan(<?php echo $kegiatan[$i]['id']; ?>); return false;"><i class="icon-pencil"></i></button>
-                                        <button class="btn btn-danger" style="margin:1px;" title="Hapus Kegiatan Ini" onclick="hapusKegiatan(<?php echo $kegiatan[$i]['id']; ?>); return false;"><i class="icon-trash"></i></button>
+                                        <button class="btn btn-success" style="margin:1px;" title="Sunting Kegiatan Ini" onclick="konfirmSunting(<?php echo $kegiatan[$i]['id']; ?>, '<?php echo $kegiatan[$i]['nama'] ?>'); return false;"><i class="icon-pencil"></i></button>
+                                        <button class="btn btn-danger" style="margin:1px;" title="Hapus Kegiatan Ini" onclick="konfirmHapus(<?php echo $kegiatan[$i]['id']; ?>, '<?php echo $kegiatan[$i]['nama'] ?>'); return false;"><i class="icon-trash"></i></button>
                                     </td>
                                 </tr>
                                 <?php } ?>
@@ -109,6 +109,21 @@
 <form id="hapuskegiatan_f" action="<?php echo site_url('dasbor/delKegiatan'); ?>" method="post">
     <input type="hidden" id="iddelkegiatan" name="iddelkegiatan">
 </form>
+
+<!-- Modal -->
+<div id="konfirmModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="konfirmModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="konfirmModalLabel"></h3>
+    </div>
+    <div class="modal-body" id="konfirmModalBody">
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" id="konfirmModalBtnRed"></button>
+        <button class="btn btn-primary" id="konfirmModalBtnBlue"></button>
+    </div>
+</div>
+<!-- /Modal -->
 
 <script>
     var elem = ["NamaKegiatan", "TanggalMulai", "TanggalSelesai", "deskripsi"];
@@ -200,8 +215,40 @@
     function finishing(){
         var stat = cekIsi(5);
         if (stat == 0){
-            document.getElementById('tambahkegiatan_f').submit();
+            document.getElementById('konfirmModalLabel').innerHTML = 'Konfirmasi Penambahan Kegiatan Baru';
+            document.getElementById('konfirmModalBody').innerHTML = '<p>Pastikan data yang anda masukkan sudah benar! Jika ingin membatalkan aksi ini silakan tekan tombol Batal.</p><p>Apakah anda yakin ingin menambah kegiatan tersebut ke dalam daftar kegiatan?</p>';
+            document.getElementById('konfirmModalBtnRed').innerHTML = 'Batal';
+            document.getElementById('konfirmModalBtnBlue').innerHTML = 'Ya. Simpan Data Baru';
+            document.getElementById('konfirmModalBtnBlue').onclick = function() {document.getElementById('tambahkegiatan_f').submit();};
+            $('#konfirmModal').modal({show: 'true', backdrop: 'static'});
         }
+    }
+    
+    function konfirmHapus(id, judul){
+        document.getElementById('konfirmModalLabel').innerHTML = 'Konfirmasi Penghapusan Kegiatan';
+        document.getElementById('konfirmModalBody').innerHTML = '<p>Apakah anda yakin ingin menghapus kegiatan "' + judul + '"?</p>';
+        document.getElementById('konfirmModalBtnRed').innerHTML = 'Batal';
+        document.getElementById('konfirmModalBtnBlue').innerHTML = 'Ya. Hapus Kegiatan';
+        document.getElementById('konfirmModalBtnBlue').onclick = function() {hapusKegiatan(id);};
+        $('#konfirmModal').modal({show: 'true', backdrop: 'static'});
+    }
+    
+    function konfirmReset(){
+        document.getElementById('konfirmModalLabel').innerHTML = 'Konfirmasi Memuat Ulang Halaman';
+        document.getElementById('konfirmModalBody').innerHTML = '<p>Aksi Reset akan memuat ulang halaman ini dan mengosongkan kembali formulir untuk menambah kegiatan.</p><p>Apakah anda yakin ingin melanjutkan aksi Reset?</p>';
+        document.getElementById('konfirmModalBtnRed').innerHTML = 'Batal';
+        document.getElementById('konfirmModalBtnBlue').innerHTML = 'Ya. Reset Halaman Ini';
+        document.getElementById('konfirmModalBtnBlue').onclick = function() {resetMsg(); $('#konfirmModal').modal('hide');};
+        $('#konfirmModal').modal({show: 'true', backdrop: 'static'});
+    }
+    
+    function konfirmSunting(id, judul){
+        document.getElementById('konfirmModalLabel').innerHTML = 'Konfirmasi Menyunting Kegiatan';
+        document.getElementById('konfirmModalBody').innerHTML = '<p>Apakah anda yakin ingin menyunting detail kegiatan "' + judul + '"?</p>';
+        document.getElementById('konfirmModalBtnRed').innerHTML = 'Batal';
+        document.getElementById('konfirmModalBtnBlue').innerHTML = 'Ya. Sunting Kegiatan Ini';
+        document.getElementById('konfirmModalBtnBlue').onclick = function() {detailKegiatan(id);};
+        $('#konfirmModal').modal({show: 'true', backdrop: 'static'});  
     }
     
 </script>
