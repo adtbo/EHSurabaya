@@ -260,7 +260,7 @@ class Dasbor extends CI_Controller {
         $info['TglSelesai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
         $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
         $this->event_model->masuk($info);
-        header("location: ".site_url('dasbor/kegiatan'));
+        redirect('dasbor/kegiatan', 'refresh');
     }
 
     function insgam()
