@@ -59,10 +59,10 @@
 			return $this->db->get('gambar')->row();
 		}
 
-		public function update($id, $data)
+		public function update($id, $detail)
 		{
 			$this->db->where('IDGambar',$id);
-			return $this->db->update('gambar',$data);
+			return $this->db->update('gambar',$detail);
 		}
 
 		public function delete($id)

@@ -142,6 +142,12 @@ class Dasbor extends CI_Controller {
         $session_data = $this->session->userdata('logged_in');
         $data['username'] = $session_data['username'];
         $id = $this->input->post('ptr');
+        if ($id == "") {
+            $id = $this->session->userdata('ptr');
+            if ($id == ""){
+                redirect(site_url('dasbor/kegiatan'), 'refresh');    
+            }
+        }
         $this->load->model('event_model');
         $query = $this->event_model->select($id);
         $data['id'] = $query->IDEvent;
@@ -236,16 +242,33 @@ class Dasbor extends CI_Controller {
                     }
                     $imgstring = file_get_contents($_FILES['gambar']['tmp_name']);
                     $idgambar = $this->gambar_model->getID();
-                    $this->gambar_model->setDataGambar($idgambar, $imgstring, $_FILES['gambar']['name'], date('Y-m-d'), 'deskripsi');
+                    $this->gambar_model->setDataGambar($idgambar, $imgstring, $_FILES['gambar']['name'], date('Y-m-d'), '-');
                     $this->listgambar_model->insert($id, $idgambar);
                     unlink('./uploads/'.$_FILES['gambar']['name']);
                 }
             }   
         $this->load->model('event_model');
         $this->event_model->update($id, $info);
-        redirect('dasbor/kegiatan', 'refresh');
+        $this->session->set_userdata('ptr',$id);
+        redirect('dasbor/ekegiatan', 'refresh');
     }
     
+    function updateGambar()
+    {
+        echo $look = $this->input->post('look'); //id of return event view
+        echo $idGambar = $this->input->post('idGambar');
+        $judulGambar = $this->input->post('judulGambar');
+        $deskripsiGambar = $this->input->post('deskripsiGambar');
+        $detail =  array(
+            'JudulGambar' => $judulGambar,
+            'DeskripsiGambar' => $deskripsiGambar
+            );
+        $this->load->model('gambar_model');
+        $this->gambar_model->update($idGambar, $detail);
+        $this->session->set_userdata('ptr',$look);
+        redirect(site_url('dasbor/ekegiatan'));
+    }
+
     function inskeg()
     {
 		$this->check();
