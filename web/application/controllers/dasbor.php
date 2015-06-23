@@ -50,7 +50,13 @@ class Dasbor extends CI_Controller {
 		$this->load->view('dasbor/v_dasborhome');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
+        $this->resetMsg();
 	}
+
+    function resetMsg(){
+        $msg = array('state' => FALSE);
+        $this->session->set_userdata('msg', $msg);
+    }
 	
 	public function check()
 	{
@@ -92,6 +98,7 @@ class Dasbor extends CI_Controller {
 		$this->load->view('dasbor/v_dasbordasar');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
+        $this->resetMsg();
 	}
 
 	public function galeri()
@@ -105,6 +112,7 @@ class Dasbor extends CI_Controller {
 		$this->load->view('dasbor/v_dasborgaleri');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
+        $this->resetMsg();
 	}
 
 	public function kegiatan()
@@ -134,6 +142,7 @@ class Dasbor extends CI_Controller {
         $this->load->view('dasbor/v_dasborkegiatan');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
+        $this->resetMsg();
 	}
     
     public function ekegiatan()
@@ -178,20 +187,33 @@ class Dasbor extends CI_Controller {
         $this->load->view('dasbor/v_dasborekegiatan');
 		$this->load->view('dasbor/v_dasborpadding');
 		$this->load->view('dasbor/v_dasborfoot');
+        $this->resetMsg();
     }
     
     function updatedes()
     {
 		$this->check();
+        if ($this->input->post('yap') != 1) redirect(site_url('dasbor'),  'refresh');
         $des = $this->input->post('tentang');
         $this->load->model('organisasi_model');
-        $this->organisasi_model->updateDeskripsi(1, $des);
-        header("location: ".site_url('dasbor/dasar'));
+        $status = $this->organisasi_model->updateDeskripsi(1, $des);
+        if ($status == 1){
+            $msg = array(
+                    'state' => TRUE,
+                    'element' => 'tentang',
+                    'status' => 'success',
+                    'title' =>  'Berhasil!',
+                    'content' => 'Informasi tentang komunitas telah diupdate.'
+                );
+            $this->session->set_userdata('msg', $msg);  
+        }
+        redirect(site_url('dasbor/dasar'), 'refresh'); 
     }
     
     function updatekon()
     {
 		$this->check();
+        if ($this->input->post('yap') != 1) redirect(site_url('dasbor'),  'refresh');
         $kontak['email'] = $this->input->post('email');
         $kontak['alamat'] = $this->input->post('alamat');
         $kontak['telp'] = $this->input->post('telepon');
@@ -202,8 +224,18 @@ class Dasbor extends CI_Controller {
         $kontak['linkedin'] = $this->input->post('linkedin');
         $kontak['instagram'] = $this->input->post('instagram');
         $this->load->model('organisasi_model');
-        $this->organisasi_model->updateKontak(1, $kontak);
-        header("location: ".site_url('dasbor/dasar'));
+        $status = $this->organisasi_model->updateKontak(1, $kontak);
+        if ($status == 1){
+            $msg = array(
+                    'state' => TRUE,
+                    'element' => 'kontak',
+                    'status' => 'success',
+                    'title' =>  'Berhasil!',
+                    'content' => 'Kontak telah diupdate.'
+                );
+            $this->session->set_userdata('msg', $msg);  
+        }
+        redirect(site_url('dasbor/dasar'), 'refresh'); 
     }
     
     function updatekeg()
@@ -272,6 +304,7 @@ class Dasbor extends CI_Controller {
     function inskeg()
     {
 		$this->check();
+        if ($this->input->post('yap') != 1) redirect(site_url('dasbor'),  'refresh');
 		$this->load->model('event_model');
 		$info['IDEvent'] = $this->event_model->getID();
         $info['NamaEvent'] = $this->input->post('NamaKegiatan');
@@ -282,7 +315,17 @@ class Dasbor extends CI_Controller {
         $tmp = explode("/", $info['TglSelesai']);
         $info['TglSelesai'] = $tmp[2]."-".$tmp[1]."-".$tmp[0];
         $info['DeskripsiEvent'] = $this->input->post('deskripsi'); 
-        $this->event_model->masuk($info);
+        $status = $this->event_model->masuk($info);
+        if ($status == 1){
+            $msg = array(
+                    'state' => TRUE,
+                    'element' => 'kegiatan',
+                    'status' => 'success',
+                    'title' =>  'Berhasil!',
+                    'content' => 'Kegiatan baru berhasil ditambahkan.'
+                );
+            $this->session->set_userdata('msg', $msg);  
+        }
         redirect('dasbor/kegiatan', 'refresh');
     }
 
@@ -371,7 +414,17 @@ class Dasbor extends CI_Controller {
     function delKegiatan() {
         $id = $_POST['iddelkegiatan'];
         $this->load->model('event_model');
-        $this->event_model->delete($id);
+        $status = $this->event_model->delete($id);
+        if ($status == 1){
+            $msg = array(
+                    'state' => TRUE,
+                    'element' => 'hapuskegiatan',
+                    'status' => 'success',
+                    'title' =>  'Berhasil!',
+                    'content' => 'Kegiatan berhasil dihapus.'
+                );
+            $this->session->set_userdata('msg', $msg);  
+        }
         redirect('dasbor/kegiatan', 'refresh');
     }
 }

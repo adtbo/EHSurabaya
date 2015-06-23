@@ -1,5 +1,11 @@
 <div class="container">
     <div class="row">
+        <div class="span12">
+                <div class="alert alert-info">
+                    <h3>Selamat Datang :)</h3> 
+                    <h4>Anda kini berada pada area pengaturan website Earth Hour Surabaya.</h4>
+                </div>
+            </div>
         <div class="span6">
             <div class="widget widget-nopad">
                 <div class="widget-header"> <i class="icon-list-alt"></i>
@@ -50,7 +56,7 @@
         <div class="span6">
             <div class="widget widget-nopad">
                 <div class="widget-header"> <i class="icon-bookmark"></i>
-                  <h3> Kegiatan Bulan Ini </h3>
+                  <h3> Kegiatan Bulan Ini (<?php echo date('M Y'); ?>)</h3>
                 </div>
                 <!-- /widget-header -->
                 <div class="widget-content">
@@ -64,7 +70,7 @@
                         ?>
                             <li>
                               <div class="news-item-date"> <span class="news-item-day"><?php echo $evdate[0]; ?></span> <span class="news-item-month"><?php echo $bulan[$evdate[1]]; ?></span> </div>
-                              <div class="news-item-detail"> <a href="http://www.egrappler.com/thursday-roundup-40/" class="news-item-title" target="_blank"><?php echo $kegiatan[$i]['nama']; ?></a>
+                              <div class="news-item-detail"> <a target="_blank" href="<?php echo site_url('website/event/'.$kegiatan[$i]['id'].''); ?>" class="news-item-title" target="_blank"><?php echo $kegiatan[$i]['nama']; ?></a>
                                 <p class="news-item-preview"> <?php echo substr($kegiatan[$i]['deskripsi'],0,200); ?>... </p>
                               </div>
 

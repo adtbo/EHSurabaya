@@ -1,10 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="span12">
+            <div class="alert alert-info">
+                <h3>Halaman Sunting Kegiatan </h3> 
+                <h4>Pada halaman ini anda bisa menyunting detail kegiatan.</h4>
+            </div>
+        </div>
+        <div class="span12">
             <div class="widget">
                 <div class="widget-header">
                     <i class="icon-pencil"></i>
-                    <h3> SUNTING KEGIATAN: Nama kegiatan </h3>
+                    <h3> SUNTING KEGIATAN: <?php echo $nama; ?> </h3>
                 </div>
                 <div class="widget-content">
                     <form id="suntingKegiatan_f" role="form" class="form-default" action="<?php echo site_url('dasbor/updatekeg'); ?>" method="post" enctype="multipart/form-data">
@@ -75,7 +81,7 @@
                                                                 <input type="file" id="gambar" name="gambar[]" multiple>                                                                          
                                                             </div>
                                                     <?php 
-                                                        if ($gambarnum==0) echo "No Pictures";
+                                                        if ($gambarnum==0) echo "Belum ada gambar.";
                                                         for ($i = 0; $i < $gambarnum; $i+=5) {
                                                     ?>
                                                     <div class="row" style="margin:2% 0%;">
@@ -87,12 +93,12 @@
                                                             <div class="thumbnail thumbnail-event">
                                                                 <div class="control">
                                                                     <a href="#" title="hapus gambar" onclick="konfirmHapusGam(<?php echo $gambar[$j]['id']?>); return false;"><img src="<?php echo base_url('assets/images/icons/close_circle.png'); ?>"></a>
-                                                                    <a href="#" title="hapus gambar" onclick="editGambar('<?php echo $gambar[$j]['id']; ?>', '<?php echo $gambar[$j]['judul']; ?>', '<?php echo $gambar[$j]['deskripsi']; ?>'); return false;"><img src="<?php echo base_url('assets/images/icons/edit_circle.png'); ?>"></a>
+                                                                    <a href="#" title="edit detail gambar" onclick="editGambar('<?php echo $gambar[$j]['id']; ?>', '<?php echo $gambar[$j]['judul']; ?>', '<?php echo $gambar[$j]['deskripsi']; ?>'); return false;"><img src="<?php echo base_url('assets/images/icons/edit_circle.png'); ?>"></a>
                                                                 </div>
                                                                 <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$j]['data']); ?>">
                                                                 
-                                                                    <p><strong>Judul: </strong><?php echo $judul[0]; ?></p>
-                                                                    <p><strong>Deskripsi: </strong><?php echo substr($gambar[$j]['deskripsi'],0,25).'...'; ?></p>
+                                                                    <p><strong>Judul: </strong><br><?php echo $judul[0]; ?></p>
+                                                                    <p><strong>Deskripsi: </strong><br><?php echo substr($gambar[$j]['deskripsi'],0,25).'...'; ?></p>
                                                                 
                                                             </div>
                                                         </div>
