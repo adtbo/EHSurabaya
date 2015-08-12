@@ -38,9 +38,10 @@ html{
 }
 body{
     line-height:1.5em;
-     border: 0;
+    border: 0;
     margin: 0 auto;
     padding: 0;
+    background-color: #E0E0D1;
 }
 
 ol,ul,dl{
@@ -190,6 +191,7 @@ a{
 #service,#pricing_table,#about,#team,#blog,#contact,#testimonial,#portfolio,#video-fact,#about-details {
      padding-bottom: 100px;
      padding-top:0px;
+     /*background: #FFFFFF;*/
 }
 section{
     /*padding:50px 0px;*/
@@ -216,7 +218,7 @@ section{
     padding: 10px 0px;
 }
 #section_header{
-    background:#fff;
+    background: #fff;
     padding: 10px 0px;
     -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
@@ -387,7 +389,7 @@ ul.navbar-nav > .active > a{
     padding:10px 10px 10px 20px;
 }
 .line{
-   width: 100px;
+    width: 100px;
     height: 5px;
     color: #222;
     margin: 0px auto;
@@ -580,7 +582,7 @@ ul.navbar-nav > .active > a{
 /* Portfolio Area
 =========================================== */
 #portfolio{
-    background: #FBFAF8;
+    background: #FFFFFF;
 }
 #isotope-filter{
     padding:35px 0px;

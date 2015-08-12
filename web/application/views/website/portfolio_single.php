@@ -23,8 +23,8 @@
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                     <div class="sidebar">
                         <div class="portfolio-desc">
-                            <h3><strong><?php echo $nama ?></strong></h3>
-                            <p><?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?></p>
+                            <h3><strong><?php if(isset($nama)) echo $nama ?></strong></h3>
+                            <p><?php  if(isset($gambar[0]['data'])) echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar[0]['data']).'" alt="" class="img-responsive">' ?></p>
                             <p><?php echo $deskripsi ?></p>
                             <h4><strong>Image Galeri</strong></h4>
                             <div class="row">
@@ -35,9 +35,9 @@
                                 ?>
                                 <div class="img col-xs-3 col-md-4">                            
                                     <a target="" href="#" class="thumbnail">
-                                        <?php  echo'<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" width="250" height="350">' ?>
+                                        <?php  if(isset($gambar[$i]['data'])) echo'<img src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" width="250" height="350">' ?>
                                     </a>
-                                    <div class="desc"><?php echo $gambar[$i]['deskripsi'] ?></div>
+                                    <div class="desc"><?php if(isset($gambar[$i]['deskripsi'])) echo $gambar[$i]['deskripsi'] ?></div>
                                 </div>
                                 <?php 
                                     }
@@ -50,18 +50,18 @@
                     <div class="right-sidebar">
                         <h4>Event Details</h4>
                         <ul class="circle">
-                            <li><span>date : </span> <?php echo $kegiatan_event[$id]['mulai'] ?></li>                   
+                            <li><span>date : </span> <?php if(isset($kegiatan_event[$id]['mulai'])) echo $kegiatan_event[$id]['mulai'] ?></li>                   
                         </ul>
                     </div>
                 <div class="share">
                     <!-- <h4>Share this :</h4> -->
                     <ul class="social-contact list-inline text-left">
-                        <li> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
-                        <li> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
-                        <li> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
-                        <li> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <i class="fa fa-linkedin"></i></a></li>
+                        <li> <a href="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>" target="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+                        <li> <a href="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>" target="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>" target="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
+                        <li> <a href="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>" target="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
+                        <li> <a href="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>" target="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>" target="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>"> <i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -93,10 +93,10 @@
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive img-rounded">' ?>
+                            <?php if(isset($gambar_event[$i]['data'])) echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive img-rounded">' ?>
                         </div>
                         <div class="caption">
-                            <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan_event[$i]['id'] ?>"><?php echo $kegiatan_event[$i]['nama']; ?></a></h3>
+                            <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php if(isset($kegiatan_event[$i]['id'])) echo  $kegiatan_event[$i]['id'] ?>"><?php if(isset($kegiatan_event[$i]['nama'])) echo $kegiatan_event[$i]['nama']; ?></a></h3>
                         </div>                        
                     </div>
                 </div>  <!-- item wrapper end -->

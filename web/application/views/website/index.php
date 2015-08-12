@@ -1,7 +1,7 @@
 <!-- Slider start -->
     <section id="home" class="hero landing hero-section">
         <div class="video-background-container">
-            <video preload="auto" autoplay loop muted class="video-background">
+            <video preload="auto" loop muted class="video-background">
                 <source type="video/webm" src="assets/videopage/videos/Earth_Hour_Surabaya_2015_Official_Video.webm" />
             </video>
         </div> 
@@ -15,7 +15,7 @@
                     <div class="col-md-12">
                         <div class="feature_header text-center">
                             <h3 class="feature_title"> <b>Tentang Kami</b></h3>
-                            <h4 class="feature_sub"><?php echo $deskripsi_organisasi; ?></h4>
+                            <h4 class="feature_sub"><?php if(isset($deskripsi_organisasi)) echo $deskripsi_organisasi; ?></h4>
                             <div class="divider"></div>
                         </div>
                     </div>  <!-- Col-md-12 End -->
@@ -48,20 +48,20 @@
                 <div class="item text-center">
                     <div class="single-member">
                         <div class="overlay-hover">
-                            <?php  echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive img-rounded">' ?>
+                            <?php  if(isset($gambar_event[$i]['data'])) echo '<img src="data:image/jpeg; base64,'.base64_encode($gambar_event[$i]['data']).'" alt="" class="img-responsive img-rounded">' ?>
                             <div class="overlay-effect">
                                 <ul class="social list-inline">
-                                    <li> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
-                                    <li> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
-                                    <li> <a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
-                                    <li> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
-                                    <li> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
-                                    <li><a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <i class="fa fa-linkedin"></i></a></li>
+                                    <li> <a href="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>" target="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+                                    <li> <a href="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>" target="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+                                    <li> <a href="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>" target="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
+                                    <li> <a href="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>" target="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
+                                    <li> <a href="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>" target="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>" target="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>"> <i class="fa fa-linkedin"></i></a></li>
                                 </ul>
                                 <p></p>
                             </div>
                         </div>
-                        <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php echo  $kegiatan[$i]['id'] ?>"><?php echo $kegiatan[$i]['nama']; ?></a></h3>
+                        <h3 style="color:blue"><a href="<?php echo site_url('website'); ?>/event/<?php if(isset($kegiatan[$i]['id'])) echo  $kegiatan[$i]['id'] ?>"><?php if(isset($kegiatan[$i]['nama'])) echo $kegiatan[$i]['nama']; ?></a></h3>
                     </div>
                 </div>  <!-- item wrapper end -->
 
@@ -109,7 +109,7 @@
                     ?>
                     <li class="col-xs-6 col-sm-3 col-md-3 single-portfolio identity">
                         <figure>
-                            <iframe style="border:10px solid gray;" width="480" height="360" src="<?php echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
+                            <iframe style="border:10px solid gray;" width="480" height="360" src="<?php if(isset($video[$i]['link'])) echo $video[$i]['link'] ?>" frameborder="0" allowfullscreen></iframe>
                         </figure>
                     </li>
 
@@ -127,7 +127,7 @@
 
                     <li class="col-xs-6 col-sm-3 col-md-3 single-portfolio web-design">
                         <figure>
-                            <?php  echo '<img style="border:10px solid gray;" src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
+                            <?php  if(isset($gambar[$i]['data']))echo '<img style="border:10px solid gray;" src="data:image/jpeg; base64,'.base64_encode($gambar[$i]['data']).'" alt="" class="img-responsive">' ?>
                             <figcaption>
                                 <h5><?php echo $gambar[$i]['judul'] ?></h5>
                                 <p class="links">

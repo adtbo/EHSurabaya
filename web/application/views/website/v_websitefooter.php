@@ -36,21 +36,21 @@
                     <div class="footer_menu_contact">
                         <ul>
                             <li> <i class="fa fa-home"></i>
-                                <span> <a href="<?php echo $kontak['alamat'] ?>"> <?php echo $kontak['alamat']?></a></span></li>
+                                <span> <a href="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>"> <?php if(isset($kontak['alamat'])) echo $kontak['alamat']?></a></span></li>
                             <li><i class="fa fa-globe"></i>
-                                <span> <a href="<?php echo $kontak['telp'] ?>"> <?php echo $kontak['telp']?></a></span></li>
+                                <span> <a href="<?php if(isset($kontak['telp'])) echo $kontak['telp'] ?>"> <?php if(isset($kontak['telp'])) echo $kontak['telp']?></a></span></li>
                             <li><i class="fa fa-phone"></i>
-                                <span> <a href="<?php echo $kontak['email'] ?>"> <?php echo $kontak['email']?></a></span></li>                            
+                                <span> <a href="<?php if(isset($kontak['email'])) echo $kontak['email'] ?>"> <?php if(isset($kontak['email'])) echo $kontak['email']?></a></span></li>                            
                             <li><i class="fa fa-facebook"></i>
-                                <span> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"> <?php echo $kontak['facebook']?></a></span></li>
+                                <span> <a href="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>" target="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>"> <?php echo $kontak['facebook']?></a></span></li>
                             <li> <i class="fa fa-twitter"></i>
-                                <span> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"> <?php echo $kontak['twitter']?> </a></span></li>
+                                <span> <a href="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>" target="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>"> <?php echo $kontak['twitter']?> </a></span></li>
                             <li><i class="fa fa-pinterest"></i>
-                                <span> <a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <?php echo $kontak['pinterest']?></a></span></li>
+                                <span> <a href="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>" target="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>"> <?php echo $kontak['pinterest']?></a></span></li>
                             <li><i class="fa fa-google-plus"></i>
-                                <span> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"> <?php echo $kontak['gplus']?></a></span></li>
+                                <span> <a href="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>" target="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>"> <?php echo $kontak['gplus']?></a></span></li>
                             <li><i class="fa fa-instagram"></i>
-                                <span> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"> <?php echo $kontak['instagram']?></a></span></li>
+                                <span> <a href="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>" target="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>"> <?php echo $kontak['instagram']?></a></span></li>
                         </ul>
                     </div>
                 </div>
@@ -70,12 +70,12 @@
                 <div class="col-md-6">
                     <div class="footer_mid pull-right">
                         <ul class="social-contact list-inline">
-                            <li> <a href="<?php echo $kontak['facebook'] ?>" target="<?php echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
-                            <li> <a href="<?php echo $kontak['twitter'] ?>" target="<?php echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="<?php echo $kontak['pinterest'] ?>" target="<?php echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
-                            <li> <a href="<?php echo $kontak['gplus'] ?>" target="<?php echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
-                            <li> <a href="<?php echo $kontak['instagram'] ?>" target="<?php echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="<?php echo $kontak['alamat'] ?>" target="<?php echo $kontak['facebook'] ?>"> <i class="fa fa-linkedin"></i></a></li>
+                            <li> <a href="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>" target="<?php if(isset($kontak['facebook'])) echo $kontak['facebook'] ?>"><i class="fa fa-facebook"></i></a></li>
+                            <li> <a href="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>" target="<?php if(isset($kontak['twitter'])) echo $kontak['twitter'] ?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>" target="<?php if(isset($kontak['pinterest'])) echo $kontak['pinterest'] ?>"> <i class="fa fa-pinterest"></i></a></li>
+                            <li> <a href="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>" target="<?php if(isset($kontak['gplus'])) echo $kontak['gplus'] ?>"><i class="fa fa-google-plus"></i> </a></li>
+                            <li> <a href="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>" target="<?php if(isset($kontak['instagram'])) echo $kontak['instagram'] ?>"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>" target="<?php if(isset($kontak['alamat'])) echo $kontak['alamat'] ?>"> <i class="fa fa-linkedin"></i></a></li>
                             
                         </ul>
                     </div>
