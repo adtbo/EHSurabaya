@@ -2,12 +2,23 @@
     margin: -15px;
     position: absolute;
     z-index: 10;
-    background: #2E2E2E;
+    background: transparent;
     opacity: 0.9;
-    padding: 4px 3px 6px 7px;
-    border-radius: 10px;
-    width: 10px;
-    height: 10px;
-    margin-bottom: 5px;
-    color: #fff;
+    padding: 0px;
+}
+
+.thumbnail-event{
+    background: #F2F2F2;
+}
+
+.thumbnail-event > p{
+    margin-top: 10px;
+}
+
+td {
+    padding-top: .7em;
+}
+
+table{
+	margin-bottom: 10px;
 }

@@ -1,10 +1,16 @@
 <div class="container">
     <div class="row">
         <div class="span12">
+            <div class="alert alert-info">
+                <h3>Halaman Sunting Kegiatan </h3> 
+                <h4>Pada halaman ini anda bisa menyunting detail kegiatan.</h4>
+            </div>
+        </div>
+        <div class="span12">
             <div class="widget">
                 <div class="widget-header">
                     <i class="icon-pencil"></i>
-                    <h3> SUNTING KEGIATAN: Nama kegiatan </h3>
+                    <h3> SUNTING KEGIATAN: <?php echo $nama; ?> </h3>
                 </div>
                 <div class="widget-content">
                     <form id="suntingKegiatan_f" role="form" class="form-default" action="<?php echo site_url('dasbor/updatekeg'); ?>" method="post" enctype="multipart/form-data">
@@ -72,20 +78,28 @@
                                                     
                                                             <div class="form-actions">  
                                                                 <label class="control-label">Tambah Gambar Baru: </label>
-                                                                <input type="file" id="gambar" name="gambar[]" multiple>          
+                                                                <input type="file" id="gambar" name="gambar[]" multiple>                                                                          
                                                             </div>
                                                     <?php 
-                                                        if ($gambarnum==0) echo "No Pictures";
+                                                        if ($gambarnum==0) echo "Belum ada gambar.";
                                                         for ($i = 0; $i < $gambarnum; $i+=5) {
                                                     ?>
                                                     <div class="row" style="margin:2% 0%;">
                                                         <?php for ($j = $i; $j < $gambarnum; $j++) { 
                                                             if ($j == $i+5) break;
+                                                            $judul = explode(".", $gambar[$j]['judul']);
                                                         ?>
                                                         <div class="span2">
-                                                            <div class="thumbnail">
-                                                                <a href="#" title="hapus gambar" onclick="konfirmHapusGam(<?php echo $gambar[$j]['id']?>); return false;"><div class="control">x</div></a>
+                                                            <div class="thumbnail thumbnail-event">
+                                                                <div class="control">
+                                                                    <a href="#" title="hapus gambar" onclick="konfirmHapusGam(<?php echo $gambar[$j]['id']?>); return false;"><img src="<?php echo base_url('assets/images/icons/close_circle.png'); ?>"></a>
+                                                                    <a href="#" title="edit detail gambar" onclick="editGambar('<?php echo $gambar[$j]['id']; ?>', '<?php echo $gambar[$j]['judul']; ?>', '<?php echo $gambar[$j]['deskripsi']; ?>'); return false;"><img src="<?php echo base_url('assets/images/icons/edit_circle.png'); ?>"></a>
+                                                                </div>
                                                                 <img src="data:image/jpeg;base64, <?php echo base64_encode($gambar[$j]['data']); ?>">
+                                                                
+                                                                    <p><strong>Judul: </strong><br><?php echo $judul[0]; ?></p>
+                                                                    <p><strong>Deskripsi: </strong><br><?php echo substr($gambar[$j]['deskripsi'],0,25).'...'; ?></p>
+                                                                
                                                             </div>
                                                         </div>
                                                         <?php } ?>
@@ -119,6 +133,49 @@
     <input type="hidden" name="iddelgambar" id="iddelgambar">
 </form>
 
+<!-- form edit gambar -->
+<div id="editGambarModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="editGambarModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="editGambarModalLabel">Edit Detail Gambar</h3>
+    </div>
+    <div class="modal-body" id="editGambarModalBody">
+    <form role="form" class="form-default" id="editGambar_f" action="<?php echo site_url('dasbor/updateGambar'); ?>" method="POST">
+        <fieldset>        
+            <div class="control-group">
+                <div class="span5">
+                    <label class="control-label" for="judulGambar"><strong>Judul Gambar</strong></label>
+                    <div class="controls">
+                        <input type="text"id="judulGambar" class="span5" name="judulGambar" placeholder="Judul Gambar">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="span5">
+                    <label class="control-label" for="deskripsiGambar"><strong>Deskripsi Gambar</strong></label>
+                    <div class="controls">
+                        <textarea rows="10" id="deskripsiGambar" class="span5" name="deskripsiGambar" placeholder="Deskripsi Gambar"></textarea>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <fieldset>
+            <div class="form-group">
+                <div class="span5">
+                        <input type="hidden" name="idGambar" id="idGambar_edit">
+                        <input type="hidden" name="look" id="look" value="<?php echo $id; ?>">
+                        <button class="btn btn-danger" data-dismiss="modal" aria-hidden="true" id="editGambarModalBtnRed">Batal</button>
+                        <button class="btn btn-primary" id="editGambarModalBtnBlue" onclick="document.getElementById('editGambar_f').submit(); return false;">Simpan Perubahan</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    </div>
+</div>
+<!-- /form edit gambar -->
+
 <!-- Modal -->
 <div id="konfirmModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="konfirmModalLabel" aria-hidden="true">
     <div class="modal-header">
@@ -136,7 +193,8 @@
 
 <script>
     CKEDITOR.replace('deskripsi');
-    
+    CKEDITOR.instances.deskripsi.config.height = 500;
+
     function doDelete(id){
         form = document.getElementById('deleteForm');
         elem = form.elements['iddelgambar'];
@@ -169,5 +227,13 @@
         document.getElementById('konfirmModalBtnBlue').innerHTML = 'Ya. Hapus Gambar';
         document.getElementById('konfirmModalBtnBlue').onclick = function() {doDelete(id);};
         $('#konfirmModal').modal({show: 'true', backdrop: 'static'}); 
+    }
+
+    function editGambar(i, j, d){
+        f = document.getElementById('editGambar_f');
+        document.getElementById('idGambar_edit').value = i;
+        document.getElementById('judulGambar').value = j;
+        document.getElementById('deskripsiGambar').innerHTML = d;
+        $('#editGambarModal').modal({show: 'true', backdrop: 'static'}); 
     }
 </script>

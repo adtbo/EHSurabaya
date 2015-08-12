@@ -1,5 +1,14 @@
+    <?php
+        $msg = $this->session->userdata('msg');
+    ?>
 <div class="container">
     <div class="row">
+        <div class="span12">
+            <div class="alert alert-info">
+                <h3>Halaman Kegiatan </h3> 
+                <h4>Pada halaman ini anda bisa menambah kegiatan dan melihat serta menyunting detail kegiatan.</h4>
+            </div>
+        </div>
         <div class="span6">
             <div class="widget">
                 <div class="widget-header">
@@ -7,9 +16,18 @@
                     <h3> Menambahkan Kegiatan </h3>
                 </div>
                 <div class="widget-content">
-                    <p>
-                        Pada bagian ini Anda bisa menambahkan dan menyunting kegiatan yang ingin ditampilkan pada halaman website.
-                    </p>
+                    <?php if($msg['state'] && $msg['element']=='kegiatan') {
+                        if ($msg['status'] == 'success') {?>
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><?php echo $msg['title']; ?> </strong><?php echo $msg['content']; ?>
+                        </div>
+                        <?php } else if ($msg['status'] == 'failed'){?>
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><?php echo $msg['title']; ?> </strong><?php echo $msg['content']; ?>
+                        </div>
+                    <?php } }  ?>
                     <form id="tambahkegiatan_f" role="form" class="form-default" action="<?php echo site_url('dasbor/inskeg'); ?>" method="post">
                         <fieldset>
                             <div class="control-group">
@@ -55,6 +73,7 @@
                                 </div>
                             </div>
                             <div class="form-actions">
+                                <input type="hidden" name="yap" value="1">
                                 <a href="#" onclick="konfirmReset(); return false;" class="btn btn-danger" title="Memuat ulang formulir tambah kegiatan"><i class="icon-eraser"></i> Reset</a>
                                 <button onclick="finishing(); return false;" class="btn btn-primary"><i class="icon-ok"></i> Simpan</button>
                             </div>
@@ -70,6 +89,18 @@
                     <h3> Daftar Kegiatan </h3>
                 </div>
                 <div class="widget-content">
+                    <?php if($msg['state'] && $msg['element']=='hapuskegiatan') {
+                        if ($msg['status'] == 'success') {?>
+                        <div class="alert alert-success">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><?php echo $msg['title']; ?> </strong><?php echo $msg['content']; ?>
+                        </div>
+                        <?php } else if ($msg['status'] == 'failed'){?>
+                        <div class="alert alert-danger">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong><?php echo $msg['title']; ?> </strong><?php echo $msg['content']; ?>
+                        </div>
+                    <?php } }  ?>
                     <div class="bs-example">
                         <table class="table table-hover">
                             <thead>
